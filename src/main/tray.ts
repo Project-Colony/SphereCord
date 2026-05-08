@@ -4,13 +4,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { app, type BrowserWindow, Menu, type NativeImage, nativeImage, Tray } from "electron";
+import { app, type BrowserWindow, dialog, Menu, type NativeImage, nativeImage, Tray } from "electron";
 import { join } from "path";
 import { STATIC_DIR } from "shared/paths";
 
 import { createAboutWindow } from "./about";
 import { createArgumentsWindow } from "./arguments";
-import { restartArRPC } from "./arrpc";
 import { createArRPCWindow } from "./arrpcWindow";
 import { AppEvents } from "./events";
 import { Settings } from "./settings";
@@ -228,12 +227,6 @@ export async function initTray(win: BrowserWindow, setIsQuitting: (val: boolean)
                     { id: 12, type: "separator" as const, enabled: true, visible: true },
                     { id: 3, label: "Repair Equicord", enabled: true, visible: true },
                     { id: 4, label: "Reset Equibop", enabled: true, visible: true },
-                    {
-                        id: 6,
-                        label: "Restart arRPC",
-                        enabled: true,
-                        visible: Settings.store.arRPC === true
-                    },
                     { id: 7, type: "separator" as const, enabled: true, visible: true },
                     { id: 8, label: "Restart", enabled: true, visible: true },
                     { id: 9, label: "Quit", enabled: true, visible: true }
@@ -263,22 +256,27 @@ export async function initTray(win: BrowserWindow, setIsQuitting: (val: boolean)
                             createAboutWindow();
                             break;
                         case 3: // repair equicord
-                            downloadVencordAsar().then(() => {
-                                setTimeout(() => {
-                                    destroyTray();
-                                    app.relaunch();
-                                    app.quit();
-                                }, 0);
-                            });
+                            downloadVencordAsar()
+                                .then(() => {
+                                    setTimeout(() => {
+                                        destroyTray();
+                                        app.relaunch();
+                                        app.quit();
+                                    }, 0);
+                                })
+                                .catch(err => {
+                                    console.error("[Tray] Repair Equicord failed:", err);
+                                    dialog.showErrorBox(
+                                        "Repair Equicord failed",
+                                        `Could not download Equicord:\n\n${err instanceof Error ? err.message : String(err)}`
+                                    );
+                                });
                             break;
                         case 4: // reset Equibop
                             clearData(win);
                             break;
                         case 5: // launch arguments
                             createArgumentsWindow();
-                            break;
-                        case 6: // restart arRPC-bun
-                            restartArRPC();
                             break;
                         case 10: // configure rich presence
                             createArRPCWindow();
@@ -340,7 +338,16 @@ export async function initTray(win: BrowserWindow, setIsQuitting: (val: boolean)
         {
             label: "Repair Equicord",
             async click() {
-                await downloadVencordAsar();
+                try {
+                    await downloadVencordAsar();
+                } catch (err) {
+                    console.error("[Tray] Repair Equicord failed:", err);
+                    dialog.showErrorBox(
+                        "Repair Equicord failed",
+                        `Could not download Equicord:\n\n${err instanceof Error ? err.message : String(err)}`
+                    );
+                    return;
+                }
                 destroyTray();
                 app.relaunch();
                 app.quit();
@@ -350,13 +357,6 @@ export async function initTray(win: BrowserWindow, setIsQuitting: (val: boolean)
             label: "Reset Equibop",
             async click() {
                 await clearData(win);
-            }
-        },
-        {
-            label: "Restart arRPC",
-            visible: Settings.store.arRPC === true,
-            async click() {
-                await restartArRPC();
             }
         },
         { type: "separator" },

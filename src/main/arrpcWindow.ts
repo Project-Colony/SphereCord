@@ -31,9 +31,10 @@ export function createArRPCWindow() {
             : process.platform === "linux"
               ? { icon: join(STATIC_DIR, "icon.png") }
               : {}),
-        height: 450,
-        width: 500,
-        resizable: false,
+        height: 600,
+        width: 540,
+        minHeight: 360,
+        minWidth: 420,
         webPreferences: {
             preload: join(__dirname, "arrpcSettingsPreload.js")
         }

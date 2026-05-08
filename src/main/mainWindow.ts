@@ -500,9 +500,7 @@ export async function createWindows() {
         }
 
         if (isDeckGameMode) {
-            // always use entire display
             mainWin?.setFullScreen(true);
-
             askToApplySteamLayout(mainWin);
         }
 

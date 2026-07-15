@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Nightowl Light
+ * @description Nightowl Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #f0f0f0;
+    --background-secondary: #f0f0f0;
+    --background-secondary-alt: #e8e8e8;
+    --background-primary: #fbfbfb;
+    --background-floating: #e8e8e8;
+    --background-nested-floating: #e8e8e8;
+    --background-modifier-hover: #e0e0e0;
+    --background-modifier-selected: #e0e0e0;
+    --background-modifier-active: #d4d4d4;
+    --background-modifier-accent: #e0e0e0;
+    --channeltextarea-background: #e8e8e8;
+    --input-background: #e8e8e8;
+    --modal-background: #fbfbfb;
+    --deprecated-card-bg: #e8e8e8;
+    --text-normal: #403f53;
+    --text-default: #403f53;
+    --text-muted: #6e6d88;
+    --header-primary: #403f53;
+    --header-secondary: #565570;
+    --channels-default: #6e6d88;
+    --interactive-normal: #565570;
+    --interactive-hover: #403f53;
+    --interactive-active: #403f53;
+    --interactive-muted: #8888a0;
+    --text-link: #4876d6;
+    --brand-experiment: #4876d6;
+    --brand-500: #4876d6;
+    --brand-560: #4876d6;
+    --brand-360: #4876d6;
+    --status-positive: #2aa298;
+    --status-warning: #d98e24;
+    --status-danger: #de3d3b;
+    --text-positive: #2aa298;
+    --text-warning: #d98e24;
+    --text-danger: #de3d3b;
+    --info-danger-foreground: #de3d3b;
+}

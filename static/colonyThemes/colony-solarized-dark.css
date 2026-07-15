@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Solarized Dark
+ * @description Solarized Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #00222c;
+    --background-secondary: #00222c;
+    --background-secondary-alt: #073642;
+    --background-primary: #002b36;
+    --background-floating: #073642;
+    --background-nested-floating: #073642;
+    --background-modifier-hover: #0a4858;
+    --background-modifier-selected: #073642;
+    --background-modifier-active: #1a5a6c;
+    --background-modifier-accent: #073642;
+    --channeltextarea-background: #073642;
+    --input-background: #073642;
+    --modal-background: #002b36;
+    --deprecated-card-bg: #073642;
+    --text-normal: #839496;
+    --text-default: #839496;
+    --text-muted: #738c90;
+    --header-primary: #839496;
+    --header-secondary: #93a1a1;
+    --channels-default: #738c90;
+    --interactive-normal: #93a1a1;
+    --interactive-hover: #839496;
+    --interactive-active: #839496;
+    --interactive-muted: #657b83;
+    --text-link: #268bd2;
+    --brand-experiment: #268bd2;
+    --brand-500: #268bd2;
+    --brand-560: #268bd2;
+    --brand-360: #268bd2;
+    --status-positive: #859900;
+    --status-warning: #b58900;
+    --status-danger: #dc322f;
+    --text-positive: #859900;
+    --text-warning: #b58900;
+    --text-danger: #dc322f;
+    --info-danger-foreground: #dc322f;
+}

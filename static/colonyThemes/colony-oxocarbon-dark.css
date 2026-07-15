@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Oxocarbon Dark
+ * @description Oxocarbon Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #0e0e0e;
+    --background-secondary: #0e0e0e;
+    --background-secondary-alt: #262626;
+    --background-primary: #161616;
+    --background-floating: #262626;
+    --background-nested-floating: #262626;
+    --background-modifier-hover: #393939;
+    --background-modifier-selected: #393939;
+    --background-modifier-active: #525252;
+    --background-modifier-accent: #262626;
+    --channeltextarea-background: #262626;
+    --input-background: #262626;
+    --modal-background: #161616;
+    --deprecated-card-bg: #262626;
+    --text-normal: #f2f4f8;
+    --text-default: #f2f4f8;
+    --text-muted: #b0b4bc;
+    --header-primary: #f2f4f8;
+    --header-secondary: #dde1e6;
+    --channels-default: #b0b4bc;
+    --interactive-normal: #dde1e6;
+    --interactive-hover: #f2f4f8;
+    --interactive-active: #f2f4f8;
+    --interactive-muted: #8a8e96;
+    --text-link: #78a9ff;
+    --brand-experiment: #78a9ff;
+    --brand-500: #78a9ff;
+    --brand-560: #78a9ff;
+    --brand-360: #78a9ff;
+    --status-positive: #42be65;
+    --status-warning: #08bdba;
+    --status-danger: #ee5396;
+    --text-positive: #42be65;
+    --text-warning: #08bdba;
+    --text-danger: #ee5396;
+    --info-danger-foreground: #ee5396;
+}

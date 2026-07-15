@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Ayu Dark
+ * @description Ayu Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #070a10;
+    --background-secondary: #070a10;
+    --background-secondary-alt: #1b2028;
+    --background-primary: #0b0e14;
+    --background-floating: #1b2028;
+    --background-nested-floating: #1b2028;
+    --background-modifier-hover: #252b35;
+    --background-modifier-selected: #1b3a4b;
+    --background-modifier-active: #303842;
+    --background-modifier-accent: #1b2028;
+    --channeltextarea-background: #1b2028;
+    --input-background: #1b2028;
+    --modal-background: #0b0e14;
+    --deprecated-card-bg: #1b2028;
+    --text-normal: #bfbdb6;
+    --text-default: #bfbdb6;
+    --text-muted: #8a8880;
+    --header-primary: #bfbdb6;
+    --header-secondary: #a8a6a0;
+    --channels-default: #8a8880;
+    --interactive-normal: #a8a6a0;
+    --interactive-hover: #bfbdb6;
+    --interactive-active: #bfbdb6;
+    --interactive-muted: #7a786e;
+    --text-link: #e6b450;
+    --brand-experiment: #e6b450;
+    --brand-500: #e6b450;
+    --brand-560: #e6b450;
+    --brand-360: #e6b450;
+    --status-positive: #aad94c;
+    --status-warning: #ffb454;
+    --status-danger: #d95757;
+    --text-positive: #aad94c;
+    --text-warning: #ffb454;
+    --text-danger: #d95757;
+    --info-danger-foreground: #d95757;
+}

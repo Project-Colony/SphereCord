@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Dawnfox
+ * @description Dawnfox palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #ebe5df;
+    --background-secondary: #ebe5df;
+    --background-secondary-alt: #ebd8ce;
+    --background-primary: #faf4ed;
+    --background-floating: #ebd8ce;
+    --background-nested-floating: #ebd8ce;
+    --background-modifier-hover: #dacdc3;
+    --background-modifier-selected: #ebd8ce;
+    --background-modifier-active: #c8beb4;
+    --background-modifier-accent: #dacdc3;
+    --channeltextarea-background: #ebd8ce;
+    --input-background: #ebd8ce;
+    --modal-background: #faf4ed;
+    --deprecated-card-bg: #ebd8ce;
+    --text-normal: #575279;
+    --text-default: #575279;
+    --text-muted: #6e6a86;
+    --header-primary: #575279;
+    --header-secondary: #625c87;
+    --channels-default: #6e6a86;
+    --interactive-normal: #625c87;
+    --interactive-hover: #575279;
+    --interactive-active: #575279;
+    --interactive-muted: #9893a5;
+    --text-link: #286983;
+    --brand-experiment: #286983;
+    --brand-500: #286983;
+    --brand-560: #286983;
+    --brand-360: #286983;
+    --status-positive: #618774;
+    --status-warning: #ea9d34;
+    --status-danger: #b4637a;
+    --text-positive: #618774;
+    --text-warning: #ea9d34;
+    --text-danger: #b4637a;
+    --info-danger-foreground: #b4637a;
+}

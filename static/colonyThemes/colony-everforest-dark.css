@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Everforest Dark
+ * @description Everforest Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #232a2e;
+    --background-secondary: #232a2e;
+    --background-secondary-alt: #343f44;
+    --background-primary: #2d353b;
+    --background-floating: #343f44;
+    --background-nested-floating: #343f44;
+    --background-modifier-hover: #3d484d;
+    --background-modifier-selected: #543a48;
+    --background-modifier-active: #475258;
+    --background-modifier-accent: #343f44;
+    --channeltextarea-background: #343f44;
+    --input-background: #343f44;
+    --modal-background: #2d353b;
+    --deprecated-card-bg: #343f44;
+    --text-normal: #d3c6aa;
+    --text-default: #d3c6aa;
+    --text-muted: #a09880;
+    --header-primary: #d3c6aa;
+    --header-secondary: #c0b498;
+    --channels-default: #a09880;
+    --interactive-normal: #c0b498;
+    --interactive-hover: #d3c6aa;
+    --interactive-active: #d3c6aa;
+    --interactive-muted: #859289;
+    --text-link: #7fbbb3;
+    --brand-experiment: #7fbbb3;
+    --brand-500: #7fbbb3;
+    --brand-560: #7fbbb3;
+    --brand-360: #7fbbb3;
+    --status-positive: #a7c080;
+    --status-warning: #dbbc7f;
+    --status-danger: #e67e80;
+    --text-positive: #a7c080;
+    --text-warning: #dbbc7f;
+    --text-danger: #e67e80;
+    --info-danger-foreground: #e67e80;
+}

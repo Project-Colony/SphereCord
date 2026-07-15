@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Rosepine Dawn
+ * @description Rosepine Dawn palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #f2e9e1;
+    --background-secondary: #f2e9e1;
+    --background-secondary-alt: #f4ede8;
+    --background-primary: #faf4ed;
+    --background-floating: #f4ede8;
+    --background-nested-floating: #f4ede8;
+    --background-modifier-hover: #dfdad9;
+    --background-modifier-selected: #dfdad9;
+    --background-modifier-active: #cecacd;
+    --background-modifier-accent: #dfdad9;
+    --channeltextarea-background: #f4ede8;
+    --input-background: #f4ede8;
+    --modal-background: #faf4ed;
+    --deprecated-card-bg: #f4ede8;
+    --text-normal: #575279;
+    --text-default: #575279;
+    --text-muted: #797593;
+    --header-primary: #575279;
+    --header-secondary: #6e6a86;
+    --channels-default: #797593;
+    --interactive-normal: #6e6a86;
+    --interactive-hover: #575279;
+    --interactive-active: #575279;
+    --interactive-muted: #9893a5;
+    --text-link: #56949f;
+    --brand-experiment: #56949f;
+    --brand-500: #56949f;
+    --brand-560: #56949f;
+    --brand-360: #56949f;
+    --status-positive: #286983;
+    --status-warning: #ea9d34;
+    --status-danger: #b4637a;
+    --text-positive: #286983;
+    --text-warning: #ea9d34;
+    --text-danger: #b4637a;
+    --info-danger-foreground: #b4637a;
+}

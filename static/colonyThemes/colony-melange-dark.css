@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Melange Dark
+ * @description Melange Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #221e1b;
+    --background-secondary: #221e1b;
+    --background-secondary-alt: #34302c;
+    --background-primary: #292522;
+    --background-floating: #34302c;
+    --background-nested-floating: #34302c;
+    --background-modifier-hover: #403a36;
+    --background-modifier-selected: #403a36;
+    --background-modifier-active: #4c4640;
+    --background-modifier-accent: #34302c;
+    --channeltextarea-background: #34302c;
+    --input-background: #34302c;
+    --modal-background: #292522;
+    --deprecated-card-bg: #34302c;
+    --text-normal: #ece1d7;
+    --text-default: #ece1d7;
+    --text-muted: #bab0a4;
+    --header-primary: #ece1d7;
+    --header-secondary: #d4c8bc;
+    --channels-default: #bab0a4;
+    --interactive-normal: #d4c8bc;
+    --interactive-hover: #ece1d7;
+    --interactive-active: #ece1d7;
+    --interactive-muted: #9e9488;
+    --text-link: #a3a9ce;
+    --brand-experiment: #a3a9ce;
+    --brand-500: #a3a9ce;
+    --brand-560: #a3a9ce;
+    --brand-360: #a3a9ce;
+    --status-positive: #85b695;
+    --status-warning: #ebc06d;
+    --status-danger: #d47766;
+    --text-positive: #85b695;
+    --text-warning: #ebc06d;
+    --text-danger: #d47766;
+    --info-danger-foreground: #d47766;
+}

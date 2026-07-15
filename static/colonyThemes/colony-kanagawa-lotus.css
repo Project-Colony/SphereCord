@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Kanagawa Lotus
+ * @description Kanagawa Lotus palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #e5ddb0;
+    --background-secondary: #e5ddb0;
+    --background-secondary-alt: #e7dba0;
+    --background-primary: #f2ecbc;
+    --background-floating: #e7dba0;
+    --background-nested-floating: #e7dba0;
+    --background-modifier-hover: #d5cea3;
+    --background-modifier-selected: #d5cea3;
+    --background-modifier-active: #c8c093;
+    --background-modifier-accent: #d5cea3;
+    --channeltextarea-background: #e4d794;
+    --input-background: #e4d794;
+    --modal-background: #f2ecbc;
+    --deprecated-card-bg: #e7dba0;
+    --text-normal: #545464;
+    --text-default: #545464;
+    --text-muted: #716e61;
+    --header-primary: #545464;
+    --header-secondary: #43436c;
+    --channels-default: #716e61;
+    --interactive-normal: #43436c;
+    --interactive-hover: #545464;
+    --interactive-active: #545464;
+    --interactive-muted: #8a8980;
+    --text-link: #4d699b;
+    --brand-experiment: #4d699b;
+    --brand-500: #4d699b;
+    --brand-560: #4d699b;
+    --brand-360: #4d699b;
+    --status-positive: #6f894e;
+    --status-warning: #de9800;
+    --status-danger: #c84053;
+    --text-positive: #6f894e;
+    --text-warning: #de9800;
+    --text-danger: #c84053;
+    --info-danger-foreground: #c84053;
+}

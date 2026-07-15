@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Solarized Light
+ * @description Solarized Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #eee8d5;
+    --background-secondary: #eee8d5;
+    --background-secondary-alt: #e6e0ca;
+    --background-primary: #fdf6e3;
+    --background-floating: #e6e0ca;
+    --background-nested-floating: #e6e0ca;
+    --background-modifier-hover: #dcd6c0;
+    --background-modifier-selected: #dcd6c0;
+    --background-modifier-active: #d0cab4;
+    --background-modifier-accent: #dcd6c0;
+    --channeltextarea-background: #e6e0ca;
+    --input-background: #e6e0ca;
+    --modal-background: #fdf6e3;
+    --deprecated-card-bg: #e6e0ca;
+    --text-normal: #657b83;
+    --text-default: #657b83;
+    --text-muted: #7c8e94;
+    --header-primary: #657b83;
+    --header-secondary: #586e75;
+    --channels-default: #7c8e94;
+    --interactive-normal: #586e75;
+    --interactive-hover: #657b83;
+    --interactive-active: #657b83;
+    --interactive-muted: #93a1a1;
+    --text-link: #268bd2;
+    --brand-experiment: #268bd2;
+    --brand-500: #268bd2;
+    --brand-560: #268bd2;
+    --brand-360: #268bd2;
+    --status-positive: #859900;
+    --status-warning: #b58900;
+    --status-danger: #dc322f;
+    --text-positive: #859900;
+    --text-warning: #b58900;
+    --text-danger: #dc322f;
+    --info-danger-foreground: #dc322f;
+}

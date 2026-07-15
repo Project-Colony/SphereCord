@@ -1,8 +1,9 @@
 name: Submit to Winget Community Repo
 
+# DISABLED auto-run for the SphereCord fork: winget publishing used an upstream
+# maintainer's winget-pkgs fork (fork-user: Creationsss) + secrets.WINGET_PAT.
+# Set up your own winget-pkgs fork + PAT and re-add the `release` trigger to publish.
 on:
-  release:
-    types: [published]
   workflow_dispatch:
     inputs:
       tag:
@@ -18,8 +19,8 @@ jobs:
       - name: Submit package to Winget Community Repo
         uses: vedantmgoyal2009/winget-releaser@0db4f0a478166abd0fa438c631849f0b8dcfb99f
         with:
-          identifier: Equicord.Equibop
+          identifier: ProjectColony.SphereCord
           token: ${{ secrets.WINGET_PAT }}
           installers-regex: '\.exe$'
           release-tag: ${{ inputs.tag || github.event.release.tag_name }}
-          fork-user: Creationsss
+          fork-user: Project-Colony

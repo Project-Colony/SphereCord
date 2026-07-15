@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Monokai Classic
+ * @description Monokai Classic palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #1a1a18;
+    --background-secondary: #1a1a18;
+    --background-secondary-alt: #49483e;
+    --background-primary: #272822;
+    --background-floating: #49483e;
+    --background-nested-floating: #49483e;
+    --background-modifier-hover: #5a5950;
+    --background-modifier-selected: #49483e;
+    --background-modifier-active: #6b6a62;
+    --background-modifier-accent: #49483e;
+    --channeltextarea-background: #49483e;
+    --input-background: #49483e;
+    --modal-background: #272822;
+    --deprecated-card-bg: #49483e;
+    --text-normal: #f8f8f2;
+    --text-default: #f8f8f2;
+    --text-muted: #c1c0c0;
+    --header-primary: #f8f8f2;
+    --header-secondary: #e0e0d8;
+    --channels-default: #c1c0c0;
+    --interactive-normal: #e0e0d8;
+    --interactive-hover: #f8f8f2;
+    --interactive-active: #f8f8f2;
+    --interactive-muted: #939293;
+    --text-link: #66d9ef;
+    --brand-experiment: #66d9ef;
+    --brand-500: #66d9ef;
+    --brand-560: #66d9ef;
+    --brand-360: #66d9ef;
+    --status-positive: #a6e22e;
+    --status-warning: #e6db74;
+    --status-danger: #f92672;
+    --text-positive: #a6e22e;
+    --text-warning: #e6db74;
+    --text-danger: #f92672;
+    --info-danger-foreground: #f92672;
+}

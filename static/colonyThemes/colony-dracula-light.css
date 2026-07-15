@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Dracula Light
+ * @description Dracula Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #f4efd8;
+    --background-secondary: #f4efd8;
+    --background-secondary-alt: #e8e4cf;
+    --background-primary: #fffbeb;
+    --background-floating: #e8e4cf;
+    --background-nested-floating: #e8e4cf;
+    --background-modifier-hover: #dcd8c0;
+    --background-modifier-selected: #dcd8c0;
+    --background-modifier-active: #d0ccb8;
+    --background-modifier-accent: #dcd8c0;
+    --channeltextarea-background: #e8e4cf;
+    --input-background: #e8e4cf;
+    --modal-background: #fffbeb;
+    --deprecated-card-bg: #e8e4cf;
+    --text-normal: #1f1f1f;
+    --text-default: #1f1f1f;
+    --text-muted: #555555;
+    --header-primary: #1f1f1f;
+    --header-secondary: #333333;
+    --channels-default: #555555;
+    --interactive-normal: #333333;
+    --interactive-hover: #1f1f1f;
+    --interactive-active: #1f1f1f;
+    --interactive-muted: #777777;
+    --text-link: #7c5fc2;
+    --brand-experiment: #7c5fc2;
+    --brand-500: #7c5fc2;
+    --brand-560: #7c5fc2;
+    --brand-360: #7c5fc2;
+    --status-positive: #2ba479;
+    --status-warning: #d5a212;
+    --status-danger: #de3535;
+    --text-positive: #2ba479;
+    --text-warning: #d5a212;
+    --text-danger: #de3535;
+    --info-danger-foreground: #de3535;
+}

@@ -76,7 +76,7 @@ interface Source {
 
 export let currentSettings: StreamSettings | null = null;
 
-const logger = new Logger("EquibopScreenShare");
+const logger = new Logger("SphereCordScreenShare");
 
 let streamCloseCallback: ((data: any) => void) | null = null;
 

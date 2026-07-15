@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Material Deepocean
+ * @description Material Deepocean palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #090b10;
+    --background-secondary: #090b10;
+    --background-secondary-alt: #1a1c28;
+    --background-primary: #0f111a;
+    --background-floating: #1a1c28;
+    --background-nested-floating: #1a1c28;
+    --background-modifier-hover: #252836;
+    --background-modifier-selected: #44475a;
+    --background-modifier-active: #3b3f51;
+    --background-modifier-accent: #1a1c28;
+    --channeltextarea-background: #1a1c28;
+    --input-background: #1a1c28;
+    --modal-background: #0f111a;
+    --deprecated-card-bg: #1a1c28;
+    --text-normal: #8f93a2;
+    --text-default: #8f93a2;
+    --text-muted: #7880a0;
+    --header-primary: #8f93a2;
+    --header-secondary: #a0a4b4;
+    --channels-default: #7880a0;
+    --interactive-normal: #a0a4b4;
+    --interactive-hover: #8f93a2;
+    --interactive-active: #8f93a2;
+    --interactive-muted: #606888;
+    --text-link: #84ffff;
+    --brand-experiment: #84ffff;
+    --brand-500: #84ffff;
+    --brand-560: #84ffff;
+    --brand-360: #84ffff;
+    --status-positive: #c3e88d;
+    --status-warning: #ffcb6b;
+    --status-danger: #ff5370;
+    --text-positive: #c3e88d;
+    --text-warning: #ffcb6b;
+    --text-danger: #ff5370;
+    --info-danger-foreground: #ff5370;
+}

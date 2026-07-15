@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Ayu Mirage
+ * @description Ayu Mirage palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #1a1f2b;
+    --background-secondary: #1a1f2b;
+    --background-secondary-alt: #2a303e;
+    --background-primary: #1f2430;
+    --background-floating: #2a303e;
+    --background-nested-floating: #2a303e;
+    --background-modifier-hover: #33415e;
+    --background-modifier-selected: #33415e;
+    --background-modifier-active: #3d4a68;
+    --background-modifier-accent: #2a303e;
+    --channeltextarea-background: #2a303e;
+    --input-background: #2a303e;
+    --modal-background: #1f2430;
+    --deprecated-card-bg: #2a303e;
+    --text-normal: #cccac2;
+    --text-default: #cccac2;
+    --text-muted: #9a988e;
+    --header-primary: #cccac2;
+    --header-secondary: #b4b2aa;
+    --channels-default: #9a988e;
+    --interactive-normal: #b4b2aa;
+    --interactive-hover: #cccac2;
+    --interactive-active: #cccac2;
+    --interactive-muted: #858380;
+    --text-link: #ffcc66;
+    --brand-experiment: #ffcc66;
+    --brand-500: #ffcc66;
+    --brand-560: #ffcc66;
+    --brand-360: #ffcc66;
+    --status-positive: #bae67e;
+    --status-warning: #ffd580;
+    --status-danger: #f28779;
+    --text-positive: #bae67e;
+    --text-warning: #ffd580;
+    --text-danger: #f28779;
+    --info-danger-foreground: #f28779;
+}

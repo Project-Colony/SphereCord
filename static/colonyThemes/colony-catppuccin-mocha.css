@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Catppuccin Mocha
+ * @description Catppuccin Mocha palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #181825;
+    --background-secondary: #181825;
+    --background-secondary-alt: #181825;
+    --background-primary: #1e1e2e;
+    --background-floating: #181825;
+    --background-nested-floating: #181825;
+    --background-modifier-hover: #313244;
+    --background-modifier-selected: #45475a;
+    --background-modifier-active: #45475a;
+    --background-modifier-accent: #313244;
+    --channeltextarea-background: #313244;
+    --input-background: #313244;
+    --modal-background: #181825;
+    --deprecated-card-bg: #181825;
+    --text-normal: #cdd6f4;
+    --text-default: #cdd6f4;
+    --text-muted: #a6adc8;
+    --header-primary: #cdd6f4;
+    --header-secondary: #bac2de;
+    --channels-default: #a6adc8;
+    --interactive-normal: #bac2de;
+    --interactive-hover: #cdd6f4;
+    --interactive-active: #cdd6f4;
+    --interactive-muted: #9399b2;
+    --text-link: #89b4fa;
+    --brand-experiment: #89b4fa;
+    --brand-500: #89b4fa;
+    --brand-560: #89b4fa;
+    --brand-360: #89b4fa;
+    --status-positive: #a6e3a1;
+    --status-warning: #f9e2af;
+    --status-danger: #f38ba8;
+    --text-positive: #a6e3a1;
+    --text-warning: #f9e2af;
+    --text-danger: #f38ba8;
+    --info-danger-foreground: #f38ba8;
+}

@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Flexoki Dark
+ * @description Flexoki Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #1c1b1a;
+    --background-secondary: #1c1b1a;
+    --background-secondary-alt: #282726;
+    --background-primary: #100f0f;
+    --background-floating: #282726;
+    --background-nested-floating: #282726;
+    --background-modifier-hover: #343331;
+    --background-modifier-selected: #403e3c;
+    --background-modifier-active: #403e3c;
+    --background-modifier-accent: #282726;
+    --channeltextarea-background: #282726;
+    --input-background: #282726;
+    --modal-background: #100f0f;
+    --deprecated-card-bg: #282726;
+    --text-normal: #cecdc3;
+    --text-default: #cecdc3;
+    --text-muted: #9f9d96;
+    --header-primary: #cecdc3;
+    --header-secondary: #b7b5ac;
+    --channels-default: #9f9d96;
+    --interactive-normal: #b7b5ac;
+    --interactive-hover: #cecdc3;
+    --interactive-active: #cecdc3;
+    --interactive-muted: #878580;
+    --text-link: #4385be;
+    --brand-experiment: #4385be;
+    --brand-500: #4385be;
+    --brand-560: #4385be;
+    --brand-360: #4385be;
+    --status-positive: #879a39;
+    --status-warning: #d0a215;
+    --status-danger: #d14d41;
+    --text-positive: #879a39;
+    --text-warning: #d0a215;
+    --text-danger: #d14d41;
+    --info-danger-foreground: #d14d41;
+}

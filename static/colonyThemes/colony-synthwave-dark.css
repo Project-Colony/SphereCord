@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Synthwave Dark
+ * @description Synthwave Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #241b2f;
+    --background-secondary: #241b2f;
+    --background-secondary-alt: #34294f;
+    --background-primary: #262335;
+    --background-floating: #34294f;
+    --background-nested-floating: #34294f;
+    --background-modifier-hover: #3e3460;
+    --background-modifier-selected: #463465;
+    --background-modifier-active: #463465;
+    --background-modifier-accent: #34294f;
+    --channeltextarea-background: #2a2139;
+    --input-background: #2a2139;
+    --modal-background: #262335;
+    --deprecated-card-bg: #34294f;
+    --text-normal: #ffffff;
+    --text-default: #ffffff;
+    --text-muted: #c0bcd0;
+    --header-primary: #ffffff;
+    --header-secondary: #e2e2e2;
+    --channels-default: #c0bcd0;
+    --interactive-normal: #e2e2e2;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ffffff;
+    --interactive-muted: #a09cb4;
+    --text-link: #ff7edb;
+    --brand-experiment: #ff7edb;
+    --brand-500: #ff7edb;
+    --brand-560: #ff7edb;
+    --brand-360: #ff7edb;
+    --status-positive: #72f1b8;
+    --status-warning: #fede5d;
+    --status-danger: #fe4450;
+    --text-positive: #72f1b8;
+    --text-warning: #fede5d;
+    --text-danger: #fe4450;
+    --info-danger-foreground: #fe4450;
+}

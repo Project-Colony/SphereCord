@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Tokyonight Day
+ * @description Tokyonight Day palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #d0d5e3;
+    --background-secondary: #d0d5e3;
+    --background-secondary-alt: #c4c8da;
+    --background-primary: #e1e2e7;
+    --background-floating: #c4c8da;
+    --background-nested-floating: #c4c8da;
+    --background-modifier-hover: #b7c1e3;
+    --background-modifier-selected: #b7c1e3;
+    --background-modifier-active: #a8b4d4;
+    --background-modifier-accent: #c4c8da;
+    --channeltextarea-background: #c4c8da;
+    --input-background: #c4c8da;
+    --modal-background: #e1e2e7;
+    --deprecated-card-bg: #c4c8da;
+    --text-normal: #3760bf;
+    --text-default: #3760bf;
+    --text-muted: #6172b0;
+    --header-primary: #3760bf;
+    --header-secondary: #4a6ca8;
+    --channels-default: #6172b0;
+    --interactive-normal: #4a6ca8;
+    --interactive-hover: #3760bf;
+    --interactive-active: #3760bf;
+    --interactive-muted: #848cb5;
+    --text-link: #2e7de9;
+    --brand-experiment: #2e7de9;
+    --brand-500: #2e7de9;
+    --brand-560: #2e7de9;
+    --brand-360: #2e7de9;
+    --status-positive: #587539;
+    --status-warning: #8c6c3e;
+    --status-danger: #f52a65;
+    --text-positive: #587539;
+    --text-warning: #8c6c3e;
+    --text-danger: #f52a65;
+    --info-danger-foreground: #f52a65;
+}

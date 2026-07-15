@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Onedark Dark
+ * @description Onedark Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #21252b;
+    --background-secondary: #21252b;
+    --background-secondary-alt: #3e4452;
+    --background-primary: #282c34;
+    --background-floating: #3e4452;
+    --background-nested-floating: #3e4452;
+    --background-modifier-hover: #4b5162;
+    --background-modifier-selected: #3e4452;
+    --background-modifier-active: #5c6370;
+    --background-modifier-accent: #3e4452;
+    --channeltextarea-background: #3e4452;
+    --input-background: #3e4452;
+    --modal-background: #282c34;
+    --deprecated-card-bg: #3e4452;
+    --text-normal: #abb2bf;
+    --text-default: #abb2bf;
+    --text-muted: #848b98;
+    --header-primary: #abb2bf;
+    --header-secondary: #9da4b0;
+    --channels-default: #848b98;
+    --interactive-normal: #9da4b0;
+    --interactive-hover: #abb2bf;
+    --interactive-active: #abb2bf;
+    --interactive-muted: #6b7280;
+    --text-link: #61afef;
+    --brand-experiment: #61afef;
+    --brand-500: #61afef;
+    --brand-560: #61afef;
+    --brand-360: #61afef;
+    --status-positive: #98c379;
+    --status-warning: #e5c07b;
+    --status-danger: #e06c75;
+    --text-positive: #98c379;
+    --text-warning: #e5c07b;
+    --text-danger: #e06c75;
+    --info-danger-foreground: #e06c75;
+}

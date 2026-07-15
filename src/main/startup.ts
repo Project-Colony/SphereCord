@@ -11,6 +11,7 @@ import "./vesktopProtocol";
 
 import { app, BrowserWindow, nativeTheme } from "electron";
 
+import { installColonyThemes } from "./colonyThemes";
 import { DATA_DIR } from "./constants";
 import { createFirstLaunchTour } from "./firstLaunch";
 import { createWindows } from "./mainWindow";
@@ -20,7 +21,7 @@ import { Settings, State } from "./settings";
 import { setAsDefaultProtocolClient } from "./utils/setAsDefaultProtocolClient";
 import { isDeckGameMode } from "./utils/steamOS";
 
-console.log("Equibop v" + app.getVersion());
+console.log("SphereCord v" + app.getVersion());
 
 process.env.EQUICORD_USER_DATA_DIR = DATA_DIR;
 
@@ -30,6 +31,8 @@ export let enableHardwareAcceleration = true;
 
 function init() {
     setAsDefaultProtocolClient("discord");
+
+    installColonyThemes();
 
     const { disableSmoothScroll, hardwareAcceleration, hardwareVideoAcceleration } = Settings.store;
     const { launchArguments } = State.store;
@@ -116,7 +119,7 @@ function init() {
     if (isDeckGameMode) nativeTheme.themeSource = "dark";
 
     app.whenReady().then(async () => {
-        if (process.platform === "win32") app.setAppUserModelId("org.equicord.equibop");
+        if (process.platform === "win32") app.setAppUserModelId("gg.spherecord.app");
 
         registerScreenShareHandler();
         registerMediaPermissionsHandler();

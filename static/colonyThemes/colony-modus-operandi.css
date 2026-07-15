@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Modus Operandi
+ * @description Modus Operandi palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #f0f0f0;
+    --background-secondary: #f0f0f0;
+    --background-secondary-alt: #e0e0e0;
+    --background-primary: #ffffff;
+    --background-floating: #e0e0e0;
+    --background-nested-floating: #e0e0e0;
+    --background-modifier-hover: #d0d0d0;
+    --background-modifier-selected: #d0d0d0;
+    --background-modifier-active: #c4c4c4;
+    --background-modifier-accent: #d0d0d0;
+    --channeltextarea-background: #e0e0e0;
+    --input-background: #e0e0e0;
+    --modal-background: #ffffff;
+    --deprecated-card-bg: #e0e0e0;
+    --text-normal: #000000;
+    --text-default: #000000;
+    --text-muted: #333333;
+    --header-primary: #000000;
+    --header-secondary: #1a1a1a;
+    --channels-default: #333333;
+    --interactive-normal: #1a1a1a;
+    --interactive-hover: #000000;
+    --interactive-active: #000000;
+    --interactive-muted: #595959;
+    --text-link: #0031a9;
+    --brand-experiment: #0031a9;
+    --brand-500: #0031a9;
+    --brand-560: #0031a9;
+    --brand-360: #0031a9;
+    --status-positive: #006800;
+    --status-warning: #6f5500;
+    --status-danger: #a60000;
+    --text-positive: #006800;
+    --text-warning: #6f5500;
+    --text-danger: #a60000;
+    --info-danger-foreground: #a60000;
+}

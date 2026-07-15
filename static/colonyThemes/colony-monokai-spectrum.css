@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Monokai Spectrum
+ * @description Monokai Spectrum palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #191919;
+    --background-secondary: #191919;
+    --background-secondary-alt: #363537;
+    --background-primary: #222222;
+    --background-floating: #363537;
+    --background-nested-floating: #363537;
+    --background-modifier-hover: #484749;
+    --background-modifier-selected: #363537;
+    --background-modifier-active: #5a595b;
+    --background-modifier-accent: #363537;
+    --channeltextarea-background: #363537;
+    --input-background: #363537;
+    --modal-background: #222222;
+    --deprecated-card-bg: #363537;
+    --text-normal: #f7f1ff;
+    --text-default: #f7f1ff;
+    --text-muted: #c0bac8;
+    --header-primary: #f7f1ff;
+    --header-secondary: #e0dae8;
+    --channels-default: #c0bac8;
+    --interactive-normal: #e0dae8;
+    --interactive-hover: #f7f1ff;
+    --interactive-active: #f7f1ff;
+    --interactive-muted: #938ea0;
+    --text-link: #5ad4e6;
+    --brand-experiment: #5ad4e6;
+    --brand-500: #5ad4e6;
+    --brand-560: #5ad4e6;
+    --brand-360: #5ad4e6;
+    --status-positive: #7bd88f;
+    --status-warning: #fce566;
+    --status-danger: #fc618d;
+    --text-positive: #7bd88f;
+    --text-warning: #fce566;
+    --text-danger: #fc618d;
+    --info-danger-foreground: #fc618d;
+}

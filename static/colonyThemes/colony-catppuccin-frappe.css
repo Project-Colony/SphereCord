@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Catppuccin Frappe
+ * @description Catppuccin Frappe palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #292c3c;
+    --background-secondary: #292c3c;
+    --background-secondary-alt: #292c3c;
+    --background-primary: #303446;
+    --background-floating: #292c3c;
+    --background-nested-floating: #292c3c;
+    --background-modifier-hover: #414559;
+    --background-modifier-selected: #51576d;
+    --background-modifier-active: #51576d;
+    --background-modifier-accent: #414559;
+    --channeltextarea-background: #414559;
+    --input-background: #414559;
+    --modal-background: #292c3c;
+    --deprecated-card-bg: #292c3c;
+    --text-normal: #c6d0f5;
+    --text-default: #c6d0f5;
+    --text-muted: #a5adce;
+    --header-primary: #c6d0f5;
+    --header-secondary: #b5bfe2;
+    --channels-default: #a5adce;
+    --interactive-normal: #b5bfe2;
+    --interactive-hover: #c6d0f5;
+    --interactive-active: #c6d0f5;
+    --interactive-muted: #949cbb;
+    --text-link: #8caaee;
+    --brand-experiment: #8caaee;
+    --brand-500: #8caaee;
+    --brand-560: #8caaee;
+    --brand-360: #8caaee;
+    --status-positive: #a6d189;
+    --status-warning: #e5c890;
+    --status-danger: #e78284;
+    --text-positive: #a6d189;
+    --text-warning: #e5c890;
+    --text-danger: #e78284;
+    --info-danger-foreground: #e78284;
+}

@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Rosepine Main
+ * @description Rosepine Main palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #1f1d2e;
+    --background-secondary: #1f1d2e;
+    --background-secondary-alt: #26233a;
+    --background-primary: #191724;
+    --background-floating: #26233a;
+    --background-nested-floating: #26233a;
+    --background-modifier-hover: #403d52;
+    --background-modifier-selected: #403d52;
+    --background-modifier-active: #524f67;
+    --background-modifier-accent: #26233a;
+    --channeltextarea-background: #26233a;
+    --input-background: #26233a;
+    --modal-background: #191724;
+    --deprecated-card-bg: #26233a;
+    --text-normal: #e0def4;
+    --text-default: #e0def4;
+    --text-muted: #908caa;
+    --header-primary: #e0def4;
+    --header-secondary: #cccadd;
+    --channels-default: #908caa;
+    --interactive-normal: #cccadd;
+    --interactive-hover: #e0def4;
+    --interactive-active: #e0def4;
+    --interactive-muted: #7e7a96;
+    --text-link: #9ccfd8;
+    --brand-experiment: #9ccfd8;
+    --brand-500: #9ccfd8;
+    --brand-560: #9ccfd8;
+    --brand-360: #9ccfd8;
+    --status-positive: #31748f;
+    --status-warning: #f6c177;
+    --status-danger: #eb6f92;
+    --text-positive: #31748f;
+    --text-warning: #f6c177;
+    --text-danger: #eb6f92;
+    --info-danger-foreground: #eb6f92;
+}

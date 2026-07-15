@@ -29,15 +29,15 @@ function openDeveloperOptionsModal(settings: Settings) {
         <ModalRoot {...props} size={ModalSize.MEDIUM}>
             <ModalHeader>
                 <BaseText size="lg" weight="semibold" tag="h3" style={{ flexGrow: 1 }}>
-                    Equibop Developer Options
+                    SphereCord Developer Options
                 </BaseText>
                 <ModalCloseButton onClick={props.onClose} />
             </ModalHeader>
 
             <ModalContent>
                 <div style={{ padding: "1em 0" }}>
-                    <Heading tag="h5">Equicord Location</Heading>
-                    <EquicordLocationPicker settings={settings} />
+                    <Heading tag="h5">SphereCord Location</Heading>
+                    <SphereCordLocationPicker settings={settings} />
 
                     <Heading tag="h5" className={Margins.top16}>
                         Debugging
@@ -54,15 +54,15 @@ function openDeveloperOptionsModal(settings: Settings) {
     ));
 }
 
-const EquicordLocationPicker: SettingsComponent = ({ settings }) => {
+const SphereCordLocationPicker: SettingsComponent = ({ settings }) => {
     const forceUpdate = useForceUpdater();
-    const usingCustomEquicordDir = VesktopNative.fileManager.isUsingCustomVencordDir();
+    const usingCustomSphereCordDir = VesktopNative.fileManager.isUsingCustomVencordDir();
 
     return (
         <>
             <Paragraph>
-                Equicord files are loaded from{" "}
-                {usingCustomEquicordDir ? (
+                SphereCord files are loaded from{" "}
+                {usingCustomSphereCordDir ? (
                     <TextButton
                         variant="link"
                         onClick={e => {
@@ -86,7 +86,7 @@ const EquicordLocationPicker: SettingsComponent = ({ settings }) => {
                                 break;
                             case "ok":
                                 Toasts.show({
-                                    message: "Equicord install changed. Fully restart Equibop to apply.",
+                                    message: "SphereCord install changed. Fully restart SphereCord to apply.",
                                     id: Toasts.genId(),
                                     type: Toasts.Type.SUCCESS
                                 });
@@ -94,7 +94,7 @@ const EquicordLocationPicker: SettingsComponent = ({ settings }) => {
                             case "invalid":
                                 Toasts.show({
                                     message:
-                                        "You did not choose a valid Equicord install. Make sure you're selecting the dist dir!",
+                                        "You did not choose a valid SphereCord install. Make sure you're selecting the dist dir!",
                                     id: Toasts.genId(),
                                     type: Toasts.Type.FAILURE
                                 });

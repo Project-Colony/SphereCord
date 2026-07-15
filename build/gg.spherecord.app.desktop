@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Equibop
+Name=SphereCord
 GenericName=Internet Messenger
 Type=Application
-Exec=equibop %U
-Icon=org.equicord.equibop
+Exec=spherecord %U
+Icon=gg.spherecord.app
 Categories=Network;InstantMessaging;Chat;
-Keywords=discord;vencord;electron;chatequibop;
+Keywords=discord;vencord;electron;chat;spherecord;
 MimeType=x-scheme-handler/discord;
-StartupWMClass=equibop
+StartupWMClass=spherecord

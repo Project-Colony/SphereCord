@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Onedark Light
+ * @description Onedark Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #f0f0f0;
+    --background-secondary: #f0f0f0;
+    --background-secondary-alt: #e2e2e2;
+    --background-primary: #fafafa;
+    --background-floating: #e2e2e2;
+    --background-nested-floating: #e2e2e2;
+    --background-modifier-hover: #d4d4d4;
+    --background-modifier-selected: #d4d4d4;
+    --background-modifier-active: #c8c8c8;
+    --background-modifier-accent: #d4d4d4;
+    --channeltextarea-background: #e2e2e2;
+    --input-background: #e2e2e2;
+    --modal-background: #fafafa;
+    --deprecated-card-bg: #e2e2e2;
+    --text-normal: #383a42;
+    --text-default: #383a42;
+    --text-muted: #686a76;
+    --header-primary: #383a42;
+    --header-secondary: #4a4c56;
+    --channels-default: #686a76;
+    --interactive-normal: #4a4c56;
+    --interactive-hover: #383a42;
+    --interactive-active: #383a42;
+    --interactive-muted: #818387;
+    --text-link: #4078f2;
+    --brand-experiment: #4078f2;
+    --brand-500: #4078f2;
+    --brand-560: #4078f2;
+    --brand-360: #4078f2;
+    --status-positive: #50a14f;
+    --status-warning: #c18401;
+    --status-danger: #e45649;
+    --text-positive: #50a14f;
+    --text-warning: #c18401;
+    --text-danger: #e45649;
+    --info-danger-foreground: #e45649;
+}

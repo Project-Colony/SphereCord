@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Material Palenight
+ * @description Material Palenight palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #232838;
+    --background-secondary: #232838;
+    --background-secondary-alt: #343a4e;
+    --background-primary: #292d3e;
+    --background-floating: #343a4e;
+    --background-nested-floating: #343a4e;
+    --background-modifier-hover: #414662;
+    --background-modifier-selected: #717cb4;
+    --background-modifier-active: #515772;
+    --background-modifier-accent: #343a4e;
+    --channeltextarea-background: #343a4e;
+    --input-background: #343a4e;
+    --modal-background: #292d3e;
+    --deprecated-card-bg: #343a4e;
+    --text-normal: #a6accd;
+    --text-default: #a6accd;
+    --text-muted: #7e86ae;
+    --header-primary: #a6accd;
+    --header-secondary: #929abe;
+    --channels-default: #7e86ae;
+    --interactive-normal: #929abe;
+    --interactive-hover: #a6accd;
+    --interactive-active: #a6accd;
+    --interactive-muted: #717cb4;
+    --text-link: #c792ea;
+    --brand-experiment: #c792ea;
+    --brand-500: #c792ea;
+    --brand-560: #c792ea;
+    --brand-360: #c792ea;
+    --status-positive: #c3e88d;
+    --status-warning: #ffcb6b;
+    --status-danger: #ff5370;
+    --text-positive: #c3e88d;
+    --text-warning: #ffcb6b;
+    --text-danger: #ff5370;
+    --info-danger-foreground: #ff5370;
+}

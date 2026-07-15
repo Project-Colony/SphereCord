@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Gruvbox Light
+ * @description Gruvbox Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #f2e5bc;
+    --background-secondary: #f2e5bc;
+    --background-secondary-alt: #ebdbb2;
+    --background-primary: #fbf1c7;
+    --background-floating: #ebdbb2;
+    --background-nested-floating: #ebdbb2;
+    --background-modifier-hover: #d5c4a1;
+    --background-modifier-selected: #d5c4a1;
+    --background-modifier-active: #bdae93;
+    --background-modifier-accent: #d5c4a1;
+    --channeltextarea-background: #ebdbb2;
+    --input-background: #ebdbb2;
+    --modal-background: #fbf1c7;
+    --deprecated-card-bg: #ebdbb2;
+    --text-normal: #3c3836;
+    --text-default: #3c3836;
+    --text-muted: #665c54;
+    --header-primary: #3c3836;
+    --header-secondary: #504945;
+    --channels-default: #665c54;
+    --interactive-normal: #504945;
+    --interactive-hover: #3c3836;
+    --interactive-active: #3c3836;
+    --interactive-muted: #7c6f64;
+    --text-link: #458588;
+    --brand-experiment: #458588;
+    --brand-500: #458588;
+    --brand-560: #458588;
+    --brand-360: #458588;
+    --status-positive: #98971a;
+    --status-warning: #d79921;
+    --status-danger: #cc241d;
+    --text-positive: #98971a;
+    --text-warning: #d79921;
+    --text-danger: #cc241d;
+    --info-danger-foreground: #cc241d;
+}

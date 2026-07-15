@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Iceberg Light
+ * @description Iceberg Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #dcdfe7;
+    --background-secondary: #dcdfe7;
+    --background-secondary-alt: #d0d4de;
+    --background-primary: #e8e9ec;
+    --background-floating: #d0d4de;
+    --background-nested-floating: #d0d4de;
+    --background-modifier-hover: #cad0de;
+    --background-modifier-selected: #cad0de;
+    --background-modifier-active: #bec4d2;
+    --background-modifier-accent: #cad0de;
+    --channeltextarea-background: #d0d4de;
+    --input-background: #d0d4de;
+    --modal-background: #e8e9ec;
+    --deprecated-card-bg: #d0d4de;
+    --text-normal: #33374c;
+    --text-default: #33374c;
+    --text-muted: #5c6080;
+    --header-primary: #33374c;
+    --header-secondary: #444862;
+    --channels-default: #5c6080;
+    --interactive-normal: #444862;
+    --interactive-hover: #33374c;
+    --interactive-active: #33374c;
+    --interactive-muted: #747896;
+    --text-link: #2d539e;
+    --brand-experiment: #2d539e;
+    --brand-500: #2d539e;
+    --brand-560: #2d539e;
+    --brand-360: #2d539e;
+    --status-positive: #668e3d;
+    --status-warning: #c57339;
+    --status-danger: #cc517a;
+    --text-positive: #668e3d;
+    --text-warning: #c57339;
+    --text-danger: #cc517a;
+    --info-danger-foreground: #cc517a;
+}

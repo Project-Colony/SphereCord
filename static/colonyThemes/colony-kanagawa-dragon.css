@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Kanagawa Dragon
+ * @description Kanagawa Dragon palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #c8b98e;
+    --background-secondary: #c8b98e;
+    --background-secondary-alt: #c8b98e;
+    --background-primary: #d5cea3;
+    --background-floating: #c8b98e;
+    --background-nested-floating: #c8b98e;
+    --background-modifier-hover: #bdae80;
+    --background-modifier-selected: #bdae80;
+    --background-modifier-active: #b0a070;
+    --background-modifier-accent: #b8a878;
+    --channeltextarea-background: #c8b98e;
+    --input-background: #c8b98e;
+    --modal-background: #d5cea3;
+    --deprecated-card-bg: #c8b98e;
+    --text-normal: #43412e;
+    --text-default: #43412e;
+    --text-muted: #736e55;
+    --header-primary: #43412e;
+    --header-secondary: #5c5840;
+    --channels-default: #736e55;
+    --interactive-normal: #5c5840;
+    --interactive-hover: #43412e;
+    --interactive-active: #43412e;
+    --interactive-muted: #8a856c;
+    --text-link: #7a6840;
+    --brand-experiment: #7a6840;
+    --brand-500: #7a6840;
+    --brand-560: #7a6840;
+    --brand-360: #7a6840;
+    --status-positive: #6f894e;
+    --status-warning: #c49a20;
+    --status-danger: #c84053;
+    --text-positive: #6f894e;
+    --text-warning: #c49a20;
+    --text-danger: #c84053;
+    --info-danger-foreground: #c84053;
+}

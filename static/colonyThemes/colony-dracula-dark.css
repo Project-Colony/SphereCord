@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Dracula Dark
+ * @description Dracula Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #21222c;
+    --background-secondary: #21222c;
+    --background-secondary-alt: #44475a;
+    --background-primary: #282a36;
+    --background-floating: #44475a;
+    --background-nested-floating: #44475a;
+    --background-modifier-hover: #515470;
+    --background-modifier-selected: #44475a;
+    --background-modifier-active: #606382;
+    --background-modifier-accent: #44475a;
+    --channeltextarea-background: #44475a;
+    --input-background: #44475a;
+    --modal-background: #282a36;
+    --deprecated-card-bg: #44475a;
+    --text-normal: #f8f8f2;
+    --text-default: #f8f8f2;
+    --text-muted: #c8c8c0;
+    --header-primary: #f8f8f2;
+    --header-secondary: #e8e8e0;
+    --channels-default: #c8c8c0;
+    --interactive-normal: #e8e8e0;
+    --interactive-hover: #f8f8f2;
+    --interactive-active: #f8f8f2;
+    --interactive-muted: #9898a0;
+    --text-link: #bd93f9;
+    --brand-experiment: #bd93f9;
+    --brand-500: #bd93f9;
+    --brand-560: #bd93f9;
+    --brand-360: #bd93f9;
+    --status-positive: #50fa7b;
+    --status-warning: #f1fa8c;
+    --status-danger: #ff5555;
+    --text-positive: #50fa7b;
+    --text-warning: #f1fa8c;
+    --text-danger: #ff5555;
+    --info-danger-foreground: #ff5555;
+}

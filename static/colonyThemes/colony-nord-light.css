@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Nord Light
+ * @description Nord Light palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #e5e9f0;
+    --background-secondary: #e5e9f0;
+    --background-secondary-alt: #d8dee9;
+    --background-primary: #eceff4;
+    --background-floating: #d8dee9;
+    --background-nested-floating: #d8dee9;
+    --background-modifier-hover: #ccd4df;
+    --background-modifier-selected: #ccd4df;
+    --background-modifier-active: #b8c2d0;
+    --background-modifier-accent: #ccd4df;
+    --channeltextarea-background: #d8dee9;
+    --input-background: #d8dee9;
+    --modal-background: #eceff4;
+    --deprecated-card-bg: #d8dee9;
+    --text-normal: #2e3440;
+    --text-default: #2e3440;
+    --text-muted: #4c566a;
+    --header-primary: #2e3440;
+    --header-secondary: #3b4252;
+    --channels-default: #4c566a;
+    --interactive-normal: #3b4252;
+    --interactive-hover: #2e3440;
+    --interactive-active: #2e3440;
+    --interactive-muted: #636e80;
+    --text-link: #5e81ac;
+    --brand-experiment: #5e81ac;
+    --brand-500: #5e81ac;
+    --brand-560: #5e81ac;
+    --brand-360: #5e81ac;
+    --status-positive: #6b8c56;
+    --status-warning: #b5a050;
+    --status-danger: #a04048;
+    --text-positive: #6b8c56;
+    --text-warning: #b5a050;
+    --text-danger: #a04048;
+    --info-danger-foreground: #a04048;
+}

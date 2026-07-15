@@ -39,7 +39,7 @@ interface TState {
     };
 }
 
-const stateKey = "EquibopState";
+const stateKey = "SphereCordState";
 
 const currentState: TState = (() => {
     const stored = localStorage.getItem(stateKey);

@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Horizon Dark
+ * @description Horizon Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #16161c;
+    --background-secondary: #16161c;
+    --background-secondary-alt: #2e303e;
+    --background-primary: #1c1e26;
+    --background-floating: #2e303e;
+    --background-nested-floating: #2e303e;
+    --background-modifier-hover: #3a3c4e;
+    --background-modifier-selected: #2e303e;
+    --background-modifier-active: #484a60;
+    --background-modifier-accent: #2e303e;
+    --channeltextarea-background: #2e303e;
+    --input-background: #2e303e;
+    --modal-background: #1c1e26;
+    --deprecated-card-bg: #2e303e;
+    --text-normal: #d5d8da;
+    --text-default: #d5d8da;
+    --text-muted: #a0a2a8;
+    --header-primary: #d5d8da;
+    --header-secondary: #bec0c4;
+    --channels-default: #a0a2a8;
+    --interactive-normal: #bec0c4;
+    --interactive-hover: #d5d8da;
+    --interactive-active: #d5d8da;
+    --interactive-muted: #888a92;
+    --text-link: #26bbd9;
+    --brand-experiment: #26bbd9;
+    --brand-500: #26bbd9;
+    --brand-560: #26bbd9;
+    --brand-360: #26bbd9;
+    --status-positive: #29d398;
+    --status-warning: #fac29a;
+    --status-danger: #e95678;
+    --text-positive: #29d398;
+    --text-warning: #fac29a;
+    --text-danger: #e95678;
+    --info-danger-foreground: #e95678;
+}

@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Catppuccin Latte
+ * @description Catppuccin Latte palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #e6e9ef;
+    --background-secondary: #e6e9ef;
+    --background-secondary-alt: #e6e9ef;
+    --background-primary: #eff1f5;
+    --background-floating: #e6e9ef;
+    --background-nested-floating: #e6e9ef;
+    --background-modifier-hover: #dce0e8;
+    --background-modifier-selected: #ccd0da;
+    --background-modifier-active: #ccd0da;
+    --background-modifier-accent: #ccd0da;
+    --channeltextarea-background: #dce0e8;
+    --input-background: #dce0e8;
+    --modal-background: #e6e9ef;
+    --deprecated-card-bg: #e6e9ef;
+    --text-normal: #4c4f69;
+    --text-default: #4c4f69;
+    --text-muted: #6c6f85;
+    --header-primary: #4c4f69;
+    --header-secondary: #5c5f77;
+    --channels-default: #6c6f85;
+    --interactive-normal: #5c5f77;
+    --interactive-hover: #4c4f69;
+    --interactive-active: #4c4f69;
+    --interactive-muted: #7c7f93;
+    --text-link: #1e66f5;
+    --brand-experiment: #1e66f5;
+    --brand-500: #1e66f5;
+    --brand-560: #1e66f5;
+    --brand-360: #1e66f5;
+    --status-positive: #40a02b;
+    --status-warning: #df8e1d;
+    --status-danger: #d20f39;
+    --text-positive: #40a02b;
+    --text-warning: #df8e1d;
+    --text-danger: #d20f39;
+    --info-danger-foreground: #d20f39;
+}

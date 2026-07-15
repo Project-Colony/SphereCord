@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Everblush Dark
+ * @description Everblush Dark palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #1a2124;
+    --background-secondary: #1a2124;
+    --background-secondary-alt: #232a2d;
+    --background-primary: #141b1e;
+    --background-floating: #232a2d;
+    --background-nested-floating: #232a2d;
+    --background-modifier-hover: #2c3538;
+    --background-modifier-selected: #2c3538;
+    --background-modifier-active: #354043;
+    --background-modifier-accent: #2c3538;
+    --channeltextarea-background: #232a2d;
+    --input-background: #232a2d;
+    --modal-background: #232a2d;
+    --deprecated-card-bg: #232a2d;
+    --text-normal: #dadada;
+    --text-default: #dadada;
+    --text-muted: #b3b9b8;
+    --header-primary: #dadada;
+    --header-secondary: #c4c4c4;
+    --channels-default: #b3b9b8;
+    --interactive-normal: #c4c4c4;
+    --interactive-hover: #dadada;
+    --interactive-active: #dadada;
+    --interactive-muted: #9aa0a0;
+    --text-link: #67b0e8;
+    --brand-experiment: #67b0e8;
+    --brand-500: #67b0e8;
+    --brand-560: #67b0e8;
+    --brand-360: #67b0e8;
+    --status-positive: #8ccf7e;
+    --status-warning: #e5c76b;
+    --status-danger: #e57474;
+    --text-positive: #8ccf7e;
+    --text-warning: #e5c76b;
+    --text-danger: #e57474;
+    --info-danger-foreground: #e57474;
+}

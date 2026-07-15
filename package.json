@@ -1,13 +1,14 @@
 {
-    "name": "equibop",
-    "desktopName": "equibop",
+    "name": "spherecord",
+    "desktopName": "spherecord",
     "version": "3.2.1",
     "private": true,
-    "description": "Equibop is a custom Discord desktop app",
+    "description": "SphereCord is a custom Discord desktop app",
     "keywords": [],
-    "homepage": "https://equicord.org",
+    "homepage": "https://github.com/Project-Colony/SphereCord",
+    "repository": "https://github.com/Project-Colony/SphereCord",
     "license": "GPL-3.0-or-later",
-    "author": "Equicord <contact@equicord.org>",
+    "author": "Project-Colony",
     "main": "dist/js/main.js",
     "scripts": {
         "build": "bun run scripts/build/build.mts",
@@ -71,9 +72,9 @@
         "bun": ">=1.3.0"
     },
     "build": {
-        "appId": "org.equicord.equibop",
-        "productName": "Equibop",
-        "executableName": "equibop",
+        "appId": "gg.spherecord.app",
+        "productName": "SphereCord",
+        "executableName": "spherecord",
         "files": [
             "!*",
             "!node_modules",
@@ -91,9 +92,9 @@
         "beforePack": "scripts/build/beforePack.mjs",
         "afterPack": "scripts/build/afterPack.mjs",
         "linux": {
-            "icon": "build/icon.svg",
+            "icon": "build/icons",
             "category": "Network",
-            "maintainer": "contact@equicord.org",
+            "maintainer": "Project-Colony",
             "target": [
                 {
                     "target": "deb",
@@ -126,13 +127,13 @@
             ],
             "desktop": {
                 "entry": {
-                    "Name": "Equibop",
+                    "Name": "SphereCord",
                     "GenericName": "Internet Messenger",
                     "Type": "Application",
                     "Categories": "Network;InstantMessaging;Chat;",
-                    "Keywords": "discord;vencord;electron;chat;equibop",
+                    "Keywords": "discord;vencord;electron;chat;spherecord",
                     "MimeType": "x-scheme-handler/discord",
-                    "StartupWMClass": "equibop"
+                    "StartupWMClass": "spherecord"
                 }
             }
         },
@@ -199,7 +200,26 @@
             ]
         },
         "publish": {
-            "provider": "github"
+            "provider": "github",
+            "owner": "Project-Colony",
+            "repo": "SphereCord"
+        },
+        "pacman": {
+            "depends": [
+                "c-ares",
+                "ffmpeg",
+                "gtk3",
+                "libevent",
+                "libvpx",
+                "libxslt",
+                "libxss",
+                "minizip",
+                "nss",
+                "re2",
+                "snappy",
+                "libnotify",
+                "libappindicator-gtk3"
+            ]
         },
         "rpm": {
             "fpm": [

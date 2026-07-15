@@ -1,8 +1,10 @@
-name: Update equicord.org Equibop version
+name: Update SphereCord version (DISABLED)
+# DISABLED for the SphereCord fork: this pushed release versions to upstream
+# Equicord website infra (Equicord/Equibite via secrets.ETOKEN), which this fork
+# does not own. Re-add the `release: { types: [published] }` trigger and repoint
+# GH_REPO / USERNAME / ETOKEN below if you set up your own website version file.
 on:
-    release:
-        types:
-            - published
+    workflow_dispatch:
 jobs:
     update:
         runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
                   version="${{ github.event.release.tag_name }}"
                   echo "${version#v}" > public/version
                   git add public/version
-                  git commit -m "Update Equibop version to ${{ github.event.release.tag_name }}"
+                  git commit -m "Update SphereCord version to ${{ github.event.release.tag_name }}"
                   git push https://$USERNAME:$API_TOKEN@github.com/$GH_REPO.git
               env:
                   API_TOKEN: ${{ secrets.ETOKEN }}

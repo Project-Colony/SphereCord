@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Sonokai Default
+ * @description Sonokai Default palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #242529;
+    --background-secondary: #242529;
+    --background-secondary-alt: #33353f;
+    --background-primary: #2c2e34;
+    --background-floating: #33353f;
+    --background-nested-floating: #33353f;
+    --background-modifier-hover: #3b3e48;
+    --background-modifier-selected: #3b3e48;
+    --background-modifier-active: #414550;
+    --background-modifier-accent: #33353f;
+    --channeltextarea-background: #33353f;
+    --input-background: #33353f;
+    --modal-background: #2c2e34;
+    --deprecated-card-bg: #33353f;
+    --text-normal: #e2e2e3;
+    --text-default: #e2e2e3;
+    --text-muted: #a8a8b0;
+    --header-primary: #e2e2e3;
+    --header-secondary: #ccccd0;
+    --channels-default: #a8a8b0;
+    --interactive-normal: #ccccd0;
+    --interactive-hover: #e2e2e3;
+    --interactive-active: #e2e2e3;
+    --interactive-muted: #8c8c96;
+    --text-link: #76cce0;
+    --brand-experiment: #76cce0;
+    --brand-500: #76cce0;
+    --brand-560: #76cce0;
+    --brand-360: #76cce0;
+    --status-positive: #9ed072;
+    --status-warning: #e7c664;
+    --status-danger: #fc5d7c;
+    --text-positive: #9ed072;
+    --text-warning: #e7c664;
+    --text-danger: #fc5d7c;
+    --info-danger-foreground: #fc5d7c;
+}

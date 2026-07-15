@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Modus Vivendi
+ * @description Modus Vivendi palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #1e1e1e;
+    --background-secondary: #1e1e1e;
+    --background-secondary-alt: #303030;
+    --background-primary: #000000;
+    --background-floating: #303030;
+    --background-nested-floating: #303030;
+    --background-modifier-hover: #404040;
+    --background-modifier-selected: #404040;
+    --background-modifier-active: #535353;
+    --background-modifier-accent: #303030;
+    --channeltextarea-background: #303030;
+    --input-background: #303030;
+    --modal-background: #000000;
+    --deprecated-card-bg: #303030;
+    --text-normal: #ffffff;
+    --text-default: #ffffff;
+    --text-muted: #c0c0c0;
+    --header-primary: #ffffff;
+    --header-secondary: #e0e0e0;
+    --channels-default: #c0c0c0;
+    --interactive-normal: #e0e0e0;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ffffff;
+    --interactive-muted: #989898;
+    --text-link: #2fafff;
+    --brand-experiment: #2fafff;
+    --brand-500: #2fafff;
+    --brand-560: #2fafff;
+    --brand-360: #2fafff;
+    --status-positive: #44bc44;
+    --status-warning: #d0bc00;
+    --status-danger: #ff5f59;
+    --text-positive: #44bc44;
+    --text-warning: #d0bc00;
+    --text-danger: #ff5f59;
+    --info-danger-foreground: #ff5f59;
+}

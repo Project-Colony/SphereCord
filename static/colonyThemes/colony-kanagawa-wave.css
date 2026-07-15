@@ -1,0 +1,45 @@
+/**
+ * @name Colony · Kanagawa Wave
+ * @description Kanagawa Wave palette from Project Colony, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root {
+    --background-tertiary: #181820;
+    --background-secondary: #181820;
+    --background-secondary-alt: #2a2a37;
+    --background-primary: #1f1f28;
+    --background-floating: #2a2a37;
+    --background-nested-floating: #2a2a37;
+    --background-modifier-hover: #363646;
+    --background-modifier-selected: #363646;
+    --background-modifier-active: #54546d;
+    --background-modifier-accent: #2a2a37;
+    --channeltextarea-background: #2a2a37;
+    --input-background: #2a2a37;
+    --modal-background: #1f1f28;
+    --deprecated-card-bg: #2a2a37;
+    --text-normal: #dcd7ba;
+    --text-default: #dcd7ba;
+    --text-muted: #9cabca;
+    --header-primary: #dcd7ba;
+    --header-secondary: #c8c093;
+    --channels-default: #9cabca;
+    --interactive-normal: #c8c093;
+    --interactive-hover: #dcd7ba;
+    --interactive-active: #dcd7ba;
+    --interactive-muted: #938aa9;
+    --text-link: #7e9cd8;
+    --brand-experiment: #7e9cd8;
+    --brand-500: #7e9cd8;
+    --brand-560: #7e9cd8;
+    --brand-360: #7e9cd8;
+    --status-positive: #98bb6c;
+    --status-warning: #e6c384;
+    --status-danger: #e46876;
+    --text-positive: #98bb6c;
+    --text-warning: #e6c384;
+    --text-danger: #e46876;
+    --info-danger-foreground: #e46876;
+}

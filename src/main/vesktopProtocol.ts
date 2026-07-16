@@ -9,6 +9,25 @@ import { app, protocol } from "electron";
 import { handleVesktopAssetsProtocol } from "./userAssets";
 import { handleVesktopStaticProtocol } from "./vesktopStatic";
 
+// Must run before the app 'ready' event. Without this, `equibop:` is a
+// non-standard scheme with a null origin, so ES module scripts served from it
+// (e.g. the updater window's <script type="module">) are blocked by CORS —
+// "Cross origin requests are only supported for … http, https". Marking it
+// standard + corsEnabled gives it a real origin (equibop://static), making
+// those scripts same-origin so they load. Runs at import (before ready).
+protocol.registerSchemesAsPrivileged([
+    {
+        scheme: "equibop",
+        privileges: {
+            standard: true,
+            secure: true,
+            supportFetchAPI: true,
+            corsEnabled: true,
+            stream: true
+        }
+    }
+]);
+
 app.whenReady().then(() => {
     protocol.handle("equibop", async req => {
         const url = new URL(req.url);

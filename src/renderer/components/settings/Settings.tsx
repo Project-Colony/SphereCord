@@ -14,6 +14,7 @@ import { isMac, isWindows } from "renderer/utils";
 
 import { ArRPCSettingsButton } from "./ArRPCSettings";
 import { AutoStartToggle } from "./AutoStartToggle";
+import { ColonyAccentPicker } from "./ColonyAccent";
 import { DeveloperOptionsButton } from "./DeveloperOptions";
 import { DiscordBranchPicker } from "./DiscordBranchPicker";
 import { NotificationBadgeToggle } from "./NotificationBadgeToggle";
@@ -97,6 +98,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         WindowsTransparencyControls,
         UserAssetsButton
     ],
+    "Colony Theming": [ColonyAccentPicker],
     Behaviour: [
         {
             key: "tray",

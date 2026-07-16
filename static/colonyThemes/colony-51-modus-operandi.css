@@ -1,0 +1,75 @@
+/**
+ * @name Modus · Operandi
+ * @description Modus · Operandi — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #ffffff !important;
+    --background-secondary: #f0f0f0 !important;
+    --background-secondary-alt: #e0e0e0 !important;
+    --background-tertiary: #f0f0f0 !important;
+    --background-floating: #e0e0e0 !important;
+    --background-nested-floating: #e0e0e0 !important;
+    --deprecated-card-bg: #e0e0e0 !important;
+    --background-base-lowest: #f0f0f0 !important;
+    --background-base-lower: #f0f0f0 !important;
+    --background-base-low: #ffffff !important;
+    --app-frame-background: #f0f0f0 !important;
+    --chat-background: #ffffff !important;
+    --chat-background-default: #ffffff !important;
+    --home-background: #ffffff !important;
+    --background-surface-high: #e0e0e0 !important;
+    --background-surface-higher: #d0d0d0 !important;
+    --background-surface-highest: #c4c4c4 !important;
+    --bg-surface-raised: #e0e0e0 !important;
+    --card-background-default: #e0e0e0 !important;
+    --modal-background: #ffffff !important;
+    --modal-footer-background: #ffffff !important;
+    --channeltextarea-background: #e0e0e0 !important;
+    --input-background: #e0e0e0 !important;
+    --background-code: #e0e0e0 !important;
+    --background-mod-subtle: #d0d0d0 !important;
+    --background-mod-normal: #d0d0d0 !important;
+    --background-mod-muted: #d0d0d0 !important;
+    --background-mod-strong: #c4c4c4 !important;
+    --background-modifier-hover: #d0d0d0 !important;
+    --background-modifier-selected: #d0d0d0 !important;
+    --background-modifier-active: #c4c4c4 !important;
+    --background-modifier-accent: #d0d0d0 !important;
+    --text-primary: #000000 !important;
+    --text-secondary: #1a1a1a !important;
+    --text-normal: #000000 !important;
+    --text-default: #000000 !important;
+    --text-muted: #333333 !important;
+    --header-primary: #000000 !important;
+    --header-secondary: #1a1a1a !important;
+    --channels-default: #333333 !important;
+    --interactive-normal: #1a1a1a !important;
+    --interactive-hover: #000000 !important;
+    --interactive-active: #000000 !important;
+    --interactive-muted: #595959 !important;
+    --text-link: #0031a9 !important;
+    --brand-experiment: #0031a9 !important;
+    --brand-500: #0031a9 !important;
+    --brand-560: #0031a9 !important;
+    --brand-360: #0031a9 !important;
+    --control-brand-foreground: #0031a9 !important;
+    --text-brand: #0031a9 !important;
+    --status-positive: #006800 !important;
+    --status-warning: #6f5500 !important;
+    --status-danger: #a60000 !important;
+    --text-positive: #006800 !important;
+    --text-warning: #6f5500 !important;
+    --text-danger: #a60000 !important;
+    --info-danger-foreground: #a60000 !important;
+}

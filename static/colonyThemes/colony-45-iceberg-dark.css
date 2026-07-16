@@ -1,0 +1,75 @@
+/**
+ * @name Iceberg · Mode sombre
+ * @description Iceberg · Mode sombre — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #161821 !important;
+    --background-secondary: #0f1117 !important;
+    --background-secondary-alt: #1e2132 !important;
+    --background-tertiary: #0f1117 !important;
+    --background-floating: #1e2132 !important;
+    --background-nested-floating: #1e2132 !important;
+    --deprecated-card-bg: #1e2132 !important;
+    --background-base-lowest: #0f1117 !important;
+    --background-base-lower: #0f1117 !important;
+    --background-base-low: #161821 !important;
+    --app-frame-background: #0f1117 !important;
+    --chat-background: #161821 !important;
+    --chat-background-default: #161821 !important;
+    --home-background: #161821 !important;
+    --background-surface-high: #1e2132 !important;
+    --background-surface-higher: #2e313f !important;
+    --background-surface-highest: #3d425b !important;
+    --bg-surface-raised: #1e2132 !important;
+    --card-background-default: #1e2132 !important;
+    --modal-background: #161821 !important;
+    --modal-footer-background: #161821 !important;
+    --channeltextarea-background: #1e2132 !important;
+    --input-background: #1e2132 !important;
+    --background-code: #1e2132 !important;
+    --background-mod-subtle: #2e313f !important;
+    --background-mod-normal: #2e313f !important;
+    --background-mod-muted: #2e313f !important;
+    --background-mod-strong: #3d425b !important;
+    --background-modifier-hover: #2e313f !important;
+    --background-modifier-selected: #2e313f !important;
+    --background-modifier-active: #3d425b !important;
+    --background-modifier-accent: #1e2132 !important;
+    --text-primary: #c6c8d1 !important;
+    --text-secondary: #b0b4c0 !important;
+    --text-normal: #c6c8d1 !important;
+    --text-default: #c6c8d1 !important;
+    --text-muted: #9498a8 !important;
+    --header-primary: #c6c8d1 !important;
+    --header-secondary: #b0b4c0 !important;
+    --channels-default: #9498a8 !important;
+    --interactive-normal: #b0b4c0 !important;
+    --interactive-hover: #c6c8d1 !important;
+    --interactive-active: #c6c8d1 !important;
+    --interactive-muted: #818596 !important;
+    --text-link: #84a0c6 !important;
+    --brand-experiment: #84a0c6 !important;
+    --brand-500: #84a0c6 !important;
+    --brand-560: #84a0c6 !important;
+    --brand-360: #84a0c6 !important;
+    --control-brand-foreground: #84a0c6 !important;
+    --text-brand: #84a0c6 !important;
+    --status-positive: #b4be82 !important;
+    --status-warning: #e2a478 !important;
+    --status-danger: #e27878 !important;
+    --text-positive: #b4be82 !important;
+    --text-warning: #e2a478 !important;
+    --text-danger: #e27878 !important;
+    --info-danger-foreground: #e27878 !important;
+}

@@ -1,0 +1,75 @@
+/**
+ * @name Nightfox · Dawnfox
+ * @description Nightfox · Dawnfox — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #faf4ed !important;
+    --background-secondary: #ebe5df !important;
+    --background-secondary-alt: #ebd8ce !important;
+    --background-tertiary: #ebe5df !important;
+    --background-floating: #ebd8ce !important;
+    --background-nested-floating: #ebd8ce !important;
+    --deprecated-card-bg: #ebd8ce !important;
+    --background-base-lowest: #ebe5df !important;
+    --background-base-lower: #ebe5df !important;
+    --background-base-low: #faf4ed !important;
+    --app-frame-background: #ebe5df !important;
+    --chat-background: #faf4ed !important;
+    --chat-background-default: #faf4ed !important;
+    --home-background: #faf4ed !important;
+    --background-surface-high: #ebd8ce !important;
+    --background-surface-higher: #dacdc3 !important;
+    --background-surface-highest: #c8beb4 !important;
+    --bg-surface-raised: #ebd8ce !important;
+    --card-background-default: #ebd8ce !important;
+    --modal-background: #faf4ed !important;
+    --modal-footer-background: #faf4ed !important;
+    --channeltextarea-background: #ebd8ce !important;
+    --input-background: #ebd8ce !important;
+    --background-code: #ebd8ce !important;
+    --background-mod-subtle: #dacdc3 !important;
+    --background-mod-normal: #dacdc3 !important;
+    --background-mod-muted: #ebd8ce !important;
+    --background-mod-strong: #c8beb4 !important;
+    --background-modifier-hover: #dacdc3 !important;
+    --background-modifier-selected: #ebd8ce !important;
+    --background-modifier-active: #c8beb4 !important;
+    --background-modifier-accent: #dacdc3 !important;
+    --text-primary: #575279 !important;
+    --text-secondary: #625c87 !important;
+    --text-normal: #575279 !important;
+    --text-default: #575279 !important;
+    --text-muted: #6e6a86 !important;
+    --header-primary: #575279 !important;
+    --header-secondary: #625c87 !important;
+    --channels-default: #6e6a86 !important;
+    --interactive-normal: #625c87 !important;
+    --interactive-hover: #575279 !important;
+    --interactive-active: #575279 !important;
+    --interactive-muted: #9893a5 !important;
+    --text-link: #286983 !important;
+    --brand-experiment: #286983 !important;
+    --brand-500: #286983 !important;
+    --brand-560: #286983 !important;
+    --brand-360: #286983 !important;
+    --control-brand-foreground: #286983 !important;
+    --text-brand: #286983 !important;
+    --status-positive: #618774 !important;
+    --status-warning: #ea9d34 !important;
+    --status-danger: #b4637a !important;
+    --text-positive: #618774 !important;
+    --text-warning: #ea9d34 !important;
+    --text-danger: #b4637a !important;
+    --info-danger-foreground: #b4637a !important;
+}

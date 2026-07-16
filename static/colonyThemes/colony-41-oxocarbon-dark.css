@@ -1,0 +1,75 @@
+/**
+ * @name Oxocarbon · Mode sombre
+ * @description Oxocarbon · Mode sombre — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #161616 !important;
+    --background-secondary: #0e0e0e !important;
+    --background-secondary-alt: #262626 !important;
+    --background-tertiary: #0e0e0e !important;
+    --background-floating: #262626 !important;
+    --background-nested-floating: #262626 !important;
+    --deprecated-card-bg: #262626 !important;
+    --background-base-lowest: #0e0e0e !important;
+    --background-base-lower: #0e0e0e !important;
+    --background-base-low: #161616 !important;
+    --app-frame-background: #0e0e0e !important;
+    --chat-background: #161616 !important;
+    --chat-background-default: #161616 !important;
+    --home-background: #161616 !important;
+    --background-surface-high: #262626 !important;
+    --background-surface-higher: #393939 !important;
+    --background-surface-highest: #525252 !important;
+    --bg-surface-raised: #262626 !important;
+    --card-background-default: #262626 !important;
+    --modal-background: #161616 !important;
+    --modal-footer-background: #161616 !important;
+    --channeltextarea-background: #262626 !important;
+    --input-background: #262626 !important;
+    --background-code: #262626 !important;
+    --background-mod-subtle: #393939 !important;
+    --background-mod-normal: #393939 !important;
+    --background-mod-muted: #393939 !important;
+    --background-mod-strong: #525252 !important;
+    --background-modifier-hover: #393939 !important;
+    --background-modifier-selected: #393939 !important;
+    --background-modifier-active: #525252 !important;
+    --background-modifier-accent: #262626 !important;
+    --text-primary: #f2f4f8 !important;
+    --text-secondary: #dde1e6 !important;
+    --text-normal: #f2f4f8 !important;
+    --text-default: #f2f4f8 !important;
+    --text-muted: #b0b4bc !important;
+    --header-primary: #f2f4f8 !important;
+    --header-secondary: #dde1e6 !important;
+    --channels-default: #b0b4bc !important;
+    --interactive-normal: #dde1e6 !important;
+    --interactive-hover: #f2f4f8 !important;
+    --interactive-active: #f2f4f8 !important;
+    --interactive-muted: #8a8e96 !important;
+    --text-link: #78a9ff !important;
+    --brand-experiment: #78a9ff !important;
+    --brand-500: #78a9ff !important;
+    --brand-560: #78a9ff !important;
+    --brand-360: #78a9ff !important;
+    --control-brand-foreground: #78a9ff !important;
+    --text-brand: #78a9ff !important;
+    --status-positive: #42be65 !important;
+    --status-warning: #08bdba !important;
+    --status-danger: #ee5396 !important;
+    --text-positive: #42be65 !important;
+    --text-warning: #08bdba !important;
+    --text-danger: #ee5396 !important;
+    --info-danger-foreground: #ee5396 !important;
+}

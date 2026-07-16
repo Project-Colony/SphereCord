@@ -14,7 +14,9 @@ import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const THEME_RS_URL = "https://raw.githubusercontent.com/Project-Colony/colony/main/src/ui/theme.rs";
+const COLONY_RAW = "https://raw.githubusercontent.com/Project-Colony/colony/main";
+const THEME_RS_URL = `${COLONY_RAW}/src/ui/theme.rs`;
+const I18N_URL = `${COLONY_RAW}/src/i18n.rs`;
 const OUT_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "static", "colonyThemes");
 
 // Discord CSS variable  <-  Colony palette field. One rule for all 52 palettes; tweak here.
@@ -87,16 +89,44 @@ const CSS_MAP: Record<string, string> = {
     "--info-danger-foreground": "error"
 };
 
-function titleCase(constName: string) {
-    return constName
-        .toLowerCase()
-        .split("_")
-        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-        .join(" ");
-}
-
 function kebab(constName: string) {
     return constName.toLowerCase().replace(/_/g, "-");
+}
+
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+
+// Colony's launcher order + (family, variant) -> palette, straight from theme.rs's match.
+function parseMatch(src: string) {
+    const re = /\("([a-z0-9_]+)",\s*"([a-z0-9_]+)"\)\s*=>\s*ThemePalette::([A-Z0-9_]+)/g;
+    const entries: { family: string; variant: string; palette: string }[] = [];
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(src))) entries.push({ family: m[1], variant: m[2], palette: m[3] });
+    return entries;
+}
+
+// Colony's display labels (settings_theme_*). First value per key wins = the French locale.
+function parseI18n(src: string) {
+    const map = new Map<string, string>();
+    const re = /"(settings_theme_[a-z0-9_]*)"\.into\(\),\s*"([^"]+)"\.into\(\)/g;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(src))) if (!map.has(m[1])) map.set(m[1], m[2]);
+    return map;
+}
+
+function familyLabel(family: string, i18n: Map<string, string>) {
+    return i18n.get(`settings_theme_${family}`) ?? cap(family);
+}
+
+function variantLabel(family: string, variant: string, i18n: Map<string, string>) {
+    return (
+        i18n.get(`settings_theme_${family}_${variant}`) ??
+        (variant === "light"
+            ? i18n.get("settings_theme_light")
+            : variant === "dark"
+              ? i18n.get("settings_theme_dark_mode")
+              : undefined) ??
+        cap(variant)
+    );
 }
 
 function parsePalettes(src: string) {
@@ -114,8 +144,7 @@ function parsePalettes(src: string) {
     return palettes;
 }
 
-function buildCss(name: string, colors: Record<string, string>) {
-    const display = `Colony · ${titleCase(name)}`;
+function buildCss(display: string, colors: Record<string, string>) {
     const vars = Object.entries(CSS_MAP)
         .map(([cssVar, field]) => (colors[field] ? `    ${cssVar}: ${colors[field]} !important;` : null))
         .filter(Boolean)
@@ -124,7 +153,7 @@ function buildCss(name: string, colors: Record<string, string>) {
     // a bare :root, so we target those too and use !important to reliably win.
     return `/**
  * @name ${display}
- * @description ${titleCase(name)} palette from Project Colony, ported to Discord. Auto-generated.
+ * @description ${display} — from Project Colony's palette set, ported to Discord. Auto-generated.
  * @author Project Colony
  * @version 1.0.0
  */
@@ -143,18 +172,35 @@ ${vars}
 `;
 }
 
-const src = await fetch(THEME_RS_URL).then(r => {
-    if (!r.ok) throw new Error(`Failed to fetch theme.rs: ${r.status}`);
-    return r.text();
-});
+const fetchText = (url: string) =>
+    fetch(url).then(r => {
+        if (!r.ok) throw new Error(`Failed to fetch ${url}: ${r.status}`);
+        return r.text();
+    });
 
-const palettes = parsePalettes(src);
-if (!palettes.length) throw new Error("No palettes parsed — did theme.rs format change?");
+const [themeSrc, i18nSrc] = await Promise.all([fetchText(THEME_RS_URL), fetchText(I18N_URL)]);
+
+const paletteColors = new Map(parsePalettes(themeSrc).map(p => [p.name, p.colors]));
+const entries = parseMatch(themeSrc); // families/variants in Colony's launcher order
+const i18n = parseI18n(i18nSrc);
+if (!entries.length) throw new Error("No theme entries parsed — did theme.rs's match block change?");
 
 await rm(OUT_DIR, { recursive: true, force: true });
 await mkdir(OUT_DIR, { recursive: true });
-for (const p of palettes) {
-    await writeFile(join(OUT_DIR, `colony-${kebab(p.name)}.css`), buildCss(p.name, p.colors), "utf-8");
+// Walk Colony's launcher order. The order index goes into the FILENAME (Equicord keeps
+// file order for unpinned themes); the @name is "Family · Variant" with Colony's labels.
+let index = 0;
+for (const { family, variant, palette } of entries) {
+    const colors = paletteColors.get(palette);
+    if (!colors) {
+        console.warn(`Skipping ${palette}: no matching palette in theme.rs`);
+        continue;
+    }
+    const fam = familyLabel(family, i18n);
+    const vari = variantLabel(family, variant, i18n);
+    const display = fam === vari ? fam : `${fam} · ${vari}`;
+    const order = String(++index).padStart(2, "0");
+    await writeFile(join(OUT_DIR, `colony-${order}-${kebab(palette)}.css`), buildCss(display, colors), "utf-8");
 }
 
 const written = (await readdir(OUT_DIR)).filter(f => f.endsWith(".css"));

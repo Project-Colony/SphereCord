@@ -1,0 +1,75 @@
+/**
+ * @name Catppuccin · Latte
+ * @description Catppuccin · Latte — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #eff1f5 !important;
+    --background-secondary: #e6e9ef !important;
+    --background-secondary-alt: #e6e9ef !important;
+    --background-tertiary: #e6e9ef !important;
+    --background-floating: #e6e9ef !important;
+    --background-nested-floating: #e6e9ef !important;
+    --deprecated-card-bg: #e6e9ef !important;
+    --background-base-lowest: #e6e9ef !important;
+    --background-base-lower: #e6e9ef !important;
+    --background-base-low: #eff1f5 !important;
+    --app-frame-background: #e6e9ef !important;
+    --chat-background: #eff1f5 !important;
+    --chat-background-default: #eff1f5 !important;
+    --home-background: #eff1f5 !important;
+    --background-surface-high: #e6e9ef !important;
+    --background-surface-higher: #dce0e8 !important;
+    --background-surface-highest: #ccd0da !important;
+    --bg-surface-raised: #e6e9ef !important;
+    --card-background-default: #e6e9ef !important;
+    --modal-background: #e6e9ef !important;
+    --modal-footer-background: #e6e9ef !important;
+    --channeltextarea-background: #dce0e8 !important;
+    --input-background: #dce0e8 !important;
+    --background-code: #dce0e8 !important;
+    --background-mod-subtle: #dce0e8 !important;
+    --background-mod-normal: #dce0e8 !important;
+    --background-mod-muted: #ccd0da !important;
+    --background-mod-strong: #ccd0da !important;
+    --background-modifier-hover: #dce0e8 !important;
+    --background-modifier-selected: #ccd0da !important;
+    --background-modifier-active: #ccd0da !important;
+    --background-modifier-accent: #ccd0da !important;
+    --text-primary: #4c4f69 !important;
+    --text-secondary: #5c5f77 !important;
+    --text-normal: #4c4f69 !important;
+    --text-default: #4c4f69 !important;
+    --text-muted: #6c6f85 !important;
+    --header-primary: #4c4f69 !important;
+    --header-secondary: #5c5f77 !important;
+    --channels-default: #6c6f85 !important;
+    --interactive-normal: #5c5f77 !important;
+    --interactive-hover: #4c4f69 !important;
+    --interactive-active: #4c4f69 !important;
+    --interactive-muted: #7c7f93 !important;
+    --text-link: #1e66f5 !important;
+    --brand-experiment: #1e66f5 !important;
+    --brand-500: #1e66f5 !important;
+    --brand-560: #1e66f5 !important;
+    --brand-360: #1e66f5 !important;
+    --control-brand-foreground: #1e66f5 !important;
+    --text-brand: #1e66f5 !important;
+    --status-positive: #40a02b !important;
+    --status-warning: #df8e1d !important;
+    --status-danger: #d20f39 !important;
+    --text-positive: #40a02b !important;
+    --text-warning: #df8e1d !important;
+    --text-danger: #d20f39 !important;
+    --info-danger-foreground: #d20f39 !important;
+}

@@ -1,0 +1,75 @@
+/**
+ * @name Monokai Pro · Spectrum
+ * @description Monokai Pro · Spectrum — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #222222 !important;
+    --background-secondary: #191919 !important;
+    --background-secondary-alt: #363537 !important;
+    --background-tertiary: #191919 !important;
+    --background-floating: #363537 !important;
+    --background-nested-floating: #363537 !important;
+    --deprecated-card-bg: #363537 !important;
+    --background-base-lowest: #191919 !important;
+    --background-base-lower: #191919 !important;
+    --background-base-low: #222222 !important;
+    --app-frame-background: #191919 !important;
+    --chat-background: #222222 !important;
+    --chat-background-default: #222222 !important;
+    --home-background: #222222 !important;
+    --background-surface-high: #363537 !important;
+    --background-surface-higher: #484749 !important;
+    --background-surface-highest: #5a595b !important;
+    --bg-surface-raised: #363537 !important;
+    --card-background-default: #363537 !important;
+    --modal-background: #222222 !important;
+    --modal-footer-background: #222222 !important;
+    --channeltextarea-background: #363537 !important;
+    --input-background: #363537 !important;
+    --background-code: #363537 !important;
+    --background-mod-subtle: #484749 !important;
+    --background-mod-normal: #484749 !important;
+    --background-mod-muted: #363537 !important;
+    --background-mod-strong: #5a595b !important;
+    --background-modifier-hover: #484749 !important;
+    --background-modifier-selected: #363537 !important;
+    --background-modifier-active: #5a595b !important;
+    --background-modifier-accent: #363537 !important;
+    --text-primary: #f7f1ff !important;
+    --text-secondary: #e0dae8 !important;
+    --text-normal: #f7f1ff !important;
+    --text-default: #f7f1ff !important;
+    --text-muted: #c0bac8 !important;
+    --header-primary: #f7f1ff !important;
+    --header-secondary: #e0dae8 !important;
+    --channels-default: #c0bac8 !important;
+    --interactive-normal: #e0dae8 !important;
+    --interactive-hover: #f7f1ff !important;
+    --interactive-active: #f7f1ff !important;
+    --interactive-muted: #938ea0 !important;
+    --text-link: #5ad4e6 !important;
+    --brand-experiment: #5ad4e6 !important;
+    --brand-500: #5ad4e6 !important;
+    --brand-560: #5ad4e6 !important;
+    --brand-360: #5ad4e6 !important;
+    --control-brand-foreground: #5ad4e6 !important;
+    --text-brand: #5ad4e6 !important;
+    --status-positive: #7bd88f !important;
+    --status-warning: #fce566 !important;
+    --status-danger: #fc618d !important;
+    --text-positive: #7bd88f !important;
+    --text-warning: #fce566 !important;
+    --text-danger: #fc618d !important;
+    --info-danger-foreground: #fc618d !important;
+}

@@ -1,0 +1,75 @@
+/**
+ * @name Rosé Pine · Aurore
+ * @description Rosé Pine · Aurore — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #faf4ed !important;
+    --background-secondary: #f2e9e1 !important;
+    --background-secondary-alt: #f4ede8 !important;
+    --background-tertiary: #f2e9e1 !important;
+    --background-floating: #f4ede8 !important;
+    --background-nested-floating: #f4ede8 !important;
+    --deprecated-card-bg: #f4ede8 !important;
+    --background-base-lowest: #f2e9e1 !important;
+    --background-base-lower: #f2e9e1 !important;
+    --background-base-low: #faf4ed !important;
+    --app-frame-background: #f2e9e1 !important;
+    --chat-background: #faf4ed !important;
+    --chat-background-default: #faf4ed !important;
+    --home-background: #faf4ed !important;
+    --background-surface-high: #f4ede8 !important;
+    --background-surface-higher: #dfdad9 !important;
+    --background-surface-highest: #cecacd !important;
+    --bg-surface-raised: #f4ede8 !important;
+    --card-background-default: #f4ede8 !important;
+    --modal-background: #faf4ed !important;
+    --modal-footer-background: #faf4ed !important;
+    --channeltextarea-background: #f4ede8 !important;
+    --input-background: #f4ede8 !important;
+    --background-code: #f4ede8 !important;
+    --background-mod-subtle: #dfdad9 !important;
+    --background-mod-normal: #dfdad9 !important;
+    --background-mod-muted: #dfdad9 !important;
+    --background-mod-strong: #cecacd !important;
+    --background-modifier-hover: #dfdad9 !important;
+    --background-modifier-selected: #dfdad9 !important;
+    --background-modifier-active: #cecacd !important;
+    --background-modifier-accent: #dfdad9 !important;
+    --text-primary: #575279 !important;
+    --text-secondary: #6e6a86 !important;
+    --text-normal: #575279 !important;
+    --text-default: #575279 !important;
+    --text-muted: #797593 !important;
+    --header-primary: #575279 !important;
+    --header-secondary: #6e6a86 !important;
+    --channels-default: #797593 !important;
+    --interactive-normal: #6e6a86 !important;
+    --interactive-hover: #575279 !important;
+    --interactive-active: #575279 !important;
+    --interactive-muted: #9893a5 !important;
+    --text-link: #56949f !important;
+    --brand-experiment: #56949f !important;
+    --brand-500: #56949f !important;
+    --brand-560: #56949f !important;
+    --brand-360: #56949f !important;
+    --control-brand-foreground: #56949f !important;
+    --text-brand: #56949f !important;
+    --status-positive: #286983 !important;
+    --status-warning: #ea9d34 !important;
+    --status-danger: #b4637a !important;
+    --text-positive: #286983 !important;
+    --text-warning: #ea9d34 !important;
+    --text-danger: #b4637a !important;
+    --info-danger-foreground: #b4637a !important;
+}

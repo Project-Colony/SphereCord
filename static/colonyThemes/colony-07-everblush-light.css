@@ -1,0 +1,75 @@
+/**
+ * @name Everblush · Mode clair
+ * @description Everblush · Mode clair — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #e8eded !important;
+    --background-secondary: #dce3e3 !important;
+    --background-secondary-alt: #d0d8d8 !important;
+    --background-tertiary: #dce3e3 !important;
+    --background-floating: #d0d8d8 !important;
+    --background-nested-floating: #d0d8d8 !important;
+    --deprecated-card-bg: #d0d8d8 !important;
+    --background-base-lowest: #dce3e3 !important;
+    --background-base-lower: #dce3e3 !important;
+    --background-base-low: #e8eded !important;
+    --app-frame-background: #dce3e3 !important;
+    --chat-background: #e8eded !important;
+    --chat-background-default: #e8eded !important;
+    --home-background: #e8eded !important;
+    --background-surface-high: #d0d8d8 !important;
+    --background-surface-higher: #c4cece !important;
+    --background-surface-highest: #b8c4c4 !important;
+    --bg-surface-raised: #d0d8d8 !important;
+    --card-background-default: #d0d8d8 !important;
+    --modal-background: #e8eded !important;
+    --modal-footer-background: #e8eded !important;
+    --channeltextarea-background: #d0d8d8 !important;
+    --input-background: #d0d8d8 !important;
+    --background-code: #d0d8d8 !important;
+    --background-mod-subtle: #c4cece !important;
+    --background-mod-normal: #c4cece !important;
+    --background-mod-muted: #c4cece !important;
+    --background-mod-strong: #b8c4c4 !important;
+    --background-modifier-hover: #c4cece !important;
+    --background-modifier-selected: #c4cece !important;
+    --background-modifier-active: #b8c4c4 !important;
+    --background-modifier-accent: #c4cece !important;
+    --text-primary: #2d3437 !important;
+    --text-secondary: #3a4448 !important;
+    --text-normal: #2d3437 !important;
+    --text-default: #2d3437 !important;
+    --text-muted: #4a5558 !important;
+    --header-primary: #2d3437 !important;
+    --header-secondary: #3a4448 !important;
+    --channels-default: #4a5558 !important;
+    --interactive-normal: #3a4448 !important;
+    --interactive-hover: #2d3437 !important;
+    --interactive-active: #2d3437 !important;
+    --interactive-muted: #5a6668 !important;
+    --text-link: #3a88c0 !important;
+    --brand-experiment: #3a88c0 !important;
+    --brand-500: #3a88c0 !important;
+    --brand-560: #3a88c0 !important;
+    --brand-360: #3a88c0 !important;
+    --control-brand-foreground: #3a88c0 !important;
+    --text-brand: #3a88c0 !important;
+    --status-positive: #5aaa4e !important;
+    --status-warning: #c0a030 !important;
+    --status-danger: #c85050 !important;
+    --text-positive: #5aaa4e !important;
+    --text-warning: #c0a030 !important;
+    --text-danger: #c85050 !important;
+    --info-danger-foreground: #c85050 !important;
+}

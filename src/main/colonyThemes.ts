@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { copyFileSync, existsSync, mkdirSync, readdirSync } from "fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync } from "fs";
 import { join } from "path";
 import { STATIC_DIR } from "shared/paths";
 
@@ -19,6 +19,11 @@ export function installColonyThemes() {
 
     try {
         mkdirSync(VENCORD_THEMES_DIR, { recursive: true });
+        // Remove previously-installed Colony themes first so renames/removals (e.g. the
+        // order-prefixed filenames) never leave stale duplicates behind.
+        for (const file of readdirSync(VENCORD_THEMES_DIR)) {
+            if (/^colony-.*\.css$/i.test(file)) rmSync(join(VENCORD_THEMES_DIR, file), { force: true });
+        }
         for (const file of readdirSync(src)) {
             if (file.endsWith(".css")) copyFileSync(join(src, file), join(VENCORD_THEMES_DIR, file));
         }

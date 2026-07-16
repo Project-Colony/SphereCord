@@ -1,0 +1,75 @@
+/**
+ * @name Kanagawa · Mode sombre
+ * @description Kanagawa · Mode sombre — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #1f1f28 !important;
+    --background-secondary: #181820 !important;
+    --background-secondary-alt: #2a2a37 !important;
+    --background-tertiary: #181820 !important;
+    --background-floating: #2a2a37 !important;
+    --background-nested-floating: #2a2a37 !important;
+    --deprecated-card-bg: #2a2a37 !important;
+    --background-base-lowest: #181820 !important;
+    --background-base-lower: #181820 !important;
+    --background-base-low: #1f1f28 !important;
+    --app-frame-background: #181820 !important;
+    --chat-background: #1f1f28 !important;
+    --chat-background-default: #1f1f28 !important;
+    --home-background: #1f1f28 !important;
+    --background-surface-high: #2a2a37 !important;
+    --background-surface-higher: #363646 !important;
+    --background-surface-highest: #54546d !important;
+    --bg-surface-raised: #2a2a37 !important;
+    --card-background-default: #2a2a37 !important;
+    --modal-background: #1f1f28 !important;
+    --modal-footer-background: #1f1f28 !important;
+    --channeltextarea-background: #2a2a37 !important;
+    --input-background: #2a2a37 !important;
+    --background-code: #2a2a37 !important;
+    --background-mod-subtle: #363646 !important;
+    --background-mod-normal: #363646 !important;
+    --background-mod-muted: #363646 !important;
+    --background-mod-strong: #54546d !important;
+    --background-modifier-hover: #363646 !important;
+    --background-modifier-selected: #363646 !important;
+    --background-modifier-active: #54546d !important;
+    --background-modifier-accent: #2a2a37 !important;
+    --text-primary: #dcd7ba !important;
+    --text-secondary: #c8c093 !important;
+    --text-normal: #dcd7ba !important;
+    --text-default: #dcd7ba !important;
+    --text-muted: #9cabca !important;
+    --header-primary: #dcd7ba !important;
+    --header-secondary: #c8c093 !important;
+    --channels-default: #9cabca !important;
+    --interactive-normal: #c8c093 !important;
+    --interactive-hover: #dcd7ba !important;
+    --interactive-active: #dcd7ba !important;
+    --interactive-muted: #938aa9 !important;
+    --text-link: #7e9cd8 !important;
+    --brand-experiment: #7e9cd8 !important;
+    --brand-500: #7e9cd8 !important;
+    --brand-560: #7e9cd8 !important;
+    --brand-360: #7e9cd8 !important;
+    --control-brand-foreground: #7e9cd8 !important;
+    --text-brand: #7e9cd8 !important;
+    --status-positive: #98bb6c !important;
+    --status-warning: #e6c384 !important;
+    --status-danger: #e46876 !important;
+    --text-positive: #98bb6c !important;
+    --text-warning: #e6c384 !important;
+    --text-danger: #e46876 !important;
+    --info-danger-foreground: #e46876 !important;
+}

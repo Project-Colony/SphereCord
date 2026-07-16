@@ -1,0 +1,75 @@
+/**
+ * @name Ayu · Mode clair
+ * @description Ayu · Mode clair — from Project Colony's palette set, ported to Discord. Auto-generated.
+ * @author Project Colony
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #fafafa !important;
+    --background-secondary: #f0eee4 !important;
+    --background-secondary-alt: #e8e6dc !important;
+    --background-tertiary: #f0eee4 !important;
+    --background-floating: #e8e6dc !important;
+    --background-nested-floating: #e8e6dc !important;
+    --deprecated-card-bg: #e8e6dc !important;
+    --background-base-lowest: #f0eee4 !important;
+    --background-base-lower: #f0eee4 !important;
+    --background-base-low: #fafafa !important;
+    --app-frame-background: #f0eee4 !important;
+    --chat-background: #fafafa !important;
+    --chat-background-default: #fafafa !important;
+    --home-background: #fafafa !important;
+    --background-surface-high: #e8e6dc !important;
+    --background-surface-higher: #dcd8cc !important;
+    --background-surface-highest: #d0ccc0 !important;
+    --bg-surface-raised: #e8e6dc !important;
+    --card-background-default: #e8e6dc !important;
+    --modal-background: #fafafa !important;
+    --modal-footer-background: #fafafa !important;
+    --channeltextarea-background: #e8e6dc !important;
+    --input-background: #e8e6dc !important;
+    --background-code: #e8e6dc !important;
+    --background-mod-subtle: #dcd8cc !important;
+    --background-mod-normal: #dcd8cc !important;
+    --background-mod-muted: #d1e4f4 !important;
+    --background-mod-strong: #d0ccc0 !important;
+    --background-modifier-hover: #dcd8cc !important;
+    --background-modifier-selected: #d1e4f4 !important;
+    --background-modifier-active: #d0ccc0 !important;
+    --background-modifier-accent: #dcd8cc !important;
+    --text-primary: #575f66 !important;
+    --text-secondary: #6b737a !important;
+    --text-normal: #575f66 !important;
+    --text-default: #575f66 !important;
+    --text-muted: #848c94 !important;
+    --header-primary: #575f66 !important;
+    --header-secondary: #6b737a !important;
+    --channels-default: #848c94 !important;
+    --interactive-normal: #6b737a !important;
+    --interactive-hover: #575f66 !important;
+    --interactive-active: #575f66 !important;
+    --interactive-muted: #9ca4ac !important;
+    --text-link: #ff9940 !important;
+    --brand-experiment: #ff9940 !important;
+    --brand-500: #ff9940 !important;
+    --brand-560: #ff9940 !important;
+    --brand-360: #ff9940 !important;
+    --control-brand-foreground: #ff9940 !important;
+    --text-brand: #ff9940 !important;
+    --status-positive: #86b300 !important;
+    --status-warning: #f29718 !important;
+    --status-danger: #f51818 !important;
+    --text-positive: #86b300 !important;
+    --text-warning: #f29718 !important;
+    --text-danger: #f51818 !important;
+    --info-danger-foreground: #f51818 !important;
+}

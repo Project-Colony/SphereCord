@@ -4,12 +4,16 @@
 [![Tests](https://github.com/Project-Colony/SphereCord/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Project-Colony/SphereCord/actions/workflows/test.yml)
 [![Discord](https://img.shields.io/discord/1173279886065029291.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://equicord.org/discord)
 
-SphereCord is a fork of [Vesktop](https://github.com/Vencord/Vesktop).
-
-You can join our [discord server](https://equicord.org/discord) for commits, changes, chat or even support.<br></br>
+SphereCord is the desktop Discord client for **Project Colony** — a fork of
+[Equibop](https://github.com/Equicord/Equibop) (itself based on
+[Vesktop](https://github.com/Vencord/Vesktop)). It ships
+[Equicord](https://github.com/Equicord/Equicord) preinstalled, plus the full set of
+Colony color themes.
 
 **Main features**:
-- Equicord preinstalled
+- Equicord preinstalled (auto-updating)
+- **52 Colony color themes bundled** — Catppuccin, Gruvbox, Nord, Dracula, Tokyonight,
+  Rosé Pine, Kanagawa and more, auto-installed and synced from the Colony palette set
 - Much more lightweight and faster than the official Discord app
 - Linux Screenshare with sound & wayland
 - Much better privacy, since Discord has no access to your system
@@ -46,10 +50,24 @@ You can join our [discord server](https://equicord.org/discord) for commits, cha
 Add flags to `${XDG_CONFIG_HOME}/spherecord-flags.conf` — one per line, lines starting with `#` are comments.
 
 ## Installing
-Grab a build from the [Releases](https://github.com/Project-Colony/SphereCord/releases) page, or build from source (see below).
 
-> [!NOTE]
-> SphereCord does not yet publish to distribution channels (AUR, Flathub, Nix, etc.). If you set those up, add them here.
+If a build is available on the [Releases](https://github.com/Project-Colony/SphereCord/releases)
+page, grab it there. Otherwise **build from source** (see below) — the artifacts land
+in `dist/`, and the **AppImage is the easiest way to just try it** (portable, no install,
+any Linux distro):
+
+```sh
+# after building (see "Building from Source"):
+
+# AppImage — portable, works on any distro, no install needed
+chmod +x dist/SphereCord-*.AppImage
+./dist/SphereCord-*.AppImage
+
+# or install natively — Arch Linux
+sudo pacman -U dist/spherecord-*.pacman
+```
+
+`.deb` and `.rpm` packages are produced too (for Debian/Ubuntu and Fedora).
 
 ## Building from Source
 
@@ -72,7 +90,10 @@ bun start
 # Or package (will build packages for your OS)
 bun package
 
-# Or only build the Linux Pacman package
+# Or only the portable AppImage (easiest to just run, any distro)
+bun package --linux AppImage
+
+# Or only build the Linux Pacman package (Arch)
 bun package --linux pacman
 
 # Or package to a directory only

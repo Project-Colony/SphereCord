@@ -5,41 +5,71 @@
  * @version 1.0.0
  */
 
-:root {
-    --background-tertiary: #f4efd8;
-    --background-secondary: #f4efd8;
-    --background-secondary-alt: #e8e4cf;
-    --background-primary: #fffbeb;
-    --background-floating: #e8e4cf;
-    --background-nested-floating: #e8e4cf;
-    --background-modifier-hover: #dcd8c0;
-    --background-modifier-selected: #dcd8c0;
-    --background-modifier-active: #d0ccb8;
-    --background-modifier-accent: #dcd8c0;
-    --channeltextarea-background: #e8e4cf;
-    --input-background: #e8e4cf;
-    --modal-background: #fffbeb;
-    --deprecated-card-bg: #e8e4cf;
-    --text-normal: #1f1f1f;
-    --text-default: #1f1f1f;
-    --text-muted: #555555;
-    --header-primary: #1f1f1f;
-    --header-secondary: #333333;
-    --channels-default: #555555;
-    --interactive-normal: #333333;
-    --interactive-hover: #1f1f1f;
-    --interactive-active: #1f1f1f;
-    --interactive-muted: #777777;
-    --text-link: #7c5fc2;
-    --brand-experiment: #7c5fc2;
-    --brand-500: #7c5fc2;
-    --brand-560: #7c5fc2;
-    --brand-360: #7c5fc2;
-    --status-positive: #2ba479;
-    --status-warning: #d5a212;
-    --status-danger: #de3535;
-    --text-positive: #2ba479;
-    --text-warning: #d5a212;
-    --text-danger: #de3535;
-    --info-danger-foreground: #de3535;
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #fffbeb !important;
+    --background-secondary: #f4efd8 !important;
+    --background-secondary-alt: #e8e4cf !important;
+    --background-tertiary: #f4efd8 !important;
+    --background-floating: #e8e4cf !important;
+    --background-nested-floating: #e8e4cf !important;
+    --deprecated-card-bg: #e8e4cf !important;
+    --background-base-lowest: #f4efd8 !important;
+    --background-base-lower: #f4efd8 !important;
+    --background-base-low: #fffbeb !important;
+    --app-frame-background: #f4efd8 !important;
+    --chat-background: #fffbeb !important;
+    --chat-background-default: #fffbeb !important;
+    --home-background: #fffbeb !important;
+    --background-surface-high: #e8e4cf !important;
+    --background-surface-higher: #dcd8c0 !important;
+    --background-surface-highest: #d0ccb8 !important;
+    --bg-surface-raised: #e8e4cf !important;
+    --card-background-default: #e8e4cf !important;
+    --modal-background: #fffbeb !important;
+    --modal-footer-background: #fffbeb !important;
+    --channeltextarea-background: #e8e4cf !important;
+    --input-background: #e8e4cf !important;
+    --background-code: #e8e4cf !important;
+    --background-mod-subtle: #dcd8c0 !important;
+    --background-mod-normal: #dcd8c0 !important;
+    --background-mod-muted: #dcd8c0 !important;
+    --background-mod-strong: #d0ccb8 !important;
+    --background-modifier-hover: #dcd8c0 !important;
+    --background-modifier-selected: #dcd8c0 !important;
+    --background-modifier-active: #d0ccb8 !important;
+    --background-modifier-accent: #dcd8c0 !important;
+    --text-primary: #1f1f1f !important;
+    --text-secondary: #333333 !important;
+    --text-normal: #1f1f1f !important;
+    --text-default: #1f1f1f !important;
+    --text-muted: #555555 !important;
+    --header-primary: #1f1f1f !important;
+    --header-secondary: #333333 !important;
+    --channels-default: #555555 !important;
+    --interactive-normal: #333333 !important;
+    --interactive-hover: #1f1f1f !important;
+    --interactive-active: #1f1f1f !important;
+    --interactive-muted: #777777 !important;
+    --text-link: #7c5fc2 !important;
+    --brand-experiment: #7c5fc2 !important;
+    --brand-500: #7c5fc2 !important;
+    --brand-560: #7c5fc2 !important;
+    --brand-360: #7c5fc2 !important;
+    --control-brand-foreground: #7c5fc2 !important;
+    --text-brand: #7c5fc2 !important;
+    --status-positive: #2ba479 !important;
+    --status-warning: #d5a212 !important;
+    --status-danger: #de3535 !important;
+    --text-positive: #2ba479 !important;
+    --text-warning: #d5a212 !important;
+    --text-danger: #de3535 !important;
+    --info-danger-foreground: #de3535 !important;
 }

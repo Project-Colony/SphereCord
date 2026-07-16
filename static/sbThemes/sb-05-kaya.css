@@ -1,0 +1,75 @@
+/**
+ * @name Stellar Blade · Kaya
+ * @description Kaya — lavender hair over a khaki coat. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @author SphereCord
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #16131c !important;
+    --background-secondary: #0f0d14 !important;
+    --background-secondary-alt: #1e1926 !important;
+    --background-tertiary: #0f0d14 !important;
+    --background-floating: #1e1926 !important;
+    --background-nested-floating: #1e1926 !important;
+    --deprecated-card-bg: #1e1926 !important;
+    --background-base-lowest: #0f0d14 !important;
+    --background-base-lower: #0f0d14 !important;
+    --background-base-low: #16131c !important;
+    --app-frame-background: #0f0d14 !important;
+    --chat-background: #16131c !important;
+    --chat-background-default: #16131c !important;
+    --home-background: #16131c !important;
+    --background-surface-high: #1e1926 !important;
+    --background-surface-higher: #251f2f !important;
+    --background-surface-highest: #2c2537 !important;
+    --bg-surface-raised: #1e1926 !important;
+    --card-background-default: #1e1926 !important;
+    --modal-background: #1a1522 !important;
+    --modal-footer-background: #1a1522 !important;
+    --channeltextarea-background: #1f1a28 !important;
+    --input-background: #1f1a28 !important;
+    --background-code: #1f1a28 !important;
+    --background-mod-subtle: #251f2f !important;
+    --background-mod-normal: #251f2f !important;
+    --background-mod-muted: #292233 !important;
+    --background-mod-strong: #2c2537 !important;
+    --background-modifier-hover: #251f2f !important;
+    --background-modifier-selected: #292233 !important;
+    --background-modifier-active: #2c2537 !important;
+    --background-modifier-accent: #342c40 !important;
+    --text-primary: #ede8f2 !important;
+    --text-secondary: #bdb3c8 !important;
+    --text-normal: #ede8f2 !important;
+    --text-default: #ede8f2 !important;
+    --text-muted: #8b8298 !important;
+    --header-primary: #ede8f2 !important;
+    --header-secondary: #bdb3c8 !important;
+    --channels-default: #8b8298 !important;
+    --interactive-normal: #bdb3c8 !important;
+    --interactive-hover: #ede8f2 !important;
+    --interactive-active: #ede8f2 !important;
+    --interactive-muted: #675e73 !important;
+    --text-link: #bfa3dc !important;
+    --brand-experiment: #bfa3dc !important;
+    --brand-500: #bfa3dc !important;
+    --brand-560: #bfa3dc !important;
+    --brand-360: #bfa3dc !important;
+    --control-brand-foreground: #bfa3dc !important;
+    --text-brand: #bfa3dc !important;
+    --status-positive: #8a9455 !important;
+    --status-warning: #d9a441 !important;
+    --status-danger: #e06a6a !important;
+    --text-positive: #8a9455 !important;
+    --text-warning: #d9a441 !important;
+    --text-danger: #e06a6a !important;
+    --info-danger-foreground: #e06a6a !important;
+}

@@ -1,0 +1,75 @@
+/**
+ * @name Stellar Blade · Enya
+ * @description Enya — white ceramic armour, ice-blue sheen. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @author SphereCord
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #14161a !important;
+    --background-secondary: #0d0f13 !important;
+    --background-secondary-alt: #1c1f25 !important;
+    --background-tertiary: #0d0f13 !important;
+    --background-floating: #1c1f25 !important;
+    --background-nested-floating: #1c1f25 !important;
+    --deprecated-card-bg: #1c1f25 !important;
+    --background-base-lowest: #0d0f13 !important;
+    --background-base-lower: #0d0f13 !important;
+    --background-base-low: #14161a !important;
+    --app-frame-background: #0d0f13 !important;
+    --chat-background: #14161a !important;
+    --chat-background-default: #14161a !important;
+    --home-background: #14161a !important;
+    --background-surface-high: #1c1f25 !important;
+    --background-surface-higher: #23272e !important;
+    --background-surface-highest: #2a2f37 !important;
+    --bg-surface-raised: #1c1f25 !important;
+    --card-background-default: #1c1f25 !important;
+    --modal-background: #181b21 !important;
+    --modal-footer-background: #181b21 !important;
+    --channeltextarea-background: #1b1f25 !important;
+    --input-background: #1b1f25 !important;
+    --background-code: #1b1f25 !important;
+    --background-mod-subtle: #23272e !important;
+    --background-mod-normal: #23272e !important;
+    --background-mod-muted: #252a32 !important;
+    --background-mod-strong: #2a2f37 !important;
+    --background-modifier-hover: #23272e !important;
+    --background-modifier-selected: #252a32 !important;
+    --background-modifier-active: #2a2f37 !important;
+    --background-modifier-accent: #313742 !important;
+    --text-primary: #edf1f5 !important;
+    --text-secondary: #b6bec8 !important;
+    --text-normal: #edf1f5 !important;
+    --text-default: #edf1f5 !important;
+    --text-muted: #858e9a !important;
+    --header-primary: #edf1f5 !important;
+    --header-secondary: #b6bec8 !important;
+    --channels-default: #858e9a !important;
+    --interactive-normal: #b6bec8 !important;
+    --interactive-hover: #edf1f5 !important;
+    --interactive-active: #edf1f5 !important;
+    --interactive-muted: #616a76 !important;
+    --text-link: #a3cde8 !important;
+    --brand-experiment: #a3cde8 !important;
+    --brand-500: #a3cde8 !important;
+    --brand-560: #a3cde8 !important;
+    --brand-360: #a3cde8 !important;
+    --control-brand-foreground: #a3cde8 !important;
+    --text-brand: #a3cde8 !important;
+    --status-positive: #6fc28e !important;
+    --status-warning: #dfb35c !important;
+    --status-danger: #e2707a !important;
+    --text-positive: #6fc28e !important;
+    --text-warning: #dfb35c !important;
+    --text-danger: #e2707a !important;
+    --info-danger-foreground: #e2707a !important;
+}

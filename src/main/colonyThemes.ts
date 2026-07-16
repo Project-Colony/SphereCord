@@ -10,24 +10,34 @@ import { STATIC_DIR } from "shared/paths";
 
 import { VENCORD_THEMES_DIR } from "./constants";
 
-// Auto-install the bundled Colony themes into the Vencord themes directory on every
-// launch, keeping them current. They then show up in Discord's Themes tab, ready to
-// enable. Generated from Project Colony's palette set — see scripts/generateColonyThemes.mts.
-export function installColonyThemes() {
-    const src = join(STATIC_DIR, "colonyThemes");
-    if (!existsSync(src)) return;
+// Each bundled theme set: the static/ folder it ships in, and the filename prefix its
+// generated files use (also what we sweep so renames/removals leave no stale duplicates).
+const THEME_SETS = [
+    { dir: "colonyThemes", prefix: "colony-", label: "Colony" },
+    { dir: "sbThemes", prefix: "sb-", label: "Stellar Blade" }
+] as const;
 
-    try {
-        mkdirSync(VENCORD_THEMES_DIR, { recursive: true });
-        // Remove previously-installed Colony themes first so renames/removals (e.g. the
-        // order-prefixed filenames) never leave stale duplicates behind.
-        for (const file of readdirSync(VENCORD_THEMES_DIR)) {
-            if (/^colony-.*\.css$/i.test(file)) rmSync(join(VENCORD_THEMES_DIR, file), { force: true });
+// Auto-install the bundled themes into the Vencord themes directory on every launch,
+// keeping them current. They then show up in Discord's Themes tab, ready to enable.
+// Generated — see scripts/generateColonyThemes.mts and scripts/generateStellarThemes.mts.
+export function installColonyThemes() {
+    for (const set of THEME_SETS) {
+        const src = join(STATIC_DIR, set.dir);
+        if (!existsSync(src)) continue;
+
+        try {
+            mkdirSync(VENCORD_THEMES_DIR, { recursive: true });
+            // Remove previously-installed themes from this set first so renames/removals
+            // (e.g. the order-prefixed filenames) never leave stale duplicates behind.
+            const stale = new RegExp(`^${set.prefix}.*\\.css$`, "i");
+            for (const file of readdirSync(VENCORD_THEMES_DIR)) {
+                if (stale.test(file)) rmSync(join(VENCORD_THEMES_DIR, file), { force: true });
+            }
+            for (const file of readdirSync(src)) {
+                if (file.endsWith(".css")) copyFileSync(join(src, file), join(VENCORD_THEMES_DIR, file));
+            }
+        } catch (e) {
+            console.error(`Failed to install ${set.label} themes:`, e);
         }
-        for (const file of readdirSync(src)) {
-            if (file.endsWith(".css")) copyFileSync(join(src, file), join(VENCORD_THEMES_DIR, file));
-        }
-    } catch (e) {
-        console.error("Failed to install Colony themes:", e);
     }
 }

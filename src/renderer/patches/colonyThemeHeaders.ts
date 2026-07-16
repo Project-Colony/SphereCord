@@ -11,6 +11,7 @@
 // Cards are named "<Family> · <Variant>" (or just "<Family>"), so we group by that.
 
 const FAMILIES = [
+    "Stellar Blade",
     "Catppuccin",
     "Gruvbox",
     "Everblush",

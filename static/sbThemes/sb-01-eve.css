@@ -1,0 +1,75 @@
+/**
+ * @name Stellar Blade · EVE
+ * @description EVE — emerald glow over a white suit. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @author SphereCord
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #0e1410 !important;
+    --background-secondary: #090e0b !important;
+    --background-secondary-alt: #151d18 !important;
+    --background-tertiary: #090e0b !important;
+    --background-floating: #151d18 !important;
+    --background-nested-floating: #151d18 !important;
+    --deprecated-card-bg: #151d18 !important;
+    --background-base-lowest: #090e0b !important;
+    --background-base-lower: #090e0b !important;
+    --background-base-low: #0e1410 !important;
+    --app-frame-background: #090e0b !important;
+    --chat-background: #0e1410 !important;
+    --chat-background-default: #0e1410 !important;
+    --home-background: #0e1410 !important;
+    --background-surface-high: #151d18 !important;
+    --background-surface-higher: #1c261f !important;
+    --background-surface-highest: #232e26 !important;
+    --bg-surface-raised: #151d18 !important;
+    --card-background-default: #151d18 !important;
+    --modal-background: #121a15 !important;
+    --modal-footer-background: #121a15 !important;
+    --channeltextarea-background: #17201a !important;
+    --input-background: #17201a !important;
+    --background-code: #17201a !important;
+    --background-mod-subtle: #1c261f !important;
+    --background-mod-normal: #1c261f !important;
+    --background-mod-muted: #1f2b23 !important;
+    --background-mod-strong: #232e26 !important;
+    --background-modifier-hover: #1c261f !important;
+    --background-modifier-selected: #1f2b23 !important;
+    --background-modifier-active: #232e26 !important;
+    --background-modifier-accent: #27352c !important;
+    --text-primary: #e9ede9 !important;
+    --text-secondary: #b3c0b6 !important;
+    --text-normal: #e9ede9 !important;
+    --text-default: #e9ede9 !important;
+    --text-muted: #7f8c84 !important;
+    --header-primary: #e9ede9 !important;
+    --header-secondary: #b3c0b6 !important;
+    --channels-default: #7f8c84 !important;
+    --interactive-normal: #b3c0b6 !important;
+    --interactive-hover: #e9ede9 !important;
+    --interactive-active: #e9ede9 !important;
+    --interactive-muted: #5c6961 !important;
+    --text-link: #2fbe4c !important;
+    --brand-experiment: #2fbe4c !important;
+    --brand-500: #2fbe4c !important;
+    --brand-560: #2fbe4c !important;
+    --brand-360: #2fbe4c !important;
+    --control-brand-foreground: #2fbe4c !important;
+    --text-brand: #2fbe4c !important;
+    --status-positive: #46d46a !important;
+    --status-warning: #e0a83a !important;
+    --status-danger: #e4553f !important;
+    --text-positive: #46d46a !important;
+    --text-warning: #e0a83a !important;
+    --text-danger: #e4553f !important;
+    --info-danger-foreground: #e4553f !important;
+}

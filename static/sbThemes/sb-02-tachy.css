@@ -1,0 +1,75 @@
+/**
+ * @name Stellar Blade · Tachy
+ * @description Tachy — carbon black, amber panel, orange glow. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @author SphereCord
+ * @version 1.0.0
+ */
+
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-light,
+.visual-refresh .theme-dark {
+    --background-primary: #12131b !important;
+    --background-secondary: #0a0b11 !important;
+    --background-secondary-alt: #191b25 !important;
+    --background-tertiary: #0a0b11 !important;
+    --background-floating: #191b25 !important;
+    --background-nested-floating: #191b25 !important;
+    --deprecated-card-bg: #191b25 !important;
+    --background-base-lowest: #0a0b11 !important;
+    --background-base-lower: #0a0b11 !important;
+    --background-base-low: #12131b !important;
+    --app-frame-background: #0a0b11 !important;
+    --chat-background: #12131b !important;
+    --chat-background-default: #12131b !important;
+    --home-background: #12131b !important;
+    --background-surface-high: #191b25 !important;
+    --background-surface-higher: #20222e !important;
+    --background-surface-highest: #272a37 !important;
+    --bg-surface-raised: #191b25 !important;
+    --card-background-default: #191b25 !important;
+    --modal-background: #161822 !important;
+    --modal-footer-background: #161822 !important;
+    --channeltextarea-background: #1a1c26 !important;
+    --input-background: #1a1c26 !important;
+    --background-code: #1a1c26 !important;
+    --background-mod-subtle: #20222e !important;
+    --background-mod-normal: #20222e !important;
+    --background-mod-muted: #232634 !important;
+    --background-mod-strong: #272a37 !important;
+    --background-modifier-hover: #20222e !important;
+    --background-modifier-selected: #232634 !important;
+    --background-modifier-active: #272a37 !important;
+    --background-modifier-accent: #2c2f3c !important;
+    --text-primary: #ecedf2 !important;
+    --text-secondary: #b8bcc8 !important;
+    --text-normal: #ecedf2 !important;
+    --text-default: #ecedf2 !important;
+    --text-muted: #868b99 !important;
+    --header-primary: #ecedf2 !important;
+    --header-secondary: #b8bcc8 !important;
+    --channels-default: #868b99 !important;
+    --interactive-normal: #b8bcc8 !important;
+    --interactive-hover: #ecedf2 !important;
+    --interactive-active: #ecedf2 !important;
+    --interactive-muted: #626775 !important;
+    --text-link: #ff7c1e !important;
+    --brand-experiment: #ff7c1e !important;
+    --brand-500: #ff7c1e !important;
+    --brand-560: #ff7c1e !important;
+    --brand-360: #ff7c1e !important;
+    --control-brand-foreground: #ff7c1e !important;
+    --text-brand: #ff7c1e !important;
+    --status-positive: #3fbfa8 !important;
+    --status-warning: #eaa72c !important;
+    --status-danger: #f0503c !important;
+    --text-positive: #3fbfa8 !important;
+    --text-warning: #eaa72c !important;
+    --text-danger: #f0503c !important;
+    --info-danger-foreground: #f0503c !important;
+}

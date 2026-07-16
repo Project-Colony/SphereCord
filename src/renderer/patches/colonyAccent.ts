@@ -36,12 +36,18 @@ export const COLONY_ACCENTS: ColonyAccent[] = [
 ];
 
 const STORAGE_KEY = "SphereCord_colonyAccent";
+const ENABLED_KEY = "SphereCord_colonyAccentEnabled";
 const STYLE_ID = "spherecord-colony-accent";
 
-const listeners = new Set<(key: string) => void>();
+export interface ColonyAccentState {
+    enabled: boolean;
+    accent: string;
+}
 
-/** Subscribe to accent changes (e.g. so the Settings picker reflects the hotkey). Returns an unsubscribe. */
-export function onColonyAccentChange(cb: (key: string) => void): () => void {
+const listeners = new Set<(state: ColonyAccentState) => void>();
+
+/** Subscribe to accent state changes (so the Settings picker reflects the hotkey/toggle). Returns an unsubscribe. */
+export function onColonyAccentChange(cb: (state: ColonyAccentState) => void): () => void {
     listeners.add(cb);
     return () => {
         listeners.delete(cb);
@@ -54,6 +60,32 @@ export function getColonyAccent(): string {
     } catch {
         return "auto";
     }
+}
+
+/** Master on/off state for the whole feature. Default on. */
+export function isColonyAccentEnabled(): boolean {
+    try {
+        return localStorage.getItem(ENABLED_KEY) !== "false";
+    } catch {
+        return true;
+    }
+}
+
+function emit(): void {
+    const state: ColonyAccentState = { enabled: isColonyAccentEnabled(), accent: getColonyAccent() };
+    for (const cb of listeners) {
+        try {
+            cb(state);
+        } catch {
+            /* ignore listener errors */
+        }
+    }
+}
+
+/** Apply the persisted state (accent + enabled) to the DOM. */
+function applyColonyAccent(): void {
+    const accent = accentByKey(getColonyAccent());
+    styleEl().textContent = isColonyAccentEnabled() && accent.hex ? buildCss(accent.hex) : "";
 }
 
 function accentByKey(key: string): ColonyAccent {
@@ -133,27 +165,38 @@ function styleEl(): HTMLStyleElement {
     return el;
 }
 
-/** Apply an accent to the DOM without persisting — used for live preview. */
+/** Apply a specific accent to the DOM without persisting — used for the live overlay preview. */
 export function previewColonyAccent(key: string): void {
     const accent = accentByKey(key);
     styleEl().textContent = accent.hex ? buildCss(accent.hex) : "";
 }
 
-/** Apply, persist, and notify listeners. */
+/** Re-apply whatever is persisted (accent + enabled) — used to cancel a preview. */
+export function refreshColonyAccent(): void {
+    applyColonyAccent();
+}
+
+/** Select an accent color, persist, apply, notify. Picking a real color also enables the feature. */
 export function setColonyAccent(key: string): void {
-    previewColonyAccent(key);
     try {
         localStorage.setItem(STORAGE_KEY, key);
+        if (key !== "auto") localStorage.setItem(ENABLED_KEY, "true");
     } catch {
         /* localStorage unavailable — apply is still live for this session */
     }
-    for (const cb of listeners) {
-        try {
-            cb(key);
-        } catch {
-            /* ignore listener errors */
-        }
+    applyColonyAccent();
+    emit();
+}
+
+/** Master on/off switch for the whole feature. */
+export function setColonyAccentEnabled(enabled: boolean): void {
+    try {
+        localStorage.setItem(ENABLED_KEY, enabled ? "true" : "false");
+    } catch {
+        /* ignore */
     }
+    applyColonyAccent();
+    emit();
 }
 
 // ---------------------------------------------------------------------------
@@ -193,7 +236,7 @@ function onOverlayKey(e: KeyboardEvent) {
     switch (e.key) {
         case "Escape":
             e.preventDefault();
-            previewColonyAccent(overlay.dataset.saved || "auto");
+            refreshColonyAccent();
             closeSwitcher();
             break;
         case "Enter":
@@ -280,7 +323,7 @@ function openSwitcher() {
 
     overlay.addEventListener("mousedown", e => {
         if (e.target === overlay) {
-            previewColonyAccent(saved);
+            refreshColonyAccent();
             closeSwitcher();
         }
     });
@@ -327,7 +370,7 @@ function onHotkey(e: KeyboardEvent) {
 }
 
 function init() {
-    previewColonyAccent(getColonyAccent());
+    applyColonyAccent();
     injectOverlayStyles();
     document.addEventListener("keydown", onHotkey, true);
 }

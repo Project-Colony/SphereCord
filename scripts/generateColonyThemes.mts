@@ -96,6 +96,9 @@ await mkdir(OUT_DIR, { recursive: true });
 // file order for unpinned themes); the @name is "Family · Variant" with Colony's labels.
 let index = 0;
 for (const { family, variant, palette } of entries) {
+    // Stellar Blade lives in Colony too now, but SphereCord ships it separately
+    // (static/sbThemes via generateStellarThemes.mts) — skip to avoid duplicates.
+    if (family === "stellar_blade") continue;
     const colors = paletteColors.get(palette);
     if (!colors) {
         console.warn(`Skipping ${palette}: no matching palette in theme.rs`);

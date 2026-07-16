@@ -99,6 +99,22 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         UserAssetsButton
     ],
     "Colony Theming": [ColonyAccentPicker],
+    Privacy: [
+        {
+            key: "blockTelemetry",
+            title: "Block telemetry & crash reporting",
+            description:
+                "Blocks Discord's science/metrics/tracking beacons and Sentry crash reports at the network level. Recommended; takes effect immediately.",
+            defaultValue: true
+        },
+        {
+            key: "webrtcIpLeakGuard",
+            title: "WebRTC IP-leak guard",
+            description:
+                "Stops voice & screenshare from exposing your local/public IP via WebRTC. May affect voice quality on some networks. Requires a full restart.",
+            defaultValue: false
+        }
+    ],
     Behaviour: [
         {
             key: "tray",

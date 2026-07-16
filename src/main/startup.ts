@@ -18,6 +18,7 @@ import { createWindows } from "./mainWindow";
 import { registerMediaPermissionsHandler } from "./mediaPermissions";
 import { registerScreenShareHandler } from "./screenShare";
 import { Settings, State } from "./settings";
+import { registerTelemetryBlocker } from "./telemetryBlocker";
 import { setAsDefaultProtocolClient } from "./utils/setAsDefaultProtocolClient";
 import { isDeckGameMode } from "./utils/steamOS";
 
@@ -34,7 +35,7 @@ function init() {
 
     installColonyThemes();
 
-    const { disableSmoothScroll, hardwareAcceleration, hardwareVideoAcceleration } = Settings.store;
+    const { disableSmoothScroll, hardwareAcceleration, hardwareVideoAcceleration, webrtcIpLeakGuard } = Settings.store;
     const { launchArguments } = State.store;
 
     const enabledFeatures = new Set(app.commandLine.getSwitchValue("enable-features").split(","));
@@ -92,6 +93,14 @@ function init() {
 
     app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 
+    // Privacy: keep WebRTC (voice/screenshare) from exposing local/public IPs via ICE
+    // candidates. `default_public_interface_only` is the least-aggressive policy, and
+    // mDNS obfuscates local IPs. Opt-in (may affect voice on some NATs).
+    if (webrtcIpLeakGuard) {
+        app.commandLine.appendSwitch("force-webrtc-ip-handling-policy", "default_public_interface_only");
+        enabledFeatures.add("WebRtcHideLocalIpsWithMdns");
+    }
+
     disabledFeatures.add("WinRetrieveSuggestionsOnlyOnDemand");
     disabledFeatures.add("HardwareMediaKeyHandling");
     disabledFeatures.add("MediaSessionService");
@@ -123,6 +132,7 @@ function init() {
 
         registerScreenShareHandler();
         registerMediaPermissionsHandler();
+        registerTelemetryBlocker();
 
         bootstrap();
 

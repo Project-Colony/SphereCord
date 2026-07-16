@@ -33,6 +33,10 @@ export interface Settings {
     clickTrayToShowHide?: boolean;
     customTitleBar?: boolean;
 
+    // Privacy
+    blockTelemetry?: boolean;
+    webrtcIpLeakGuard?: boolean;
+
     enableSplashScreen?: boolean;
     splashTheming?: boolean;
     splashColor?: string;

@@ -12,8 +12,12 @@ permissions:
 jobs:
     release:
         runs-on: ${{ matrix.os }}
+        # macOS needs Apple signing secrets that aren't configured yet — let it fail
+        # without cancelling or failing the Windows/Linux builds.
+        continue-on-error: ${{ matrix.platform == 'mac' }}
 
         strategy:
+            fail-fast: false
             matrix:
                 os: [macos-latest, ubuntu-latest, windows-latest]
                 include:

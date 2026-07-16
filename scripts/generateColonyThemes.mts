@@ -104,12 +104,13 @@ function parseMatch(src: string) {
     return entries;
 }
 
-// Colony's display labels (settings_theme_*). First value per key wins = the French locale.
+// Colony's display labels (settings_theme_*). Colony ships fr first then en in i18n.rs;
+// SphereCord's UI is English, so we keep the LAST value per key = the English locale.
 function parseI18n(src: string) {
     const map = new Map<string, string>();
     const re = /"(settings_theme_[a-z0-9_]*)"\.into\(\),\s*"([^"]+)"\.into\(\)/g;
     let m: RegExpExecArray | null;
-    while ((m = re.exec(src))) if (!map.has(m[1])) map.set(m[1], m[2]);
+    while ((m = re.exec(src))) map.set(m[1], m[2]);
     return map;
 }
 

@@ -1,6 +1,6 @@
 /**
  * @name Stellar Blade · Lily
- * @description Lily — black rig with gold trim. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @description Lily — amber ink on black. Derived from her Stellar Blade design; fan-made, unofficial.
  * @author SphereCord
  * @version 1.0.0
  */
@@ -14,57 +14,57 @@
 .visual-refresh.theme-dark,
 .visual-refresh .theme-light,
 .visual-refresh .theme-dark {
-    --background-primary: #141210 !important;
-    --background-secondary: #0c0b09 !important;
-    --background-secondary-alt: #1c1915 !important;
-    --background-tertiary: #0c0b09 !important;
-    --background-floating: #1c1915 !important;
-    --background-nested-floating: #1c1915 !important;
-    --deprecated-card-bg: #1c1915 !important;
-    --background-base-lowest: #0c0b09 !important;
-    --background-base-lower: #0c0b09 !important;
-    --background-base-low: #141210 !important;
-    --app-frame-background: #0c0b09 !important;
-    --chat-background: #141210 !important;
-    --chat-background-default: #141210 !important;
-    --home-background: #141210 !important;
-    --background-surface-high: #1c1915 !important;
-    --background-surface-higher: #241f1a !important;
-    --background-surface-highest: #2b251e !important;
-    --bg-surface-raised: #1c1915 !important;
-    --card-background-default: #1c1915 !important;
-    --modal-background: #191612 !important;
-    --modal-footer-background: #191612 !important;
-    --channeltextarea-background: #1d1a15 !important;
-    --input-background: #1d1a15 !important;
-    --background-code: #1d1a15 !important;
-    --background-mod-subtle: #241f1a !important;
-    --background-mod-normal: #241f1a !important;
-    --background-mod-muted: #262019 !important;
-    --background-mod-strong: #2b251e !important;
-    --background-modifier-hover: #241f1a !important;
-    --background-modifier-selected: #262019 !important;
-    --background-modifier-active: #2b251e !important;
-    --background-modifier-accent: #332c23 !important;
-    --text-primary: #f0ede6 !important;
-    --text-secondary: #c0b8aa !important;
-    --text-normal: #f0ede6 !important;
-    --text-default: #f0ede6 !important;
-    --text-muted: #8e8578 !important;
-    --header-primary: #f0ede6 !important;
-    --header-secondary: #c0b8aa !important;
-    --channels-default: #8e8578 !important;
-    --interactive-normal: #c0b8aa !important;
-    --interactive-hover: #f0ede6 !important;
-    --interactive-active: #f0ede6 !important;
-    --interactive-muted: #6a6255 !important;
-    --text-link: #efc02a !important;
-    --brand-experiment: #efc02a !important;
-    --brand-500: #efc02a !important;
-    --brand-560: #efc02a !important;
-    --brand-360: #efc02a !important;
-    --control-brand-foreground: #efc02a !important;
-    --text-brand: #efc02a !important;
+    --background-primary: #111010 !important;
+    --background-secondary: #0a0909 !important;
+    --background-secondary-alt: #191817 !important;
+    --background-tertiary: #0a0909 !important;
+    --background-floating: #191817 !important;
+    --background-nested-floating: #191817 !important;
+    --deprecated-card-bg: #191817 !important;
+    --background-base-lowest: #0a0909 !important;
+    --background-base-lower: #0a0909 !important;
+    --background-base-low: #111010 !important;
+    --app-frame-background: #0a0909 !important;
+    --chat-background: #111010 !important;
+    --chat-background-default: #111010 !important;
+    --home-background: #111010 !important;
+    --background-surface-high: #191817 !important;
+    --background-surface-higher: #201e1c !important;
+    --background-surface-highest: #262421 !important;
+    --bg-surface-raised: #191817 !important;
+    --card-background-default: #191817 !important;
+    --modal-background: #151413 !important;
+    --modal-footer-background: #151413 !important;
+    --channeltextarea-background: #1a1918 !important;
+    --input-background: #1a1918 !important;
+    --background-code: #1a1918 !important;
+    --background-mod-subtle: #201e1c !important;
+    --background-mod-normal: #201e1c !important;
+    --background-mod-muted: #232120 !important;
+    --background-mod-strong: #262421 !important;
+    --background-modifier-hover: #201e1c !important;
+    --background-modifier-selected: #232120 !important;
+    --background-modifier-active: #262421 !important;
+    --background-modifier-accent: #2e2b26 !important;
+    --text-primary: #f6c832 !important;
+    --text-secondary: #d4a92c !important;
+    --text-normal: #f6c832 !important;
+    --text-default: #f6c832 !important;
+    --text-muted: #a5842a !important;
+    --header-primary: #f6c832 !important;
+    --header-secondary: #d4a92c !important;
+    --channels-default: #a5842a !important;
+    --interactive-normal: #d4a92c !important;
+    --interactive-hover: #f6c832 !important;
+    --interactive-active: #f6c832 !important;
+    --interactive-muted: #7a6526 !important;
+    --text-link: #ffd23e !important;
+    --brand-experiment: #ffd23e !important;
+    --brand-500: #ffd23e !important;
+    --brand-560: #ffd23e !important;
+    --brand-360: #ffd23e !important;
+    --control-brand-foreground: #ffd23e !important;
+    --text-brand: #ffd23e !important;
     --status-positive: #5fb55a !important;
     --status-warning: #e08a2a !important;
     --status-danger: #e0503c !important;

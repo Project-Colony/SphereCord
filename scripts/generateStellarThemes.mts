@@ -10,13 +10,17 @@
 //
 // FAN-MADE / UNOFFICIAL. Shift Up publishes no official color codes, so each palette is
 // *derived* from the character's on-screen design (hair, suit, signature glow) and then
-// designed into a usable dark UI: the character's colors set the identity, but the depth
-// ramp and contrast are ours. Colors themselves aren't copyrightable; no game art ships here.
+// designed into a usable UI. No game art ships here.
 //
-// Design rules held across the set:
-//  - neutrals are TINTED toward each character's world (never pure grey) — that's what reads
-//  - accent_blue is the one color a fan names first for that character; all 5 stay distinct
-//  - text_primary clears 4.5:1 on bg_primary (all are ~13:1+ here)
+// Design language (per user direction): DUOTONE. Each character = her surfaces + her ink.
+// The character's signature colors go on TEXT and ACCENT — the things you actually read —
+// while backgrounds stay in her "material" (carbon, black, ceramic…). That's what makes a
+// theme read as the character instead of "dark Discord with tinted links".
+//  - Lily: black / soft-black surfaces, ALL text in amber gold (2 colors, no brown)
+//  - Tachy: carbon-navy surfaces, amber text, orange-glow accent (her 3 suit tones)
+//  - EVE: deep-green blacks, white text (her suit), vivid emerald accent (her glow)
+//  - Kaya: khaki sidebar + dark-lavender chat, lavender text (coat + hair, both visible)
+//  - Enya: LIGHT theme — white ceramic surfaces, near-black text, ice-blue sheen accent
 
 import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -37,47 +41,49 @@ const CHARACTERS: Character[] = [
     {
         key: "eve",
         name: "EVE",
-        blurb: "emerald glow over a white suit",
+        blurb: "white-grey suit, green ink (light theme)",
         colors: {
-            bg_sidebar: "#090e0b",
-            bg_primary: "#0e1410",
-            bg_card: "#151d18",
-            bg_card_hover: "#1c261f",
-            bg_card_pressed: "#232e26",
-            bg_modal_section: "#121a15",
-            bg_input: "#17201a",
-            bg_selected: "#1f2b23",
-            border_subtle: "#27352c",
-            text_primary: "#e9ede9",
-            text_secondary: "#b3c0b6",
-            text_muted: "#7f8c84",
-            text_dim: "#5c6961",
-            accent_blue: "#2fbe4c",
-            success: "#46d46a",
-            warning: "#e0a83a",
-            error: "#e4553f"
+            // her Planet Diving Suit: white/grey ceramic surfaces, the green of her
+            // legs as the ink — light theme, ALL text in green (duotone like Lily)
+            bg_sidebar: "#d3d7d3",
+            bg_primary: "#eceeec",
+            bg_card: "#ffffff",
+            bg_card_hover: "#e2e6e2",
+            bg_card_pressed: "#d7dcd7",
+            bg_modal_section: "#e7eae7",
+            bg_input: "#e0e4e0",
+            bg_selected: "#d9e4da",
+            border_subtle: "#c0c8c1",
+            text_primary: "#1a6b3b",
+            text_secondary: "#2b7d4a",
+            text_muted: "#4e8a63",
+            text_dim: "#6fa082",
+            accent_blue: "#21a04d",
+            success: "#2f9e5c",
+            warning: "#c8861e",
+            error: "#d5493c"
         }
     },
     {
         key: "tachy",
         name: "Tachy",
-        blurb: "carbon black, amber panel, orange glow",
+        blurb: "carbon black, amber text, orange glow",
         colors: {
-            // Her three tones, split by role: carbon -> surfaces, orange glow -> accent,
-            // amber panel -> warning/secondary, the teal glints on her suit -> success.
-            bg_sidebar: "#0a0b11",
-            bg_primary: "#12131b",
-            bg_card: "#191b25",
-            bg_card_hover: "#20222e",
-            bg_card_pressed: "#272a37",
-            bg_modal_section: "#161822",
-            bg_input: "#1a1c26",
-            bg_selected: "#232634",
-            border_subtle: "#2c2f3c",
-            text_primary: "#ecedf2",
-            text_secondary: "#b8bcc8",
-            text_muted: "#868b99",
-            text_dim: "#626775",
+            // her three suit tones, all visible: carbon -> surfaces, amber -> text,
+            // orange glow -> accent; the teal glints on her suit -> success
+            bg_sidebar: "#0a0b10",
+            bg_primary: "#10121a",
+            bg_card: "#171a24",
+            bg_card_hover: "#1e2230",
+            bg_card_pressed: "#252a3a",
+            bg_modal_section: "#141720",
+            bg_input: "#191c28",
+            bg_selected: "#202536",
+            border_subtle: "#2b3040",
+            text_primary: "#f2bc4e",
+            text_secondary: "#d9a133",
+            text_muted: "#a58136",
+            text_dim: "#75612f",
             accent_blue: "#ff7c1e",
             success: "#3fbfa8",
             warning: "#eaa72c",
@@ -87,22 +93,23 @@ const CHARACTERS: Character[] = [
     {
         key: "lily",
         name: "Lily",
-        blurb: "black rig with gold trim",
+        blurb: "amber ink on black",
         colors: {
-            bg_sidebar: "#0c0b09",
-            bg_primary: "#141210",
-            bg_card: "#1c1915",
-            bg_card_hover: "#241f1a",
-            bg_card_pressed: "#2b251e",
-            bg_modal_section: "#191612",
-            bg_input: "#1d1a15",
-            bg_selected: "#262019",
-            border_subtle: "#332c23",
-            text_primary: "#f0ede6",
-            text_secondary: "#c0b8aa",
-            text_muted: "#8e8578",
-            text_dim: "#6a6255",
-            accent_blue: "#efc02a",
+            // strict duotone: neutral blacks (no brown), ALL text in amber gold
+            bg_sidebar: "#0a0909",
+            bg_primary: "#111010",
+            bg_card: "#191817",
+            bg_card_hover: "#201e1c",
+            bg_card_pressed: "#262421",
+            bg_modal_section: "#151413",
+            bg_input: "#1a1918",
+            bg_selected: "#232120",
+            border_subtle: "#2e2b26",
+            text_primary: "#f6c832",
+            text_secondary: "#d4a92c",
+            text_muted: "#a5842a",
+            text_dim: "#7a6526",
+            accent_blue: "#ffd23e",
             success: "#5fb55a",
             warning: "#e08a2a",
             error: "#e0503c"
@@ -111,48 +118,50 @@ const CHARACTERS: Character[] = [
     {
         key: "enya",
         name: "Enya",
-        blurb: "white ceramic armour, ice-blue sheen",
+        blurb: "white ceramic, ice-blue sheen (light theme)",
         colors: {
-            // Her armour is near-white; a white accent would be indistinguishable from body
-            // text, so the accent takes the cool sheen of the ceramic instead.
-            bg_sidebar: "#0d0f13",
-            bg_primary: "#14161a",
-            bg_card: "#1c1f25",
-            bg_card_hover: "#23272e",
-            bg_card_pressed: "#2a2f37",
-            bg_modal_section: "#181b21",
-            bg_input: "#1b1f25",
-            bg_selected: "#252a32",
-            border_subtle: "#313742",
-            text_primary: "#edf1f5",
-            text_secondary: "#b6bec8",
-            text_muted: "#858e9a",
-            text_dim: "#616a76",
-            accent_blue: "#a3cde8",
-            success: "#6fc28e",
-            warning: "#dfb35c",
-            error: "#e2707a"
+            // her armour is white ceramic — only a light theme can say that
+            bg_sidebar: "#d5dae1",
+            bg_primary: "#eef0f3",
+            bg_card: "#ffffff",
+            bg_card_hover: "#e4e8ee",
+            bg_card_pressed: "#d9dfe7",
+            bg_modal_section: "#e9ecf0",
+            bg_input: "#e2e6ec",
+            bg_selected: "#dce3ec",
+            border_subtle: "#c2cad4",
+            text_primary: "#171c23",
+            text_secondary: "#3f4a58",
+            text_muted: "#66727f",
+            text_dim: "#8d97a3",
+            accent_blue: "#3e90c9",
+            success: "#2f9e5c",
+            warning: "#c8861e",
+            error: "#d5493c"
         }
     },
     {
         key: "kaya",
         name: "Kaya",
-        blurb: "lavender hair over a khaki coat",
+        blurb: "lavender ink on deep violet",
         colors: {
-            bg_sidebar: "#0f0d14",
-            bg_primary: "#16131c",
-            bg_card: "#1e1926",
-            bg_card_hover: "#251f2f",
-            bg_card_pressed: "#2c2537",
-            bg_modal_section: "#1a1522",
-            bg_input: "#1f1a28",
-            bg_selected: "#292233",
-            border_subtle: "#342c40",
-            text_primary: "#ede8f2",
-            text_secondary: "#bdb3c8",
-            text_muted: "#8b8298",
-            text_dim: "#675e73",
-            accent_blue: "#bfa3dc",
+            // duotone like Lily: one material, one ink. Deep violet-black surfaces,
+            // ALL text in her hair's lavender; the khaki coat retreats to a small
+            // role (success) — big khaki + lavender slabs side by side clashed.
+            bg_sidebar: "#14111b",
+            bg_primary: "#1a1622",
+            bg_card: "#221d2e",
+            bg_card_hover: "#292338",
+            bg_card_pressed: "#302a42",
+            bg_modal_section: "#1e1928",
+            bg_input: "#241f31",
+            bg_selected: "#2c2540",
+            border_subtle: "#382f4c",
+            text_primary: "#d9c8f0",
+            text_secondary: "#b49ae0",
+            text_muted: "#8d7bae",
+            text_dim: "#6b5c88",
+            accent_blue: "#cfa8ff",
             // her khaki field coat, kept as the positive state
             success: "#8a9455",
             warning: "#d9a441",

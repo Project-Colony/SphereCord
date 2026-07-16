@@ -1,6 +1,6 @@
 /**
  * @name Stellar Blade · Tachy
- * @description Tachy — carbon black, amber panel, orange glow. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @description Tachy — carbon black, amber text, orange glow. Derived from her Stellar Blade design; fan-made, unofficial.
  * @author SphereCord
  * @version 1.0.0
  */
@@ -14,50 +14,50 @@
 .visual-refresh.theme-dark,
 .visual-refresh .theme-light,
 .visual-refresh .theme-dark {
-    --background-primary: #12131b !important;
-    --background-secondary: #0a0b11 !important;
-    --background-secondary-alt: #191b25 !important;
-    --background-tertiary: #0a0b11 !important;
-    --background-floating: #191b25 !important;
-    --background-nested-floating: #191b25 !important;
-    --deprecated-card-bg: #191b25 !important;
-    --background-base-lowest: #0a0b11 !important;
-    --background-base-lower: #0a0b11 !important;
-    --background-base-low: #12131b !important;
-    --app-frame-background: #0a0b11 !important;
-    --chat-background: #12131b !important;
-    --chat-background-default: #12131b !important;
-    --home-background: #12131b !important;
-    --background-surface-high: #191b25 !important;
-    --background-surface-higher: #20222e !important;
-    --background-surface-highest: #272a37 !important;
-    --bg-surface-raised: #191b25 !important;
-    --card-background-default: #191b25 !important;
-    --modal-background: #161822 !important;
-    --modal-footer-background: #161822 !important;
-    --channeltextarea-background: #1a1c26 !important;
-    --input-background: #1a1c26 !important;
-    --background-code: #1a1c26 !important;
-    --background-mod-subtle: #20222e !important;
-    --background-mod-normal: #20222e !important;
-    --background-mod-muted: #232634 !important;
-    --background-mod-strong: #272a37 !important;
-    --background-modifier-hover: #20222e !important;
-    --background-modifier-selected: #232634 !important;
-    --background-modifier-active: #272a37 !important;
-    --background-modifier-accent: #2c2f3c !important;
-    --text-primary: #ecedf2 !important;
-    --text-secondary: #b8bcc8 !important;
-    --text-normal: #ecedf2 !important;
-    --text-default: #ecedf2 !important;
-    --text-muted: #868b99 !important;
-    --header-primary: #ecedf2 !important;
-    --header-secondary: #b8bcc8 !important;
-    --channels-default: #868b99 !important;
-    --interactive-normal: #b8bcc8 !important;
-    --interactive-hover: #ecedf2 !important;
-    --interactive-active: #ecedf2 !important;
-    --interactive-muted: #626775 !important;
+    --background-primary: #10121a !important;
+    --background-secondary: #0a0b10 !important;
+    --background-secondary-alt: #171a24 !important;
+    --background-tertiary: #0a0b10 !important;
+    --background-floating: #171a24 !important;
+    --background-nested-floating: #171a24 !important;
+    --deprecated-card-bg: #171a24 !important;
+    --background-base-lowest: #0a0b10 !important;
+    --background-base-lower: #0a0b10 !important;
+    --background-base-low: #10121a !important;
+    --app-frame-background: #0a0b10 !important;
+    --chat-background: #10121a !important;
+    --chat-background-default: #10121a !important;
+    --home-background: #10121a !important;
+    --background-surface-high: #171a24 !important;
+    --background-surface-higher: #1e2230 !important;
+    --background-surface-highest: #252a3a !important;
+    --bg-surface-raised: #171a24 !important;
+    --card-background-default: #171a24 !important;
+    --modal-background: #141720 !important;
+    --modal-footer-background: #141720 !important;
+    --channeltextarea-background: #191c28 !important;
+    --input-background: #191c28 !important;
+    --background-code: #191c28 !important;
+    --background-mod-subtle: #1e2230 !important;
+    --background-mod-normal: #1e2230 !important;
+    --background-mod-muted: #202536 !important;
+    --background-mod-strong: #252a3a !important;
+    --background-modifier-hover: #1e2230 !important;
+    --background-modifier-selected: #202536 !important;
+    --background-modifier-active: #252a3a !important;
+    --background-modifier-accent: #2b3040 !important;
+    --text-primary: #f2bc4e !important;
+    --text-secondary: #d9a133 !important;
+    --text-normal: #f2bc4e !important;
+    --text-default: #f2bc4e !important;
+    --text-muted: #a58136 !important;
+    --header-primary: #f2bc4e !important;
+    --header-secondary: #d9a133 !important;
+    --channels-default: #a58136 !important;
+    --interactive-normal: #d9a133 !important;
+    --interactive-hover: #f2bc4e !important;
+    --interactive-active: #f2bc4e !important;
+    --interactive-muted: #75612f !important;
     --text-link: #ff7c1e !important;
     --brand-experiment: #ff7c1e !important;
     --brand-500: #ff7c1e !important;

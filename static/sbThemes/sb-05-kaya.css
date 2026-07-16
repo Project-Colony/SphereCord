@@ -1,6 +1,6 @@
 /**
  * @name Stellar Blade · Kaya
- * @description Kaya — lavender hair over a khaki coat. Derived from her Stellar Blade design; fan-made, unofficial.
+ * @description Kaya — lavender ink on deep violet. Derived from her Stellar Blade design; fan-made, unofficial.
  * @author SphereCord
  * @version 1.0.0
  */
@@ -14,57 +14,57 @@
 .visual-refresh.theme-dark,
 .visual-refresh .theme-light,
 .visual-refresh .theme-dark {
-    --background-primary: #16131c !important;
-    --background-secondary: #0f0d14 !important;
-    --background-secondary-alt: #1e1926 !important;
-    --background-tertiary: #0f0d14 !important;
-    --background-floating: #1e1926 !important;
-    --background-nested-floating: #1e1926 !important;
-    --deprecated-card-bg: #1e1926 !important;
-    --background-base-lowest: #0f0d14 !important;
-    --background-base-lower: #0f0d14 !important;
-    --background-base-low: #16131c !important;
-    --app-frame-background: #0f0d14 !important;
-    --chat-background: #16131c !important;
-    --chat-background-default: #16131c !important;
-    --home-background: #16131c !important;
-    --background-surface-high: #1e1926 !important;
-    --background-surface-higher: #251f2f !important;
-    --background-surface-highest: #2c2537 !important;
-    --bg-surface-raised: #1e1926 !important;
-    --card-background-default: #1e1926 !important;
-    --modal-background: #1a1522 !important;
-    --modal-footer-background: #1a1522 !important;
-    --channeltextarea-background: #1f1a28 !important;
-    --input-background: #1f1a28 !important;
-    --background-code: #1f1a28 !important;
-    --background-mod-subtle: #251f2f !important;
-    --background-mod-normal: #251f2f !important;
-    --background-mod-muted: #292233 !important;
-    --background-mod-strong: #2c2537 !important;
-    --background-modifier-hover: #251f2f !important;
-    --background-modifier-selected: #292233 !important;
-    --background-modifier-active: #2c2537 !important;
-    --background-modifier-accent: #342c40 !important;
-    --text-primary: #ede8f2 !important;
-    --text-secondary: #bdb3c8 !important;
-    --text-normal: #ede8f2 !important;
-    --text-default: #ede8f2 !important;
-    --text-muted: #8b8298 !important;
-    --header-primary: #ede8f2 !important;
-    --header-secondary: #bdb3c8 !important;
-    --channels-default: #8b8298 !important;
-    --interactive-normal: #bdb3c8 !important;
-    --interactive-hover: #ede8f2 !important;
-    --interactive-active: #ede8f2 !important;
-    --interactive-muted: #675e73 !important;
-    --text-link: #bfa3dc !important;
-    --brand-experiment: #bfa3dc !important;
-    --brand-500: #bfa3dc !important;
-    --brand-560: #bfa3dc !important;
-    --brand-360: #bfa3dc !important;
-    --control-brand-foreground: #bfa3dc !important;
-    --text-brand: #bfa3dc !important;
+    --background-primary: #1a1622 !important;
+    --background-secondary: #14111b !important;
+    --background-secondary-alt: #221d2e !important;
+    --background-tertiary: #14111b !important;
+    --background-floating: #221d2e !important;
+    --background-nested-floating: #221d2e !important;
+    --deprecated-card-bg: #221d2e !important;
+    --background-base-lowest: #14111b !important;
+    --background-base-lower: #14111b !important;
+    --background-base-low: #1a1622 !important;
+    --app-frame-background: #14111b !important;
+    --chat-background: #1a1622 !important;
+    --chat-background-default: #1a1622 !important;
+    --home-background: #1a1622 !important;
+    --background-surface-high: #221d2e !important;
+    --background-surface-higher: #292338 !important;
+    --background-surface-highest: #302a42 !important;
+    --bg-surface-raised: #221d2e !important;
+    --card-background-default: #221d2e !important;
+    --modal-background: #1e1928 !important;
+    --modal-footer-background: #1e1928 !important;
+    --channeltextarea-background: #241f31 !important;
+    --input-background: #241f31 !important;
+    --background-code: #241f31 !important;
+    --background-mod-subtle: #292338 !important;
+    --background-mod-normal: #292338 !important;
+    --background-mod-muted: #2c2540 !important;
+    --background-mod-strong: #302a42 !important;
+    --background-modifier-hover: #292338 !important;
+    --background-modifier-selected: #2c2540 !important;
+    --background-modifier-active: #302a42 !important;
+    --background-modifier-accent: #382f4c !important;
+    --text-primary: #d9c8f0 !important;
+    --text-secondary: #b49ae0 !important;
+    --text-normal: #d9c8f0 !important;
+    --text-default: #d9c8f0 !important;
+    --text-muted: #8d7bae !important;
+    --header-primary: #d9c8f0 !important;
+    --header-secondary: #b49ae0 !important;
+    --channels-default: #8d7bae !important;
+    --interactive-normal: #b49ae0 !important;
+    --interactive-hover: #d9c8f0 !important;
+    --interactive-active: #d9c8f0 !important;
+    --interactive-muted: #6b5c88 !important;
+    --text-link: #cfa8ff !important;
+    --brand-experiment: #cfa8ff !important;
+    --brand-500: #cfa8ff !important;
+    --brand-560: #cfa8ff !important;
+    --brand-360: #cfa8ff !important;
+    --control-brand-foreground: #cfa8ff !important;
+    --text-brand: #cfa8ff !important;
     --status-positive: #8a9455 !important;
     --status-warning: #d9a441 !important;
     --status-danger: #e06a6a !important;

@@ -42,15 +42,23 @@ const trayPixmapCache = new Map<string, Buffer>();
 let useNativeTray = false;
 let nativeTrayInitialized = false;
 
-async function getCachedTrayImage(variant: TrayVariant): Promise<NativeImage> {
-    const path = await resolveAssetPath(variant);
+// The Electron Tray path wants a small logical-size icon (macOS especially treats the
+// pixel size as points). The native StatusNotifierItem path hands the host a raw pixmap
+// that panels (waybar…) rescale to their slot, so we give it a larger source (64px) to
+// downscale from — a 32px pixmap gets upscaled and blurry on HiDPI bars.
+const ELECTRON_TRAY_SIZE = 32;
+const NATIVE_TRAY_SIZE = 64;
 
-    const cached = trayImageCache.get(path);
+async function getCachedTrayImage(variant: TrayVariant, size = ELECTRON_TRAY_SIZE): Promise<NativeImage> {
+    const path = await resolveAssetPath(variant);
+    const cacheKey = `${size}:${path}`;
+
+    const cached = trayImageCache.get(cacheKey);
     if (cached) return cached;
 
     const image = nativeImage.createFromPath(path);
-    const resized = image.resize({ width: 32, height: 32 });
-    trayImageCache.set(path, resized);
+    const resized = image.resize({ width: size, height: size, quality: "best" });
+    trayImageCache.set(cacheKey, resized);
 
     return resized;
 }
@@ -91,7 +99,7 @@ async function getCachedTrayPixmap(variant: TrayVariant): Promise<Buffer> {
     const cached = trayPixmapCache.get(path);
     if (cached) return cached;
 
-    const image = await getCachedTrayImage(variant);
+    const image = await getCachedTrayImage(variant, NATIVE_TRAY_SIZE);
     const pixmap = await nativeImageToPixmap(image);
     trayPixmapCache.set(path, pixmap);
 

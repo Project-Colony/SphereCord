@@ -34,7 +34,8 @@ jobs:
 
             - name: Install system dependencies
               if: ${{ matrix.platform == 'linux' }}
-              run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev
+              # libarchive-tools (bsdtar) + zstd: needed by fpm to assemble the pacman target
+              run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev libarchive-tools zstd
 
             - name: Install dependencies
               run: bun install

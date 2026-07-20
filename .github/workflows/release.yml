@@ -29,7 +29,7 @@ jobs:
                       platform: windows
 
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
             - uses: oven-sh/setup-bun@v2
 
             - name: Install system dependencies
@@ -63,3 +63,48 @@ jobs:
                   APPLE_API_KEY: apple.p8
                   APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
                   APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+
+    # Sign every release asset with the Project-Colony org key (ed25519).
+    # Colony >= 0.8.0 verifies these signatures on install and REFUSES a
+    # tampered asset. Runs only for tag pushes (a manual dispatch has no
+    # release to sign).
+    sign:
+        name: Sign release assets
+        needs: release
+        if: startsWith(github.ref, 'refs/tags/')
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download release binaries
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  TAG: ${{ github.ref_name }}
+              run: |
+                  mkdir dist
+                  gh release download "$TAG" -R "${{ github.repository }}" --dir dist
+                  # Metadata companions are not signable assets.
+                  rm -f dist/*.sig dist/*.sha256 dist/*.txt dist/*.yml dist/*.json dist/*.asc dist/*.blockmap
+
+            - name: Sign
+              env:
+                  KEY: ${{ secrets.COLONY_SIGNING_KEY_PEM }}
+              run: |
+                  if [ -z "$KEY" ]; then
+                    echo "::error::COLONY_SIGNING_KEY_PEM is not available - the release would ship unsigned."
+                    exit 1
+                  fi
+                  printf '%s' "$KEY" > /tmp/key.pem
+                  chmod 600 /tmp/key.pem
+                  pub=$(mktemp)
+                  openssl pkey -in /tmp/key.pem -pubout -out "$pub"
+                  for f in dist/*; do
+                    openssl pkeyutl -sign -inkey /tmp/key.pem -rawin -in "$f" -out "$f.sig"
+                    openssl pkeyutl -verify -pubin -inkey "$pub" -rawin -in "$f" -sigfile "$f.sig" >/dev/null
+                    echo "signed $(basename "$f")"
+                  done
+                  rm -f /tmp/key.pem
+
+            - name: Upload signatures
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  TAG: ${{ github.ref_name }}
+              run: gh release upload "$TAG" dist/*.sig --clobber

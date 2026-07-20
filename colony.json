@@ -10,5 +10,6 @@
       "tag": "latest",
       "filePattern": "spherecord-*.appimage, !*-arm64*"
     }
-  }
+  },
+  "signed": true
 }

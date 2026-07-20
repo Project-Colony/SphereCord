@@ -1,0 +1,14 @@
+{
+  "name": "SphereCord",
+  "category": "Network",
+  "icon": "build/icons/256x256.png",
+  "platforms": [
+    "linux"
+  ],
+  "releaseFiles": {
+    "linux": {
+      "tag": "latest",
+      "filePattern": "spherecord-*.appimage, !*-arm64*"
+    }
+  }
+}

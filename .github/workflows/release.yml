@@ -2,15 +2,46 @@ name: Release
 
 on:
     push:
+        # release-please watches main and opens a release PR; merging it creates
+        # the tag + release, which then runs the build below.
+        branches: [main]
+        # Manual tags still work, for a release cut by hand.
         tags:
             - v*
     workflow_dispatch:
 
 permissions:
     contents: write
+    pull-requests: write
 
 jobs:
+    # Keeps a release PR up to date from conventional commits (feat/fix/...).
+    # Merging that PR bumps package.json, writes the changelog, and publishes
+    # the tag + GitHub release.
+    release-please:
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        outputs:
+            release_created: ${{ steps.release.outputs.release_created }}
+            tag_name: ${{ steps.release.outputs.tag_name }}
+        steps:
+            - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+              id: release
+              with:
+                  release-type: node
+
     release:
+        needs: [release-please]
+        # Build when release-please just published a release, or for the manual
+        # paths (tag push / dispatch), where release-please is skipped.
+        # release-please's own tag is pushed with GITHUB_TOKEN, which does NOT
+        # trigger workflows — hence chaining on its output instead of the tag.
+        if: >-
+            always() && (
+              needs.release-please.outputs.release_created == 'true' ||
+              startsWith(github.ref, 'refs/tags/') ||
+              github.event_name == 'workflow_dispatch'
+            )
         runs-on: ${{ matrix.os }}
         # macOS needs Apple signing secrets that aren't configured yet — let it fail
         # without cancelling or failing the Windows/Linux builds.
@@ -66,18 +97,22 @@ jobs:
 
     # Sign every release asset with the Project-Colony org key (ed25519).
     # Colony >= 0.8.0 verifies these signatures on install and REFUSES a
-    # tampered asset. Runs only for tag pushes (a manual dispatch has no
-    # release to sign).
+    # tampered asset. Runs for both release paths — release-please and a manual
+    # tag — but not for a bare dispatch, which has no release to sign.
     sign:
         name: Sign release assets
-        needs: release
-        if: startsWith(github.ref, 'refs/tags/')
+        needs: [release-please, release]
+        if: >-
+            always() && needs.release.result == 'success' && (
+              needs.release-please.outputs.release_created == 'true' ||
+              startsWith(github.ref, 'refs/tags/')
+            )
         runs-on: ubuntu-latest
         steps:
             - name: Download release binaries
               env:
                   GH_TOKEN: ${{ github.token }}
-                  TAG: ${{ github.ref_name }}
+                  TAG: ${{ needs.release-please.outputs.tag_name || github.ref_name }}
               run: |
                   mkdir dist
                   gh release download "$TAG" -R "${{ github.repository }}" --dir dist
@@ -106,5 +141,5 @@ jobs:
             - name: Upload signatures
               env:
                   GH_TOKEN: ${{ github.token }}
-                  TAG: ${{ github.ref_name }}
+                  TAG: ${{ needs.release-please.outputs.tag_name || github.ref_name }}
               run: gh release upload "$TAG" dist/*.sig --clobber

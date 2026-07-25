@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.1](https://github.com/Project-Colony/SphereCord/compare/v3.3.0...v3.3.1) (2026-07-25)
+
+
+### Bug Fixes
+
+* **ci:** pass -R when uploading signatures so releases ship signed ([ba55762](https://github.com/Project-Colony/SphereCord/commit/ba557629b07c47209f4e25658e276f0b8c2e0944))
+
 ## [3.3.0](https://github.com/Project-Colony/SphereCord/compare/v3.2.7...v3.3.0) (2026-07-25)
 
 

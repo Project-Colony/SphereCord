@@ -138,8 +138,10 @@ jobs:
                   done
                   rm -f /tmp/key.pem
 
+            # -R is required: this job never checks out the repo, so gh has no git
+            # context to infer it from (without it: "fatal: not a git repository").
             - name: Upload signatures
               env:
                   GH_TOKEN: ${{ github.token }}
                   TAG: ${{ needs.release-please.outputs.tag_name || github.ref_name }}
-              run: gh release upload "$TAG" dist/*.sig --clobber
+              run: gh release upload "$TAG" dist/*.sig --clobber -R "${{ github.repository }}"

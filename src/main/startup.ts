@@ -35,7 +35,7 @@ function init() {
 
     installColonyThemes();
 
-    const { disableSmoothScroll, hardwareAcceleration, hardwareVideoAcceleration, webrtcIpLeakGuard } = Settings.store;
+    const { disableSmoothScroll, hardwareAcceleration, hardwareVideoAcceleration } = Settings.store;
     const { launchArguments } = State.store;
 
     const enabledFeatures = new Set(app.commandLine.getSwitchValue("enable-features").split(","));
@@ -82,7 +82,13 @@ function init() {
                 if (eqIndex !== -1) {
                     const key = cleanArg.slice(2, eqIndex);
                     const value = cleanArg.slice(eqIndex + 1);
-                    app.commandLine.appendSwitch(key, value);
+                    if (key === "enable-features") {
+                        value.split(",").forEach(feature => enabledFeatures.add(feature));
+                    } else if (key === "disable-features") {
+                        value.split(",").forEach(feature => disabledFeatures.add(feature));
+                    } else {
+                        app.commandLine.appendSwitch(key, value);
+                    }
                 } else {
                     app.commandLine.appendSwitch(cleanArg.slice(2));
                 }
@@ -92,14 +98,6 @@ function init() {
     }
 
     app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
-
-    // Privacy: keep WebRTC (voice/screenshare) from exposing local/public IPs via ICE
-    // candidates. `default_public_interface_only` is the least-aggressive policy, and
-    // mDNS obfuscates local IPs. Opt-in (may affect voice on some NATs).
-    if (webrtcIpLeakGuard) {
-        app.commandLine.appendSwitch("force-webrtc-ip-handling-policy", "default_public_interface_only");
-        enabledFeatures.add("WebRtcHideLocalIpsWithMdns");
-    }
 
     disabledFeatures.add("WinRetrieveSuggestionsOnlyOnDemand");
     disabledFeatures.add("HardwareMediaKeyHandling");
@@ -159,4 +157,13 @@ app.on("open-url", (_, url) => {
 
 app.on("window-all-closed", () => {
     if (process.platform !== "darwin") app.quit();
+});
+
+app.on("web-contents-created", (_event, contents) => {
+    contents.setWebRTCIPHandlingPolicy(Settings.store.webRTCIPHandlingPolicy ?? "default");
+});
+Settings.addChangeListener("webRTCIPHandlingPolicy", () => {
+    for (const win of BrowserWindow.getAllWindows()) {
+        win.webContents.setWebRTCIPHandlingPolicy(Settings.store.webRTCIPHandlingPolicy ?? "default");
+    }
 });

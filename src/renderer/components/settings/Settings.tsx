@@ -22,6 +22,7 @@ import { OutdatedVesktopWarning } from "./OutdatedVesktopWarning";
 import { Updater } from "./Updater";
 import { UserAssetsButton } from "./UserAssets";
 import { VesktopSettingsSwitch } from "./VesktopSettingsSwitch";
+import { WebRTCIPHandlingPolicyPicker } from "./WebRTCIPHandlingPolicyPicker";
 import { WindowsTransparencyControls } from "./WindowsTransparencyControls";
 
 interface BooleanSetting {
@@ -107,13 +108,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
                 "Blocks Discord's science/metrics/tracking beacons and Sentry crash reports at the network level. Recommended; takes effect immediately.",
             defaultValue: true
         },
-        {
-            key: "webrtcIpLeakGuard",
-            title: "WebRTC IP-leak guard",
-            description:
-                "Stops voice & screenshare from exposing your local/public IP via WebRTC. May affect voice quality on some networks. Requires a full restart.",
-            defaultValue: false
-        }
+        WebRTCIPHandlingPolicyPicker
     ],
     Behaviour: [
         {

@@ -26,7 +26,7 @@ import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { buildThemeCss } from "./utils/themeCss.mjs";
+import { buildThemeCss, type ManifestEntry, renderManifestModule, toManifestEntry } from "./utils/themeCss.mjs";
 
 const OUT_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "static", "sbThemes");
 
@@ -173,19 +173,29 @@ const CHARACTERS: Character[] = [
 await rm(OUT_DIR, { recursive: true, force: true });
 await mkdir(OUT_DIR, { recursive: true });
 
+const manifest: ManifestEntry[] = [];
 let index = 0;
 for (const c of CHARACTERS) {
     const order = String(++index).padStart(2, "0");
+    const display = `Stellar Blade · ${c.name}`;
     const css = buildThemeCss(
         {
-            name: `Stellar Blade · ${c.name}`,
+            name: display,
             description: `${c.name} — ${c.blurb}. Derived from her Stellar Blade design; fan-made, unofficial.`,
             author: "SphereCord"
         },
         c.colors
     );
-    await writeFile(join(OUT_DIR, `sb-${order}-${c.key}.css`), css, "utf-8");
+    const file = `sb-${order}-${c.key}.css`;
+    await writeFile(join(OUT_DIR, file), css, "utf-8");
+    manifest.push(toManifestEntry(file, display, "Stellar Blade", c.name, c.colors));
 }
+
+await writeFile(
+    join(dirname(fileURLToPath(import.meta.url)), "..", "src", "shared", "themes", "stellar.ts"),
+    renderManifestModule("STELLAR_THEMES", "scripts/generateStellarThemes.mts", manifest),
+    "utf-8"
+);
 
 const written = (await readdir(OUT_DIR)).filter(f => f.endsWith(".css"));
 console.log(`Generated ${written.length} Stellar Blade themes into static/sbThemes/`);

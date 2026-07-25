@@ -14,7 +14,7 @@ import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { buildThemeCss } from "./utils/themeCss.mjs";
+import { buildThemeCss, type ManifestEntry, renderManifestModule, toManifestEntry } from "./utils/themeCss.mjs";
 
 const COLONY_RAW = "https://raw.githubusercontent.com/Project-Colony/colony/main";
 const THEME_RS_URL = `${COLONY_RAW}/src/ui/theme.rs`;
@@ -94,6 +94,7 @@ await rm(OUT_DIR, { recursive: true, force: true });
 await mkdir(OUT_DIR, { recursive: true });
 // Walk Colony's launcher order. The order index goes into the FILENAME (Equicord keeps
 // file order for unpinned themes); the @name is "Family · Variant" with Colony's labels.
+const manifest: ManifestEntry[] = [];
 let index = 0;
 for (const { family, variant, palette } of entries) {
     // Stellar Blade lives in Colony too now, but SphereCord ships it separately
@@ -116,8 +117,16 @@ for (const { family, variant, palette } of entries) {
         },
         colors
     );
-    await writeFile(join(OUT_DIR, `colony-${order}-${kebab(palette)}.css`), css, "utf-8");
+    const file = `colony-${order}-${kebab(palette)}.css`;
+    await writeFile(join(OUT_DIR, file), css, "utf-8");
+    manifest.push(toManifestEntry(file, display, fam, vari, colors));
 }
+
+await writeFile(
+    join(dirname(fileURLToPath(import.meta.url)), "..", "src", "shared", "themes", "colony.ts"),
+    renderManifestModule("COLONY_THEMES", "scripts/generateColonyThemes.mts", manifest),
+    "utf-8"
+);
 
 const written = (await readdir(OUT_DIR)).filter(f => f.endsWith(".css"));
 console.log(`Generated ${written.length} Colony themes into static/colonyThemes/`);

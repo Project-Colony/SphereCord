@@ -86,6 +86,96 @@ export interface ThemeMeta {
     version?: string;
 }
 
+// ── Gallery manifest ──────────────────────────────────────────────────────────
+// Each generator also emits a typed TS module listing the themes it produced, so
+// the Themes gallery in the SphereCord Settings tab can draw preview swatches
+// without reading or parsing CSS at runtime. Generated modules are committed.
+
+export interface ManifestEntry {
+    file: string;
+    name: string;
+    family: string;
+    variant: string;
+    dark: boolean;
+    swatch: { bg: string; sidebar: string; card: string; text: string; accent: string };
+}
+
+/** WCAG relative luminance, used only to decide the light/dark chip. */
+function isDark(hex: string): boolean {
+    const h = hex.replace("#", "");
+    const channel = (i: number) => {
+        const c = parseInt(h.slice(i, i + 2), 16) / 255;
+        return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+    };
+    return 0.2126 * channel(0) + 0.7152 * channel(2) + 0.0722 * channel(4) < 0.35;
+}
+
+export function toManifestEntry(
+    file: string,
+    name: string,
+    family: string,
+    variant: string,
+    colors: Record<string, string>
+): ManifestEntry {
+    const bg = colors.bg_primary;
+    return {
+        file,
+        name,
+        family,
+        variant,
+        dark: isDark(bg),
+        swatch: {
+            bg,
+            sidebar: colors.bg_sidebar,
+            card: colors.bg_card,
+            text: colors.text_primary,
+            accent: colors.accent_blue
+        }
+    };
+}
+
+/**
+ * Render a generated `shared/themes/<set>.ts` module for the gallery.
+ * Emitted in the repo's prettier style (unquoted keys, 4-space indent) so a
+ * regeneration never leaves lint errors behind.
+ */
+export function renderManifestModule(exportName: string, source: string, entries: ManifestEntry[]): string {
+    const str = (s: string) => `"${s.replace(/["\\]/g, "\\$&")}"`;
+    const body = entries
+        .map(
+            e => `    {
+        file: ${str(e.file)},
+        name: ${str(e.name)},
+        family: ${str(e.family)},
+        variant: ${str(e.variant)},
+        dark: ${e.dark},
+        swatch: {
+            bg: ${str(e.swatch.bg)},
+            sidebar: ${str(e.swatch.sidebar)},
+            card: ${str(e.swatch.card)},
+            text: ${str(e.swatch.text)},
+            accent: ${str(e.swatch.accent)}
+        }
+    }`
+        )
+        .join(",\n");
+
+    return `/*
+ * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Copyright (c) 2025 Vendicated and Vesktop contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+// GENERATED — do not edit by hand. Run \`bun run ${source}\` to regenerate.
+
+import type { BundledTheme } from "./types";
+
+export const ${exportName}: BundledTheme[] = [
+${body}
+];
+`;
+}
+
 /**
  * Build a Discord (Vencord) theme stylesheet from a palette.
  *

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.3](https://github.com/Project-Colony/SphereCord/compare/v3.3.2...v3.3.3) (2026-07-29)
+
+
+### Bug Fixes
+
+* **build:** don't fail packaging for targets arRPC can't be built for ([34b1ea3](https://github.com/Project-Colony/SphereCord/commit/34b1ea3a3650673669d335801d59e176cfd6316d))
+
 ## [3.3.2](https://github.com/Project-Colony/SphereCord/compare/v3.3.1...v3.3.2) (2026-07-29)
 
 

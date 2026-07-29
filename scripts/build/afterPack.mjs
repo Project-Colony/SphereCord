@@ -3,6 +3,12 @@ import { join } from "path";
 
 import { addAssetsCar } from "./addAssetsCar.mjs";
 
+// Platform/arch combinations arRPC genuinely cannot be built for, so a missing binary
+// there is expected rather than a packaging mistake. Bun has no windows-arm64 compile
+// target (see TARGETS in scripts/build/compileArrpc.mts), so those builds ship without
+// Rich Presence — Windows on ARM runs the x64 build under emulation anyway.
+const ARRPC_UNSUPPORTED = new Set(["win32-arm64"]);
+
 async function copyArRPCBinaries(context) {
     const { electronPlatformName, arch, appOutDir } = context;
 
@@ -33,6 +39,8 @@ async function copyArRPCBinaries(context) {
         const binaryDestPath = join(arrpcDestDir, destBinaryName);
         console.log(`Copying arRPC binary: ${binaryName} -> ${destBinaryName}...`);
         cpSync(binarySourcePath, binaryDestPath);
+    } else if (ARRPC_UNSUPPORTED.has(`${electronPlatformName}-${archString}`)) {
+        console.warn(`arRPC has no ${electronPlatformName}-${archString} build — packaging without Rich Presence.`);
     } else {
         // resources/arrpc is the ONLY shipped copy — the one inside app.asar is excluded
         // from build.files, and arrpc/index.ts refuses to spawn anything under .asar anyway.

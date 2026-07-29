@@ -6,7 +6,9 @@
 
 import { execSync } from "child_process";
 import { BuildContext, BuildOptions, context } from "esbuild";
+import { readdirSync, rmSync } from "fs";
 import { copyFile } from "fs/promises";
+import { join } from "path";
 
 import vencordDep from "./vencordDep.mjs";
 import { includeDirPlugin } from "./includeDirPlugin.mts";
@@ -23,7 +25,11 @@ try {
 const CommonOpts: BuildOptions = {
     minify: !isDev,
     bundle: true,
-    sourcemap: "linked",
+    // Dev only: nothing consumes these in a packaged build. source-map-support is never
+    // imported, and renderer.js is injected via webFrame.executeJavaScript rather than
+    // loaded as a file, so its sourceMappingURL resolves against discord.com and 404s.
+    // Emitting them only added ~1.7 MB to app.asar. Use `bun start:dev` to get them back.
+    sourcemap: isDev ? "linked" : false,
     logLevel: "info"
 };
 
@@ -41,6 +47,23 @@ const NodeCommonOpts: BuildOptions = {
         EQUIBOP_GIT_HASH: JSON.stringify(gitHash)
     }
 };
+
+// esbuild never removes files it didn't write this run, so maps left by an earlier dev
+// build would keep being packaged into app.asar long after we stopped emitting them.
+function removeStaleSourcemaps() {
+    if (isDev) return;
+
+    const outDir = join(import.meta.dirname, "..", "..", "dist", "js");
+    try {
+        for (const file of readdirSync(outDir)) {
+            if (file.endsWith(".map")) rmSync(join(outDir, file), { force: true });
+        }
+    } catch {
+        // no dist/js yet (fresh checkout / CI) — nothing to clean
+    }
+}
+
+removeStaleSourcemaps();
 
 const contexts = [] as BuildContext[];
 async function createContext(options: BuildOptions) {

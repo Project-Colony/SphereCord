@@ -34,8 +34,14 @@ async function copyArRPCBinaries(context) {
         console.log(`Copying arRPC binary: ${binaryName} -> ${destBinaryName}...`);
         cpSync(binarySourcePath, binaryDestPath);
     } else {
-        console.warn(`Warning: arRPC binary not found: ${binarySourcePath}`);
-        console.warn("Run 'bun compileArrpc' to build arRPC binaries");
+        // resources/arrpc is the ONLY shipped copy — the one inside app.asar is excluded
+        // from build.files, and arrpc/index.ts refuses to spawn anything under .asar anyway.
+        // So a missing binary here means shipping an app whose Rich Presence silently never
+        // starts; fail the build instead of warning into a log nobody reads.
+        throw new Error(
+            `arRPC binary not found: ${binarySourcePath}\n` +
+                "Run 'bun compileArrpc' to build the arRPC binaries before packaging."
+        );
     }
 }
 

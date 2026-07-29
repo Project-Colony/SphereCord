@@ -1,5 +1,5 @@
 import { execSync } from "child_process";
-import { existsSync, mkdirSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "fs";
 import { join, parse } from "path";
 
 const OUTPUT_DIR = join(import.meta.dir, "..", "..", "static/dist");
@@ -59,6 +59,71 @@ if (!existsSync(ARRPC_ENTRY)) {
 }
 
 mkdirSync(OUTPUT_DIR, { recursive: true });
+
+// `bun --compile` inlines detectable.json into every binary as a JS object literal, so
+// each field is paid for in the arRPC child's startup memory (~276 MB peak today).
+// These three are pure payload: 60k+ instances across ~24k entries that nothing in
+// arrpc-bun ever reads. Dropping them cuts the startup peak by ~90 MB and ~7 MB off
+// each binary. Runs before compiling, and is idempotent (deleting an absent key is a
+// no-op), so a rebuild without a fresh `updateArrpcDB` stays correct.
+const DEAD_DB_FIELDS = ["third_party_skus", "content_classification", "cover_image_hash"];
+const DETECTABLE_DB = join(ARRPC_DIR, "detectable.json");
+
+/**
+ * Fail loudly if a future arrpc-bun release starts reading one of the fields we strip —
+ * an entry-count assertion can't catch that, and silently shipping a DB missing data the
+ * runtime now needs would break game detection with no error.
+ */
+function assertDbFieldsUnused() {
+	const srcDir = join(ARRPC_DIR, "src");
+	if (!existsSync(srcDir)) return;
+
+	for (const rel of readdirSync(srcDir, { recursive: true, encoding: "utf8" })) {
+		if (!/\.(ts|tsx|js|mjs|cjs)$/.test(rel)) continue;
+		const full = join(srcDir, rel);
+		if (!statSync(full).isFile()) continue;
+
+		const source = readFileSync(full, "utf8");
+		for (const field of DEAD_DB_FIELDS) {
+			if (source.includes(field)) {
+				throw new Error(
+					`compileArrpc: arrpc-bun now references "${field}" (src/${rel}).\n` +
+						"Remove it from DEAD_DB_FIELDS — pruning it would break game detection."
+				);
+			}
+		}
+	}
+}
+
+function pruneDetectableDb() {
+	if (!existsSync(DETECTABLE_DB)) return;
+	assertDbFieldsUnused();
+
+	const before = statSync(DETECTABLE_DB).size;
+	const entries = JSON.parse(readFileSync(DETECTABLE_DB, "utf8"));
+	if (!Array.isArray(entries)) return;
+
+	let removed = 0;
+	for (const entry of entries) {
+		for (const field of DEAD_DB_FIELDS) {
+			if (field in entry) {
+				delete entry[field];
+				removed++;
+			}
+		}
+	}
+
+	if (!removed) return;
+
+	writeFileSync(DETECTABLE_DB, JSON.stringify(entries));
+	const after = statSync(DETECTABLE_DB).size;
+	console.log(
+		`Pruned ${removed} unused fields from detectable.json ` +
+			`(${(before / 1e6).toFixed(1)} MB -> ${(after / 1e6).toFixed(1)} MB)\n`
+	);
+}
+
+pruneDetectableDb();
 
 const isCI = process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true";
 const currentPlatform = process.platform === "win32" ? "windows" : process.platform;

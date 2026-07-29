@@ -4,17 +4,19 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync } from "fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync } from "fs";
 import { join } from "path";
 import { STATIC_DIR } from "shared/paths";
 
 import { VENCORD_THEMES_DIR } from "./constants";
 
-// Each bundled theme set: the static/ folder it ships in, and the filename prefix its
-// generated files use (also what we sweep so renames/removals leave no stale duplicates).
+// Each bundled theme set: the static/ folder it ships in, and the pattern its generated
+// files match. The pattern requires the order number the generators emit
+// (colony-07-…, sb-02-…) so sweeping stale files can't eat a user theme that merely
+// starts with the same word.
 const THEME_SETS = [
-    { dir: "colonyThemes", prefix: "colony-", label: "Colony" },
-    { dir: "sbThemes", prefix: "sb-", label: "Stellar Blade" }
+    { dir: "colonyThemes", generated: /^colony-\d+-.*\.css$/i, label: "Colony" },
+    { dir: "sbThemes", generated: /^sb-\d+-.*\.css$/i, label: "Stellar Blade" }
 ] as const;
 
 // Auto-install the bundled themes into the Vencord themes directory on every launch,
@@ -27,14 +29,31 @@ export function installColonyThemes() {
 
         try {
             mkdirSync(VENCORD_THEMES_DIR, { recursive: true });
-            // Remove previously-installed themes from this set first so renames/removals
-            // (e.g. the order-prefixed filenames) never leave stale duplicates behind.
-            const stale = new RegExp(`^${set.prefix}.*\\.css$`, "i");
-            for (const file of readdirSync(VENCORD_THEMES_DIR)) {
-                if (stale.test(file)) rmSync(join(VENCORD_THEMES_DIR, file), { force: true });
-            }
+
+            // Copy only what actually differs. Rewriting all 57 files on every launch cost
+            // ~7 ms of the synchronous pre-window path and, worse, fired ~114 inotify events
+            // into the themes watcher while Discord was still booting.
+            // Compare CONTENT, not mtime: copyFileSync doesn't preserve it, and in a packaged
+            // build the source lives in app.asar, whose entry mtimes are synthesised per
+            // archive open — an mtime check would copy everything every time.
+            const shipped = new Set<string>();
             for (const file of readdirSync(src)) {
-                if (file.endsWith(".css")) copyFileSync(join(src, file), join(VENCORD_THEMES_DIR, file));
+                if (!file.endsWith(".css")) continue;
+                shipped.add(file);
+
+                const dest = join(VENCORD_THEMES_DIR, file);
+                const incoming = readFileSync(join(src, file));
+                if (existsSync(dest) && incoming.equals(readFileSync(dest))) continue;
+
+                copyFileSync(join(src, file), dest);
+            }
+
+            // Sweep themes this set generated in a previous version but no longer ships,
+            // so renames and removals leave no stale duplicates behind.
+            for (const file of readdirSync(VENCORD_THEMES_DIR)) {
+                if (set.generated.test(file) && !shipped.has(file)) {
+                    rmSync(join(VENCORD_THEMES_DIR, file), { force: true });
+                }
             }
         } catch (e) {
             console.error(`Failed to install ${set.label} themes:`, e);

@@ -80,6 +80,7 @@
             "!node_modules",
             "dist/js",
             "static",
+            "!static/dist/arrpc-*",
             "package.json",
             "LICENSE"
         ],

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.2](https://github.com/Project-Colony/SphereCord/compare/v3.3.1...v3.3.2) (2026-07-29)
+
+
+### Performance Improvements
+
+* cut the install by a third and the arRPC startup peak by 100 MB ([a36b48c](https://github.com/Project-Colony/SphereCord/commit/a36b48c7172c6c0e1730a5fbf47f9355695e1ddc))
+
 ## [3.3.1](https://github.com/Project-Colony/SphereCord/compare/v3.3.0...v3.3.1) (2026-07-25)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.4](https://github.com/Project-Colony/SphereCord/compare/v3.3.3...v3.3.4) (2026-10-03)
+
+
+### Bug Fixes
+
+* **package:** `toolset` -&gt; `toolsets` ([#1333](https://github.com/Project-Colony/SphereCord/issues/1333)) ([303e8c0](https://github.com/Project-Colony/SphereCord/commit/303e8c03ce7a65cf3dcccbb9f298119aa085711d))
+
 ## [3.3.3](https://github.com/Project-Colony/SphereCord/compare/v3.3.2...v3.3.3) (2026-07-29)
 
 

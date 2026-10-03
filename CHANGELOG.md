@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.5](https://github.com/Project-Colony/SphereCord/compare/v3.3.4...v3.3.5) (2026-10-03)
+
+
+### Bug Fixes
+
+* **tray:** use SphereCord artwork for every status icon ([d241e3d](https://github.com/Project-Colony/SphereCord/commit/d241e3d386df67c12bf835d563ac9d8da832b7ef))
+
 ## [3.3.4](https://github.com/Project-Colony/SphereCord/compare/v3.3.3...v3.3.4) (2026-10-03)
 
 

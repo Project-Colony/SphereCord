@@ -19,6 +19,7 @@ import {
 } from "electron";
 import { IpcCommands, IpcEvents } from "shared/IpcEvents";
 import { STATIC_DIR } from "shared/paths";
+import { debounce } from "shared/utils/debounce";
 import { isTruthy } from "shared/utils/guards";
 import { once } from "shared/utils/once";
 import type { SettingsStore } from "shared/utils/SettingsStore";
@@ -217,13 +218,16 @@ function initWindowBoundsListeners(win: BrowserWindow) {
     win.on("restore", saveState);
 
     const saveBounds = () => {
-        if (win.isMaximized()) return;
+        if (win.isDestroyed() || win.isMaximized()) return;
 
         State.store.windowBounds = win.getBounds();
     };
+    // Every bounds change rewrites state.json synchronously, and a drag fires dozens per second
+    const saveBoundsSoon = debounce(saveBounds, 500);
 
-    win.on("resize", saveBounds);
-    win.on("move", saveBounds);
+    win.on("resize", saveBoundsSoon);
+    win.on("move", saveBoundsSoon);
+    win.on("close", saveBounds);
 }
 
 function initSettingsListeners(win: BrowserWindow) {

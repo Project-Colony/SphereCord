@@ -22,6 +22,7 @@ function getPlatform() {
     return "unknown";
 }
 
-export const isWindows = getPlatform() === "windows";
-export const isMac = getPlatform() === "macos";
-export const isLinux = getPlatform() === "linux";
+const platform = getPlatform();
+export const isWindows = platform === "windows";
+export const isMac = platform === "macos";
+export const isLinux = platform === "linux";

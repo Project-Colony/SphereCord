@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.3.6](https://github.com/Project-Colony/SphereCord/compare/v3.3.5...v3.3.6) (2026-11-02)
+
+
+### Bug Fixes
+
+* **deps:** sync Equibop upstream through Electron 44.9.3 ([9bb749c](https://github.com/Project-Colony/SphereCord/commit/9bb749cf8e5a4f74221e9e5e7456fe676e98b6d8))
+* **spellcheck:** don't crash the language menu before Discord loads its search control ([e943a62](https://github.com/Project-Colony/SphereCord/commit/e943a626feb1f22b8fb58b033f613d93a0fb7fdc))
+* **spellcheck:** load each regional dictionary once ([25af94d](https://github.com/Project-Colony/SphereCord/commit/25af94dd67645d13d28d348f99d58c4b3e54d71d))
+* **splash:** let the progress bar reach 100% ([c68cb60](https://github.com/Project-Colony/SphereCord/commit/c68cb60fe4ce94fe3cad9d1f860366c65af0197c))
+
+
+### Performance Improvements
+
+* **arrpc:** keep only the database fields arrpc-bun reads ([90ca8bb](https://github.com/Project-Colony/SphereCord/commit/90ca8bbf42a62a6d74176fee7472d88e63354cfd))
+* **renderer:** resolve the platform once ([c08169f](https://github.com/Project-Colony/SphereCord/commit/c08169f782fb806d8d9d6a3c56da618a7ab439c0))
+* **window:** debounce window bounds persistence ([72c2946](https://github.com/Project-Colony/SphereCord/commit/72c2946e671aa7500bf527d8826415999384bafe))
+
 ## [3.3.5](https://github.com/Project-Colony/SphereCord/compare/v3.3.4...v3.3.5) (2026-10-03)
 
 

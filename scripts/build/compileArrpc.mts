@@ -61,20 +61,36 @@ if (!existsSync(ARRPC_ENTRY)) {
 mkdirSync(OUTPUT_DIR, { recursive: true });
 
 // `bun --compile` inlines detectable.json into every binary as a JS object literal, so
-// each field is paid for in the arRPC child's startup memory (~276 MB peak today).
-// These three are pure payload: 60k+ instances across ~24k entries that nothing in
-// arrpc-bun ever reads. Dropping them cuts the startup peak by ~90 MB and ~7 MB off
-// each binary. Runs before compiling, and is idempotent (deleting an absent key is a
-// no-op), so a rebuild without a fresh `updateArrpcDB` stays correct.
-const DEAD_DB_FIELDS = ["third_party_skus", "content_classification", "cover_image_hash"];
+// each field is paid for in the arRPC child's memory. arrpc-bun only reads these four
+// fields of a database entry; the rest (icon hashes, themes, overlay flags, SKUs) is
+// pure payload. Runs before compiling, and is idempotent, so a rebuild without a fresh
+// `updateArrpcDB` stays correct.
+const KEPT_DB_FIELDS = ["id", "name", "executables", "aliases"];
+// The keys Discord ships today, checked against arrpc-bun's source below. A key Discord adds
+// later is stripped too but only warned about: a common name such as "type" or "flags" would
+// match unrelated reads in arrpc-bun and fail every install.
+const KNOWN_DEAD_FIELDS = [
+	"content_classification",
+	"cover_image_hash",
+	"hook",
+	"icon_hash",
+	"linked_applications",
+	"overlay",
+	"overlay_compatibility_hook",
+	"overlay_methods",
+	"overlay_warn",
+	"themes",
+	"third_party_skus"
+];
 const DETECTABLE_DB = join(ARRPC_DIR, "detectable.json");
 
 /**
- * Fail loudly if a future arrpc-bun release starts reading one of the fields we strip —
+ * Fail loudly if a future arrpc-bun release starts reading one of the fields we strip:
  * an entry-count assertion can't catch that, and silently shipping a DB missing data the
- * runtime now needs would break game detection with no error.
+ * runtime now needs would break game detection with no error. Reads of the same names on
+ * user-supplied `customEntry` objects don't touch the database and are fine.
  */
-function assertDbFieldsUnused() {
+function assertDbFieldsUnused(stripped: string[]) {
 	const srcDir = join(ARRPC_DIR, "src");
 	if (!existsSync(srcDir)) return;
 
@@ -84,11 +100,12 @@ function assertDbFieldsUnused() {
 		if (!statSync(full).isFile()) continue;
 
 		const source = readFileSync(full, "utf8");
-		for (const field of DEAD_DB_FIELDS) {
-			if (source.includes(field)) {
+		for (const field of stripped) {
+			// shortcut: misses destructuring and bracket access, add them if arrpc-bun starts using either
+			if (new RegExp(`(?<!customEntry)\\.${field}\\b`).test(source)) {
 				throw new Error(
-					`compileArrpc: arrpc-bun now references "${field}" (src/${rel}).\n` +
-						"Remove it from DEAD_DB_FIELDS — pruning it would break game detection."
+					`compileArrpc: arrpc-bun now reads "${field}" (src/${rel}).\n` +
+						"Add it to KEPT_DB_FIELDS, pruning it would break game detection."
 				);
 			}
 		}
@@ -97,28 +114,25 @@ function assertDbFieldsUnused() {
 
 function pruneDetectableDb() {
 	if (!existsSync(DETECTABLE_DB)) return;
-	assertDbFieldsUnused();
 
 	const before = statSync(DETECTABLE_DB).size;
 	const entries = JSON.parse(readFileSync(DETECTABLE_DB, "utf8"));
 	if (!Array.isArray(entries)) return;
 
-	let removed = 0;
-	for (const entry of entries) {
-		for (const field of DEAD_DB_FIELDS) {
-			if (field in entry) {
-				delete entry[field];
-				removed++;
-			}
-		}
-	}
+	const stripped = [...new Set(entries.flatMap(Object.keys))].filter(k => !KEPT_DB_FIELDS.includes(k));
+	if (!stripped.length) return;
+	assertDbFieldsUnused(stripped.filter(k => KNOWN_DEAD_FIELDS.includes(k)));
+	const unknown = stripped.filter(k => !KNOWN_DEAD_FIELDS.includes(k));
+	if (unknown.length) console.warn(`compileArrpc: stripped new detectable.json keys unchecked: ${unknown.join(", ")}`);
 
-	if (!removed) return;
+	for (const entry of entries) {
+		for (const field of stripped) delete entry[field];
+	}
 
 	writeFileSync(DETECTABLE_DB, JSON.stringify(entries));
 	const after = statSync(DETECTABLE_DB).size;
 	console.log(
-		`Pruned ${removed} unused fields from detectable.json ` +
+		`Pruned ${stripped.join(", ")} from detectable.json ` +
 			`(${(before / 1e6).toFixed(1)} MB -> ${(after / 1e6).toFixed(1)} MB)\n`
 	);
 }

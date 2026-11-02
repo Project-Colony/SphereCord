@@ -271,9 +271,33 @@ async function initSpellCheckLanguages(_win: BrowserWindow, languages?: string[]
     const ses = session.defaultSession;
 
     const available = ses.availableSpellCheckerLanguages;
-    const applicable = languages.filter(l => available.includes(l)).slice(0, 5);
+    // navigator.languages lists both "fr-FR" and "fr", which Chromium maps to one dictionary
+    // (components/spellcheck/common/spellcheck_common.cc), so each would be loaded twice.
+    const dictionaries = new Set<string>();
+    const applicable = languages
+        .filter(l => available.includes(l))
+        .filter(l => {
+            const dictionary = SHARED_DICTIONARIES[l] ?? l;
+            if (dictionaries.has(dictionary)) return false;
+            dictionaries.add(dictionary);
+            return true;
+        })
+        .slice(0, 5);
     if (applicable.length) ses.setSpellCheckerLanguages(applicable);
 }
+
+const SHARED_DICTIONARIES: Record<string, string> = {
+    de: "de-DE",
+    en: "en-US",
+    es: "es-ES",
+    "es-419": "es-ES",
+    "es-AR": "es-ES",
+    "es-MX": "es-ES",
+    "es-US": "es-ES",
+    fr: "fr-FR",
+    it: "it-IT",
+    pt: "pt-BR"
+};
 
 function initSpellCheck(win: BrowserWindow) {
     win.webContents.on("context-menu", (_, data) => {

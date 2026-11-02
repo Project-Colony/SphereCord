@@ -137,9 +137,7 @@ handle(IpcEvents.MAXIMIZE, (e, key?: string) => {
     }
 });
 
-handleSync(IpcEvents.SPELLCHECK_GET_AVAILABLE_LANGUAGES, e => {
-    e.returnValue = session.defaultSession.availableSpellCheckerLanguages;
-});
+handleSync(IpcEvents.SPELLCHECK_GET_AVAILABLE_LANGUAGES, () => session.defaultSession.availableSpellCheckerLanguages);
 
 handle(IpcEvents.SPELLCHECK_REPLACE_MISSPELLING, (e, word: string) => {
     e.sender.replaceMisspelling(word);

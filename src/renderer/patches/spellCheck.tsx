@@ -120,12 +120,15 @@ addContextMenuPatch("textarea-context", children => {
                 />
 
                 <Menu.MenuItem id="vcd-spellcheck-languages" label="Languages" disabled={!spellCheckEnabled}>
-                    <Menu.MenuControlItem
-                        id="vcd-spellcheck-search"
-                        control={(props, ref) => (
-                            <Menu.MenuSearchControl {...props} query={search} onChange={setSearch} ref={ref} />
-                        )}
-                    />
+                    {/* Equicord maps MenuSearchControl lazily; it stays undefined until Discord first loads its module */}
+                    {Menu.MenuSearchControl && (
+                        <Menu.MenuControlItem
+                            id="vcd-spellcheck-search"
+                            control={(props, ref) => (
+                                <Menu.MenuSearchControl {...props} query={search} onChange={setSearch} ref={ref} />
+                            )}
+                        />
+                    )}
 
                     {filteredLanguages.map(({ name, displayName }) => {
                         const isEnabled = spellCheckLanguages.includes(name);

@@ -494,12 +494,16 @@
 
             if (showActivities) {
                 activitiesList.classList.remove("hidden");
-                activitiesList.innerHTML = status.activities
-                    .map(
-                        a =>
-                            `<div class="activity-item"><span class="activity-name">${a.name}</span><span class="activity-pid">PID ${a.pid}</span></div>`
-                    )
-                    .join("");
+                // Activity names come straight from RPC clients' SET_ACTIVITY payloads, so never parse them as HTML
+                const span = (className, textContent) =>
+                    Object.assign(document.createElement("span"), { className, textContent });
+                activitiesList.replaceChildren(
+                    ...status.activities.map(a => {
+                        const item = Object.assign(document.createElement("div"), { className: "activity-item" });
+                        item.append(span("activity-name", a.name), span("activity-pid", `PID ${a.pid}`));
+                        return item;
+                    })
+                );
             } else {
                 activitiesList.classList.add("hidden");
             }

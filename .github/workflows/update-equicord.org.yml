@@ -5,6 +5,8 @@ name: Update SphereCord version (DISABLED)
 # GH_REPO / USERNAME / ETOKEN below if you set up your own website version file.
 on:
     workflow_dispatch:
+# The push uses secrets.ETOKEN, not the job token
+permissions: {}
 jobs:
     update:
         runs-on: ubuntu-latest

@@ -11,6 +11,10 @@ on:
         description: The release tag to submit
         required: true
 
+# Publishing goes through secrets.WINGET_PAT; the job token only needs to read
+permissions:
+  contents: read
+
 jobs:
   winget:
     name: Publish winget package

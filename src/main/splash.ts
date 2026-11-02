@@ -16,7 +16,7 @@ import { fileExistsAsync } from "./utils/fileExists";
 export let splash: BrowserWindow | undefined;
 import { loadView } from "./vesktopStatic";
 
-const totalTasks = 9;
+const totalTasks = 8;
 let doneTasks = 0;
 
 let splashReady = false;

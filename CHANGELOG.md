@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.7](https://github.com/Project-Colony/SphereCord/compare/v3.3.6...v3.3.7) (2026-11-03)
+
+
+### Bug Fixes
+
+* **arrpc:** render activity names as text in the Rich Presence window ([a9ef747](https://github.com/Project-Colony/SphereCord/commit/a9ef747246f8355ce3c08b32993c497a375f0057))
+
 ## [3.3.6](https://github.com/Project-Colony/SphereCord/compare/v3.3.5...v3.3.6) (2026-11-02)
 
 

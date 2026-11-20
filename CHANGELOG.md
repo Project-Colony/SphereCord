@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/Project-Colony/SphereCord/compare/v3.3.7...v3.4.0) (2026-11-20)
+
+
+### Features
+
+* sync Equibop upstream through Electron 45.3.2 ([7629ec9](https://github.com/Project-Colony/SphereCord/commit/7629ec9c5496b3aeaba98f98de6b50ea82452983))
+
 ## [3.3.7](https://github.com/Project-Colony/SphereCord/compare/v3.3.6...v3.3.7) (2026-11-03)
 
 

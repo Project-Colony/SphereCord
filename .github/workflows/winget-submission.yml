@@ -4,27 +4,27 @@ name: Submit to Winget Community Repo
 # maintainer's winget-pkgs fork (fork-user: Creationsss) + secrets.WINGET_PAT.
 # Set up your own winget-pkgs fork + PAT and re-add the `release` trigger to publish.
 on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        type: string
-        description: The release tag to submit
-        required: true
+    workflow_dispatch:
+        inputs:
+            tag:
+                type: string
+                description: The release tag to submit
+                required: true
 
 # Publishing goes through secrets.WINGET_PAT; the job token only needs to read
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  winget:
-    name: Publish winget package
-    runs-on: windows-latest
-    steps:
-      - name: Submit package to Winget Community Repo
-        uses: vedantmgoyal2009/winget-releaser@0db4f0a478166abd0fa438c631849f0b8dcfb99f
-        with:
-          identifier: ProjectColony.SphereCord
-          token: ${{ secrets.WINGET_PAT }}
-          installers-regex: '\.exe$'
-          release-tag: ${{ inputs.tag || github.event.release.tag_name }}
-          fork-user: Project-Colony
+    winget:
+        name: Publish winget package
+        runs-on: windows-latest
+        steps:
+            - name: Submit package to Winget Community Repo
+              uses: vedantmgoyal2009/winget-releaser@0db4f0a478166abd0fa438c631849f0b8dcfb99f
+              with:
+                  identifier: ProjectColony.SphereCord
+                  token: ${{ secrets.WINGET_PAT }}
+                  installers-regex: '\.exe$'
+                  release-tag: ${{ inputs.tag || github.event.release.tag_name }}
+                  fork-user: Project-Colony

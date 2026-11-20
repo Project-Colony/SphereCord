@@ -6,12 +6,12 @@
 
 Each idea is tagged by **surface** — where it ships — which decides whether it survives Equicord's independent auto-updates:
 
-| Surface | What it means | Update-proof? |
-|---|---|---|
-| `Shell patch` | A renderer patch bundled in SphereCord (`src/renderer/patches/`) | ✅ Yes — ships in the shell |
-| `Native` | Electron main process (tray, hotkeys, IPC, sockets) | ✅ Yes — shell-owned |
-| `Colony` | Glue to the wider ecosystem (shared config, launcher, presence) | ✅ Yes — shell-owned |
-| `Equicord` | A real Vencord/Equicord plugin | ⚠️ Needs a fork/upstream — **none of these require it** |
+| Surface       | What it means                                                    | Update-proof?                                           |
+| ------------- | ---------------------------------------------------------------- | ------------------------------------------------------- |
+| `Shell patch` | A renderer patch bundled in SphereCord (`src/renderer/patches/`) | ✅ Yes — ships in the shell                             |
+| `Native`      | Electron main process (tray, hotkeys, IPC, sockets)              | ✅ Yes — shell-owned                                    |
+| `Colony`      | Glue to the wider ecosystem (shared config, launcher, presence)  | ✅ Yes — shell-owned                                    |
+| `Equicord`    | A real Vencord/Equicord plugin                                   | ⚠️ Needs a fork/upstream — **none of these require it** |
 
 `effort` S/M/L · `impact` 1–5 · `score` = feasibility + impact + Colony-fit + novelty (0–100). Legend: 🚩 flagship · ⚡ quick win · ➕ gap-filler.
 
@@ -123,7 +123,7 @@ Each idea is tagged by **surface** — where it ships — which decides whether 
 
 - **Native telemetry & science firewall** — `Native` · effort M · impact ●●●●○ · **82/100**
   Kill Discord's tracking at the socket, not in a patch Discord can rewrite.
-  A session.defaultSession.webRequest.onBeforeRequest filter in mainWindow.ts cancels requests to Discord's /api/*/science, /api/*/metrics, /error-reporting, sentry.io and other beacon hosts before they leave the process. Unlike Vencord's renderer-level NoTrack (patches known JS, re-fetched on Equicord update), a main-process block is authoritative, catches native-issued beacons, is update-proof, and ships on-by-default with a user-editable blocklist in Settings. The 'Colony privacy default profile' framing matches the ecosystem's opinionated-defaults philosophy.
+  A session.defaultSession.webRequest.onBeforeRequest filter in mainWindow.ts cancels requests to Discord's /api/_/science, /api/_/metrics, /error-reporting, sentry.io and other beacon hosts before they leave the process. Unlike Vencord's renderer-level NoTrack (patches known JS, re-fetched on Equicord update), a main-process block is authoritative, catches native-issued beacons, is update-proof, and ships on-by-default with a user-editable blocklist in Settings. The 'Colony privacy default profile' framing matches the ecosystem's opinionated-defaults philosophy.
   _Watch out:_ risk: over-blocking breaks features — needs a tested allowlist + escape toggle; partial overlap with NoTrack, value is the native/default/update-proof layer.
 
 - **Screen-share privacy shield (auto-arm on capture)** — `Shell patch` · effort M · impact ●●●●○ · **80/100**

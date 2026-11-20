@@ -5,13 +5,14 @@
  */
 
 import { execSync } from "child_process";
-import { BuildContext, BuildOptions, context } from "esbuild";
 import { readdirSync, rmSync } from "fs";
-import { copyFile } from "fs/promises";
+import { copyFile, rm } from "fs/promises";
 import { join } from "path";
 
-import vencordDep from "./vencordDep.mjs";
+import { BuildContext, BuildOptions, context } from "esbuild";
+
 import { includeDirPlugin } from "./includeDirPlugin.mts";
+import vencordDep from "./vencordDep.mjs";
 
 const isDev = process.argv.includes("--dev");
 
@@ -85,6 +86,19 @@ async function copyVenmic() {
     ]).catch(() => console.warn("Failed to copy venmic. Building without venmic support"));
 }
 
+async function copyGameDetection() {
+    const prebuilds = "./node_modules/@vencord/game-detection/prebuilds";
+
+    return Promise.all(
+        ["x64", "arm64"].map(async arch => {
+            const dest = `./static/dist/game-detection-${arch}.node`;
+            // Overwriting in place crashes a running instance, as the addon is mapped into memory
+            await rm(dest, { force: true });
+            await copyFile(`${prebuilds}/${process.platform}-${arch}/rpc_native.node`, dest);
+        })
+    ).catch(() => console.warn("Failed to copy game detection. Building without game detection support"));
+}
+
 async function copyLibVesktop() {
     if (process.platform !== "linux") return;
 
@@ -108,6 +122,7 @@ async function copyLibVesktop() {
 await Promise.all([
     copyVenmic(),
     copyLibVesktop(),
+    copyGameDetection(),
     createContext({
         ...NodeCommonOpts,
         entryPoints: ["src/main/index.ts"],
@@ -133,12 +148,6 @@ await Promise.all([
         footer: { js: "//# sourceURL=VesktopUpdaterPreload" }
     }),
     createContext({
-        ...NodeCommonOpts,
-        entryPoints: ["src/preload/arrpcSettings.ts"],
-        outfile: "dist/js/arrpcSettingsPreload.js",
-        footer: { js: "//# sourceURL=VesktopArRPCSettingsPreload" }
-    }),
-    createContext({
         ...CommonOpts,
         globalName: "SphereCord",
         entryPoints: ["src/renderer/index.ts"],
@@ -156,24 +165,24 @@ await Promise.all([
 const watch = process.argv.includes("--watch");
 
 if (watch) {
-	await Promise.all(contexts.map((ctx) => ctx.watch()));
+    await Promise.all(contexts.map(ctx => ctx.watch()));
 } else {
-	const results = await Promise.all(
-		contexts.map(async (ctx) => {
-			const result = await ctx.rebuild();
-			await ctx.dispose();
-			return result;
-		}),
-	);
+    const results = await Promise.all(
+        contexts.map(async ctx => {
+            const result = await ctx.rebuild();
+            await ctx.dispose();
+            return result;
+        })
+    );
 
-	for (const result of results) {
-		if (result.metafile) {
-			const outputs = Object.keys(result.metafile.outputs);
-			for (const output of outputs) {
-				const meta = result.metafile.outputs[output];
-				const size = (meta.bytes / 1024).toFixed(2);
-				console.log(`  ${output} ${size} KB`);
-			}
-		}
-	}
+    for (const result of results) {
+        if (result.metafile) {
+            const outputs = Object.keys(result.metafile.outputs);
+            for (const output of outputs) {
+                const meta = result.metafile.outputs[output];
+                const size = (meta.bytes / 1024).toFixed(2);
+                console.log(`  ${output} ${size} KB`);
+            }
+        }
+    }
 }

@@ -11,6 +11,7 @@ SphereCord is the desktop Discord client for **Project Colony** — a fork of
 Colony color themes.
 
 **Main features**:
+
 - Equicord preinstalled (auto-updating)
 - **52 Colony color themes bundled** — Catppuccin, Gruvbox, Nord, Dracula, Tokyonight,
   Rosé Pine, Kanagawa and more, auto-installed and synced from the Colony palette set
@@ -22,28 +23,29 @@ Colony color themes.
 
 - Tray Customization with voice detection and notification badges
 - Command-line flags to toggle microphone and deafen status (Linux)
-- Custom Arguments from [this PR](https://github.com/Project-Colony/SphereCord/pull/46)
-- arRPC-bun with debug logging support https://github.com/Creationsss/arrpc-bun
+- Custom Arguments from [this PR](https://github.com/Equicord/Equibop/pull/46)
 
 **Not fully Supported**:
+
 - Global Keybinds (Windows/macOS - use command-line flags on Linux instead)
 
 ## SphereCord Arguments
+
 > [!NOTE]
 > These flags are inherited from Equibop/Vesktop. See the persistent-flags section below to apply them.
 
 ### Quick reference
 
-| Flag                            | Description                             |
-|---------------------------------|-----------------------------------------|
-| `--ozone-platform=wayland`      | Force native Wayland                    |
-| `--ozone-platform=x11`          | Force XWayland                          |
-| `--no-sandbox`                  | Disable Chromium sandbox (use with caution) |
-| `--force_high_performance_gpu`  | Prefer discrete GPU                     |
-| `--start-minimized`             | Launch minimized to tray                |
-| `--toggle-mic`                  | Toggle mic (bind to shortcuts)          |
-| `--toggle-deafen`               | Toggle deafen (bind to shortcuts)       |
-| `--toggle-vad`                  | Toggle Voice Activity Detection (Voice Activity <-> Push To Talk) |
+| Flag                           | Description                                                       |
+| ------------------------------ | ----------------------------------------------------------------- |
+| `--ozone-platform=wayland`     | Force native Wayland                                              |
+| `--ozone-platform=x11`         | Force XWayland                                                    |
+| `--no-sandbox`                 | Disable Chromium sandbox (use with caution)                       |
+| `--force_high_performance_gpu` | Prefer discrete GPU                                               |
+| `--start-minimized`            | Launch minimized to tray                                          |
+| `--toggle-mic`                 | Toggle mic (bind to shortcuts)                                    |
+| `--toggle-deafen`              | Toggle deafen (bind to shortcuts)                                 |
+| `--toggle-vad`                 | Toggle Voice Activity Detection (Voice Activity <-> Push To Talk) |
 
 ### Persistent flags
 
@@ -72,6 +74,7 @@ sudo pacman -U dist/spherecord-*.pacman
 ## Building from Source
 
 You need to have the following dependencies installed:
+
 - [Git](https://git-scm.com/downloads)
 - [Bun](https://bun.sh)
 
@@ -105,6 +108,7 @@ bun package:dir
 This is a small C++ helper library SphereCord uses on Linux to emit D-Bus events. By default, prebuilt binaries for x64 and arm64 are used.
 
 If you want to build it from source:
+
 1. Install build dependencies:
     - Debian/Ubuntu: `apt install build-essential python3 curl pkg-config libglib2.0-dev`
     - Fedora: `dnf install @c-development @development-tools python3 curl pkgconf-pkg-config glib2-devel`

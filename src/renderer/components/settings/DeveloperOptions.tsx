@@ -5,8 +5,8 @@
  */
 
 import { Button, Heading, Paragraph, TextButton } from "@equicord/types/components";
-import { Margins, openModal, useForceUpdater } from "@equicord/types/utils";
-import { Modal, Toasts } from "@equicord/types/webpack/common";
+import { Margins, promptToRestart, useForceUpdater } from "@equicord/types/utils";
+import { Modal, openModal, showToast } from "@equicord/types/webpack/common";
 import { Settings } from "shared/settings";
 
 import { cl, SettingsComponent } from "./Settings";
@@ -36,7 +36,7 @@ function openDeveloperOptionsModal(settings: Settings) {
     ));
 }
 
-const SphereCordLocationPicker: SettingsComponent = ({ settings }) => {
+const SphereCordLocationPicker: SettingsComponent = () => {
     const forceUpdate = useForceUpdater();
     const usingCustomSphereCordDir = VesktopNative.fileManager.isUsingCustomVencordDir();
 
@@ -67,18 +67,12 @@ const SphereCordLocationPicker: SettingsComponent = ({ settings }) => {
                             case "cancelled":
                                 break;
                             case "ok":
-                                Toasts.show({
-                                    message: "SphereCord install changed. Fully restart SphereCord to apply.",
-                                    id: Toasts.genId(),
-                                    type: Toasts.Type.SUCCESS
-                                });
+                                promptToRestart("relaunch");
                                 break;
                             case "invalid":
-                                Toasts.show({
-                                    message:
-                                        "You did not choose a valid SphereCord install. Make sure you're selecting the dist dir!",
-                                    id: Toasts.genId(),
-                                    type: Toasts.Type.FAILURE
+                                showToast({
+                                    text: "You did not choose a valid SphereCord install. Make sure you're selecting the dist dir!",
+                                    variant: "critical"
                                 });
                                 break;
                         }

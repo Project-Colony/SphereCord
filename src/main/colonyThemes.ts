@@ -6,6 +6,7 @@
 
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync } from "fs";
 import { join } from "path";
+
 import { STATIC_DIR } from "shared/paths";
 
 import { VENCORD_THEMES_DIR } from "./constants";

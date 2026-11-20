@@ -9,14 +9,17 @@ test("legacy settings keep the effective titlebar and explicit preferences", asy
     const settingsFile = join(dataDir, "settings.json");
     const vencordFile = join(dataDir, "vencord.json");
     try {
-        writeFileSync(settingsFile, JSON.stringify({
-            customTitleBar: false,
-            blockTelemetry: false,
-            hardwareAcceleration: false,
-            tray: false,
-            arRPC: true,
-            webRTCIPHandlingPolicy: "disable_non_proxied_udp"
-        }));
+        writeFileSync(
+            settingsFile,
+            JSON.stringify({
+                customTitleBar: false,
+                blockTelemetry: false,
+                hardwareAcceleration: false,
+                tray: false,
+                arRPC: true,
+                webRTCIPHandlingPolicy: "disable_non_proxied_udp"
+            })
+        );
         writeFileSync(vencordFile, JSON.stringify({ frameless: true }));
         mock.module("../src/main/constants", () => ({
             DATA_DIR: dataDir,
